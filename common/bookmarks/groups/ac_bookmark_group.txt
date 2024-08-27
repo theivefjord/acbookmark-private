@@ -1,0 +1,3 @@
+﻿ac_bm_group_7998 = { # Aegon's Conquest
+	default_start_date = 7998.1.1
+}
