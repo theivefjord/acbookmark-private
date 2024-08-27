@@ -1,0 +1,5 @@
+﻿ac_canon_children_birth_year_aenys_targaryen = 8007
+ac_canon_children_birth_year_aenys_targaryen_min = { value = ac_canon_children_birth_year_aenys_targaryen add = -1 }
+
+ac_canon_children_birth_year_maegor_targaryen = 8012
+ac_canon_children_birth_year_maegor_targaryen_min = { value = ac_canon_children_birth_year_maegor_targaryen add = -1 }

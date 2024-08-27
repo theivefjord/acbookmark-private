@@ -1,0 +1,93 @@
+﻿ac_canon_children_setup_story_cycles_effect = {
+	if = {
+		limit = {
+			agot_canon_children_setup_trigger = yes
+		}
+
+		character:Targaryen_27 ?= { #the conqueror :sunglasses:
+			if = {
+				limit = { is_alive = yes }
+				create_story = { type = story_ac_canon_children_aegon_targaryen }
+			}
+		}
+	}
+}
+
+ac_canon_children_birth_effect = {
+	scope:child = {
+		agot_canon_children_clear_genetic_traits_effect = yes
+	}
+
+	#Targs
+	#Visenya 
+	if = {
+		limit = {
+			scope:mother = { has_character_flag = is_visenya_i_targaryen }
+		}
+		if = { #maegor
+			limit = { agot_canon_children_check_pregnancy_child_trigger = { FLAG = is_maegor_i_targaryen } }
+			ac_canon_children_maegor_i_targaryen_birth_effect = yes
+		}
+	}
+
+	#Rhaenys
+	if = {
+		limit = {
+			scope:mother = { has_character_flag = is_rhaenys_i_targaryen }
+		}
+		if = { #aenys
+			limit = { agot_canon_children_check_pregnancy_child_trigger = { FLAG = is_aenys_i_targaryen } }
+			ac_canon_children_aenys_i_targaryen_birth_effect = yes
+		}
+	}
+}
+
+#Maegor - Targaryen_31
+ac_canon_children_maegor_i_targaryen_birth_effect = {
+	scope:child = {
+		agot_canon_children_after_birth_effect = {
+			NAME_MALE = "Maegor"
+			NAME_FEMALE = "Maegelle"
+			FLAG = is_maegor_i_targaryen
+			DNA = Dummy_Targaryen_131
+		}
+
+		set_culture_same_as = scope:father
+		set_sexuality = heterosexual
+		add_trait_force_tooltip = physique_good_2
+
+		add_character_flag = has_scripted_appearance
+		make_trait_inactive = scripted_appearance
+
+		agot_canon_children_schedule_trait_effect = { TRAIT = flag:rowdy AGE = childhood_personality_age }
+		agot_canon_children_schedule_trait_effect = { TRAIT = flag:wrathful AGE = agot_canon_children_trait_1_year }
+		agot_canon_children_schedule_trait_effect = { TRAIT = flag:paranoid AGE = agot_canon_children_trait_2_year }
+		agot_canon_children_schedule_trait_effect = { TRAIT = flag:sadistic AGE = agot_canon_children_trait_3_year }
+		agot_canon_children_schedule_trait_effect = { TRAIT = flag:brave AGE = agot_canon_children_trait_4_year }
+	}
+}
+
+#Aenys - Targaryen_30
+ac_canon_children_aenys_i_targaryen_birth_effect = {
+	scope:child = {
+		agot_canon_children_after_birth_effect = {
+			NAME_MALE = "Aenys"
+			NAME_FEMALE = "Alysanne"
+			FLAG = is_aenys_i_targaryen
+			DNA = Dummy_Targaryen_68
+		}
+
+		set_culture_same_as = scope:father
+		set_sexuality = heterosexual
+		remove_trait = child_of_concubine_female
+
+		add_character_flag = has_scripted_appearance
+		make_trait_inactive = scripted_appearance
+
+		agot_canon_children_schedule_trait_effect = { TRAIT = flag:pensive AGE = childhood_personality_age }
+		agot_canon_children_schedule_trait_effect = { TRAIT = flag:fickle AGE = agot_canon_children_trait_1_year }
+		agot_canon_children_schedule_trait_effect = { TRAIT = flag:craven AGE = agot_canon_children_trait_2_year }
+		agot_canon_children_schedule_trait_effect = { TRAIT = flag:compassionate AGE = agot_canon_children_trait_3_year }
+		agot_canon_children_schedule_trait_effect = { TRAIT = flag:trusting AGE = agot_canon_children_trait_4_year }
+	}
+}

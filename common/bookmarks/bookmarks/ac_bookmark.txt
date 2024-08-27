@@ -4,7 +4,7 @@
 	group = ac_bm_group_7998
 
 	weight = {
-		value = 10
+		value = 100
 	}
 
 	character = {

@@ -1,0 +1,14 @@
+﻿on_game_start = {
+	on_actions = {
+		ac_game_start
+	}
+}
+
+ac_game_start = {
+	effect = {
+		if = {
+			limit = { game_start_date = 7998.1.1 }
+			ac_7998_scenario_setup = yes
+		}
+	}
+}

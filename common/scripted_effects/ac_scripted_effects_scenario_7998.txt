@@ -1,0 +1,3 @@
+﻿ac_7998_scenario_setup = {
+	ac_canon_children_setup_story_cycles_effect = yes
+}

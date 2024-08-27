@@ -1,0 +1,14 @@
+﻿on_birth_child = {
+	on_actions = {
+		ac_child_birth_oneffect
+	}
+}
+
+ac_child_birth_oneffect = {
+	effect = {
+		if = {
+			limit = { scope:mother = { has_character_flag = agot_is_pregnant } }
+			ac_canon_children_birth_effect = yes
+		}
+	}
+}
