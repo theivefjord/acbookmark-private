@@ -1,0 +1,95 @@
+﻿ac_convert_to_seven = {
+	picture = "gfx\interface\illustrations\decisions\decision_major_religion.dds"
+
+	major = yes
+
+	desc = ac_convert_to_seven_desc
+	selection_tooltip = ac_convert_to_seven_tt
+
+	ai_check_interval = 12
+
+	is_shown = {
+		faith = faith:valyrian
+		NOT = {
+			has_title = title:e_the_iron_throne
+		}
+	}
+
+	is_valid = {
+		root = {
+			faith = faith:valyrian
+		}
+	}
+
+	effect = {
+		root = {
+			set_character_faith = faith:the_seven_main
+			
+			
+			every_spouse = {
+				set_character_faith = faith:the_seven_main
+			}
+			hidden_effect = {
+				divorce = character:Targaryen_29 # Rhaenys Targaryen
+				agot_safe_concubine_history_effect = {
+					TARGET = character:Targaryen_29 # Rhaenys Targaryen
+				}
+			}
+		}
+	}
+
+	ai_potential = {
+		always = yes
+	}
+
+	ai_will_do = {
+		base = 100
+	}
+}
+
+ac_doctrine_of_exceptionalism = {
+	picture = "gfx/interface/illustrations/decisions/fp2_decision_struggle_conciliation.dds"
+
+	major = yes
+
+
+	desc = ac_doctrine_of_exceptionalism_desc
+	selection_tooltip = ac_doctrine_of_exceptionalism_tt
+
+	ai_check_interval = 12
+
+	is_shown = {
+		faith = faith:the_seven_main
+		has_title = title:e_the_iron_throne
+	}
+
+	is_valid = {
+		has_trait = dragonrider
+		piety >= 6000
+		title:k_the_most_devout.holder = {
+			opinion = { target = root value >= 100 }
+		}
+	}
+
+	effect = {
+		custom_tooltip = "ac_exceptionalism_tt"
+		faith:the_seven_main = { add_doctrine = agot_exceptionalism_doctrine }
+		custom_tooltip = "ac_exceptionalism_tt1"
+		hidden_effect = {
+			dynasty:dynn_Targaryen = {
+				every_living_character = {
+				limit = { has_trait = incestuous }
+				remove_trait = incestuous
+				}
+			}
+		}
+	}
+
+	ai_potential = {
+		always = yes
+	}
+
+	ai_will_do = {
+		base = 100
+	}
+}
