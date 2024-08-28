@@ -14,6 +14,7 @@
 		NOT = {
 			has_title = title:e_the_iron_throne
 		}
+		is_ai = no
 	}
 
 	is_valid = {
@@ -92,6 +93,40 @@ ac_doctrine_of_exceptionalism = {
 				}
 			}
 		}
+	}
+
+	ai_potential = {
+		always = yes
+	}
+
+	ai_will_do = {
+		base = 100
+	}
+}
+
+ac_claim_aegonfort = {
+	picture = "gfx/interface/illustrations/decisions/fp2_decision_struggle_conciliation.dds"
+
+	major = yes
+
+
+	desc = ac_claim_aegonfort_desc
+	selection_tooltip = ac_claim_aegonfort_tt
+
+	ai_check_interval = 12
+
+	is_shown = {
+		root = character:Targaryen_27
+		NOT = { has_title = title:c_kings_landing }
+	}
+
+	is_valid = {
+		NOT = { has_title = title:c_kings_landing }
+	}
+
+	effect = {
+		#custom_tooltip = "ac_exceptionalism_tt"
+		
 	}
 
 	ai_potential = {
