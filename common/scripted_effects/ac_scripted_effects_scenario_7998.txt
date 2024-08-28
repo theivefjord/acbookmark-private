@@ -19,6 +19,26 @@
 			set_character_faith = faith:valyrian
 			remove_concubine = character:Targaryen_29
 			marry = character:Targaryen_29
+			spawn_army = {
+				uses_supply = no
+				inheritable = no
+				name = ac_troops
+				men_at_arms = {
+					type = dragonkeepers
+					stacks = 18
+				}
+				location = capital_province
+				origin = capital_province
+			}
 		}
+	}
+	character:Velaryon_11 ?= { # Daemon Velaryon
+		if = {
+			limit = { is_alive = yes }
+			set_character_faith = faith:the_seven_main
+		}
+	}
+	title:c_dragonstone = {
+		set_county_faith = faith:valyrian
 	}
 }

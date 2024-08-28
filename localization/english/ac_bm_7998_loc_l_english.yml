@@ -44,3 +44,5 @@
  ac_doctrine_of_exceptionalism_confirm:0 "Introduce Doctrine of Exceptionalism"
  ac_exceptionalism_tt:0 "The Faith of the Seven gains [GetFaithDoctrine('agot_exceptionalism_doctrine').GetBaseName]."
  ac_exceptionalism_tt1:0 "All Targaryens with the [GetTrait('incestuous').GetName(GetNullCharacter)] [trait|E] will have it removed."
+
+ ac_troops:0 "Aegons' Host"

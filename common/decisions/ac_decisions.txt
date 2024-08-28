@@ -23,7 +23,6 @@
 	effect = {
 		set_character_faith = faith:the_seven_main
 		
-		
 		character:Targaryen_28 ?= { # Visenya
 			if = {
 				limit = { is_alive = yes }
@@ -35,6 +34,9 @@
 				limit = { is_alive = yes }
 				set_character_faith = faith:the_seven_main
 			}
+		}
+		title:c_dragonstone = {
+			set_county_faith = faith:the_seven_main
 		}
 		hidden_effect = {
 			divorce = character:Targaryen_29 # Rhaenys Targaryen
