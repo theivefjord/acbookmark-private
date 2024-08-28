@@ -10,6 +10,7 @@
 
 	is_shown = {
 		faith = faith:valyrian
+		root = character:Targaryen_27
 		NOT = {
 			has_title = title:e_the_iron_throne
 		}
@@ -61,6 +62,7 @@ ac_doctrine_of_exceptionalism = {
 	is_shown = {
 		faith = faith:the_seven_main
 		has_title = title:e_the_iron_throne
+		root = character:Targaryen_27
 	}
 
 	is_valid = {
