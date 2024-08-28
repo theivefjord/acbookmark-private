@@ -71,12 +71,45 @@ story_ac_canon_children_aegon_targaryen = {
 							}
 						}
 
-						# 2 Rhaenys
+						# 2 Rhaenys (if still spouse due to valyrian religion)
 						else_if = {
 							limit = {
 								has_character_flag = is_rhaenys_i_targaryen
 								scope:canon_father = {
 									agot_canon_children_force_pregnancy_spouse_trigger = {
+										MOTHER = scope:canon_mother
+									}
+								}
+							}
+
+							# 2-1 Aenys
+							if = {
+								limit = {
+									agot_canon_children_child_pregnancy_trigger = {
+										ID = Targaryen_30
+										FLAG = is_aenys_i_targaryen
+										BIRTH_YEAR = ac_canon_children_birth_year_aenys_targaryen
+									}
+								}
+								agot_canon_children_force_pregnancy_basic_effect = {
+									CHILD_FLAG = is_aenys_i_targaryen
+									IS_FEMALE = no
+								}
+							}
+
+							# lifecycle
+							agot_canon_children_life_cycle_effect = {
+								MOTHER = scope:canon_mother
+								FINAL_CHILD_FLAG = is_aenys_i_targaryen
+								FINAL_CHILD_ID = Targaryen_30
+							}
+						}
+						# 2 Rhaenys (if woman due to faith of the seven)
+						else_if = {
+							limit = {
+								has_character_flag = is_rhaenys_i_targaryen
+								scope:canon_father = {
+									agot_canon_children_force_pregnancy_happy_accident_trigger = {
 										MOTHER = scope:canon_mother
 									}
 								}

@@ -16,7 +16,7 @@
 		title = k_dragonstone
 		government = lp_feudal_government
 		culture = high_valyrian
-		religion = the_seven_main
+		religion = valyrian
 		difficulty = "BOOKMARK_CHARACTER_DIFFICULTY_EASY"
 		history_id = Targaryen_27
 		position = { 1284 592 }
@@ -30,7 +30,7 @@
 			type = female
 			birth = 7972.1.1
 			culture = high_valyrian
-			religion = the_seven_main
+			religion = valyrian
 			history_id = Targaryen_28
 			animation = personality_bold
 		}
@@ -42,7 +42,7 @@
 			type = female
 			birth = 7976.1.1
 			culture = high_valyrian
-			religion = the_seven_main
+			religion = valyrian
 			history_id = Targaryen_29
 			animation = idle
 		}

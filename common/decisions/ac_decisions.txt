@@ -17,24 +17,29 @@
 	}
 
 	is_valid = {
-		root = {
-			faith = faith:valyrian
-		}
+		faith = faith:valyrian
 	}
 
 	effect = {
-		root = {
-			set_character_faith = faith:the_seven_main
-			
-			
-			every_spouse = {
+		set_character_faith = faith:the_seven_main
+		
+		
+		character:Targaryen_28 ?= { # Visenya
+			if = {
+				limit = { is_alive = yes }
 				set_character_faith = faith:the_seven_main
 			}
-			hidden_effect = {
-				divorce = character:Targaryen_29 # Rhaenys Targaryen
-				agot_safe_concubine_history_effect = {
-					TARGET = character:Targaryen_29 # Rhaenys Targaryen
-				}
+		}
+		character:Targaryen_29 ?= { # Aegon
+			if = {
+				limit = { is_alive = yes }
+				set_character_faith = faith:the_seven_main
+			}
+		}
+		hidden_effect = {
+			divorce = character:Targaryen_29 # Rhaenys Targaryen
+			agot_safe_concubine_history_effect = {
+				TARGET = character:Targaryen_29 # Rhaenys Targaryen
 			}
 		}
 	}
@@ -75,9 +80,9 @@ ac_doctrine_of_exceptionalism = {
 
 	effect = {
 		custom_tooltip = "ac_exceptionalism_tt"
-		faith:the_seven_main = { add_doctrine = agot_exceptionalism_doctrine }
 		custom_tooltip = "ac_exceptionalism_tt1"
 		hidden_effect = {
+			faith:the_seven_main = { add_doctrine = agot_exceptionalism_doctrine }
 			dynasty:dynn_Targaryen = {
 				every_living_character = {
 				limit = { has_trait = incestuous }
