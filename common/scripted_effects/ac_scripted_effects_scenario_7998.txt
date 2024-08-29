@@ -25,7 +25,7 @@
 				name = ac_troops
 				men_at_arms = {
 					type = dragonkeepers
-					stacks = 12
+					stacks = 20
 				}
 				location = capital_province
 				origin = capital_province

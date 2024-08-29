@@ -39,9 +39,10 @@
  ac_convert_to_seven_tt:0 "It would mean denouncing my old ways"
  ac_convert_to_seven_confirm:0 "Convert"
  ac_doctrine_of_exceptionalism:0 "Introduce the Doctrine of Exceptionalism"
- ac_doctrine_of_exceptionalism_desc:0 "It's common knowledge that we Targaryens are not like other men. We are the blood of the Dragon, and the blood of Old Valyria. By what right do these ignorant fools question our actions? \n\nThe Doctrine of Exceptionalism will ensure that all [ROOT.Char.GetFaith.DevoteeMale] understand that marriage between brother and sister is necessary to preserve the purity of our blood, so that we maintain control of the dragons." 
+ ac_doctrine_of_exceptionalism_desc:0 "It's common knowledge that we Targaryens are not like other men. We are the blood of the Dragon, and the blood of Old Valyria. By what right do these ignorant fools question our actions? \n\nBy leaving behind the old way, the Doctrine of Exceptionalism will ensure that all [ROOT.Char.GetFaith.DevoteeMale] understand that marriage between brother and sister is necessary to preserve the purity of our blood, so we may maintain control of the dragons." 
  ac_doctrine_of_exceptionalism_tt:0 ""
  ac_doctrine_of_exceptionalism_confirm:0 "Introduce Doctrine of Exceptionalism"
+ ac_exceptionalism_tt2:0 "[THIS.Char.GetCulture.GetName] loses [GetCultureTradition('ac_val_polygamy_doctrine').GetName]."
  ac_exceptionalism_tt:0 "The Faith of the Seven gains [GetFaithDoctrine('agot_exceptionalism_doctrine').GetBaseName]."
  ac_exceptionalism_tt1:0 "All Targaryens with the [GetTrait('incestuous').GetName(GetNullCharacter)] [trait|E] will have it removed."
 
@@ -49,4 +50,15 @@
 
  building_harrenhal_01:0 "Harrenhal"
  building_harrenhal_01_desc:0 "The castle of House Hoare, Harrenhal stands as a testament to the line of Harren the Black and his Ironmen over the Riverlands. Said to be the greatest castle in Westeros, though this is disputed by those in the Westerlands, it is a clear statement of control and prominence of the Hoares over not only there realm, but the surrounding lands as well."
+ 
  c_aegonfort:0 "Aegonfort"
+ ac_claim_aegonfort:0 "Land in Westeros"
+ ac_claim_aegonfort_desc:0 "Two years before the conquest, Aegon and his sisters landed with a force at the mouth of the Blackwater Rush, intent on conquering the continent of Westeros. On the tallest of the three hills they began construction on a crude fortress they called the Aegonfort. \n\nAs time passed, a town sprang up around the growing fort. This emerging town and the strategic location may have influenced Aegon's decision to make it the place for his new capital, which would eventually become known as King's Landing."
+ ac_claim_aegonfort_tt:0 "This decision will give you a base of operations in Westeros"
+ ac_claim_aegonfort_confirm:0 "Claim the Aegonfort"
+ ac_claim_aegonfort_custom_tt:0 "[GetTitleByKey('c_kings_landing').GetName] will become known as Lordship of Aegonfort"
+
+ ac_val_polygamy_name:0 "$ac_val_polygamy_doctrine_name$"
+ ac_val_polygamy_doctrine_name:0 "Valyrian Polygamy"
+ ac_val_polygamy_doctrine_desc:0 "This tradition allows for the taking of an additional spouse. This will allow us to follow the old way, even after converting to the Faith of the Seven."
+ ac_fots_polygamy_tt:0 "[THIS.Char.GetCulture.GetName] gains [GetCultureTradition('ac_val_polygamy_doctrine').GetName]."
