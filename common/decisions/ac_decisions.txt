@@ -71,15 +71,13 @@ ac_doctrine_of_exceptionalism = {
 	desc = ac_doctrine_of_exceptionalism_desc
 	selection_tooltip = ac_doctrine_of_exceptionalism_tt
 
-	ai_check_interval = 12
+	ai_check_interval = 120
 
 	is_shown = {
-		#faith = faith:the_seven_main
-		#has_title = title:e_the_iron_throne
-		#root = character:Targaryen_27
-		#NOT = { faith:the_seven_main = { has_doctrine = agot_exceptionalism_doctrine } }
-		always = yes
-		is_ai = no
+		faith = faith:the_seven_main
+		has_title = title:e_the_iron_throne
+		root = character:Targaryen_27
+		NOT = { faith:the_seven_main = { has_doctrine = agot_exceptionalism_doctrine } }
 	}
 
 	is_valid = {

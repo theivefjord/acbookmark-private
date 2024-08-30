@@ -46,7 +46,7 @@
  ac_exceptionalism_tt:0 "The Faith of the Seven gains [GetFaithDoctrine('agot_exceptionalism_doctrine').GetBaseName]."
  ac_exceptionalism_tt1:0 "All Targaryens with the [GetTrait('incestuous').GetName(GetNullCharacter)] [trait|E] will have it removed."
 
- ac_troops:0 "Aegons' Host"
+ ac_troops:0 "Aegon's Host"
 
  building_harrenhal_01:0 "Harrenhal"
  building_harrenhal_01_desc:0 "The castle of House Hoare, Harrenhal stands as a testament to the line of Harren the Black and his Ironmen over the Riverlands. Said to be the greatest castle in Westeros, though this is disputed by those in the Westerlands, it is a clear statement of control and prominence of the Hoares over not only there realm, but the surrounding lands as well."
