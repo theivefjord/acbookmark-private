@@ -1,0 +1,857 @@
+﻿namespace = conq_events
+
+conq_events.0001 = { # aegon d-day
+	type = character_event
+	title = conq_events.0001.t
+	desc = conq_events.0001.desc
+
+	theme = martial
+
+	right_portrait = {
+		character = root
+		animation = personality_bold
+	}
+	left_portrait = {
+		character = title:e_the_riverlands.holder
+		animation = personality_bold
+	}
+
+	option = { # claim aegonfort(kings landing)
+		name = conq_events.0001.a
+		create_title_and_vassal_change = {
+			type = created
+			save_scope_as = change
+			add_claim_on_loss = no
+		}
+
+		get_title = title:d_kings_landing
+
+		
+		title:c_kings_landing = {
+			limit = { NOT = { holder = root } }
+			change_title_holder = {
+				holder = root
+				change = scope:change
+			}
+		}
+		title:c_bramsfort = {
+			limit = { NOT = { holder = root } }
+			change_title_holder = {
+				holder = root
+				change = scope:change
+			}
+		}
+		title:c_riverline = {
+			limit = { NOT = { holder = root } }
+			change_title_holder = {
+				holder = root
+				change = scope:change
+			}
+		}
+		title:c_shinebridge = {
+			limit = { NOT = { holder = root } }
+			change_title_holder = {
+				holder = root
+				change = scope:change
+			}
+		}
+		
+		resolve_title_and_vassal_change = scope:change
+		custom_tooltip = ac_claim_aegonfort_custom_tt
+
+		hidden_effect = {
+			title:c_kings_landing = {
+				set_title_name = c_aegonfort
+			}
+			set_variable = { name = ac_started_conquest value = 0 }
+			get_title = title:e_aegons_host
+			get_title = title:k_the_crownlands
+			get_title = title:d_kings_landing
+			title:d_kings_landing = {
+				set_de_jure_liege_title = title:k_the_crownlands
+			}
+			title:b_the_red_keep = {
+				set_title_name = c_aegonfort
+			}
+			title:e_aegons_host = {
+				set_variable = is_paramountcy_realm
+			}
+			character:Targaryen_27 = {
+				change_government = lp_feudal_government
+			}
+		}
+		ai_chance = {
+			base = 100
+		}
+	}
+
+	option = { # or dont and chill instead
+		name = conq_events.0001.b
+		custom_tooltip = ac_claim_aegonfort_warning_tt
+	}
+}
+
+conq_events.0002 = { # riverlands
+	type = character_event
+	title = conq_events.0002.t
+	desc = conq_events.0002.desc
+
+	theme = martial
+
+	right_portrait = {
+		character = root
+		animation = personality_bold
+	}
+	left_portrait = {
+		character = scope:defender
+		animation = personality_bold
+	}
+	lower_right_portrait = {
+		character = dynasty:dynn_Qoherys.dynast
+		animation = personality_bold
+	}
+	lower_left_portrait = {
+		character = title:d_riverrun.holder
+		animation = personality_bold
+	}
+
+	immediate = {
+		if = {
+			limit = { has_variable = ac_started_conquest }
+			change_variable = { name = ac_started_conquest add = 1 }
+		}
+		destroy_title = title:e_the_riverlands
+	}
+
+	option = { # keep titles to hand out yourself
+		name = conq_events.0002.a
+	}
+
+	option = { # give titles to qoherys and make him lord paramount
+		name = conq_events.0002.b
+		ac_change_titles = { # give titles to qoherys
+			OLD_HOLDER = root
+			NEW_HOLDER = dynasty:dynn_Qoherys.dynast
+			GIVE_TITLES_IN_TITLE = title:k_the_riverlands
+			TYPE = granted
+		}
+		ac_change_kingdom_title = {
+			NEW_HOLDER = dynasty:dynn_Qoherys.dynast
+			CHANGE_KINGDOM_TITLE = title:k_the_riverlands
+			TYPE = granted
+		}
+		ac_change_vassals = {
+			OLD_HOLDER = root
+			NEW_HOLDER = dynasty:dynn_Qoherys.dynast
+			CHANGE_VASSALS_OF_TITLE = title:k_the_riverlands
+			TYPE = granted
+		}
+		hidden_effect = {
+			dynasty:dynn_Qoherys.dynast = {
+				add_legitimacy = 650
+				add_opinion = {
+					target = root
+					modifier = pleased_opinion
+					opinion = 100
+					years = 10
+				}
+			}
+			
+		}
+	}
+
+	option = { # give harrenhal to qoherys but make riverrun lord paramount
+		name = conq_events.0002.c
+		ac_change_titles = { # give titles to qoherys
+			OLD_HOLDER = root
+			NEW_HOLDER = dynasty:dynn_Qoherys.dynast
+			GIVE_TITLES_IN_TITLE = title:k_the_riverlands
+			TYPE = granted
+		}
+		ac_change_kingdom_title = {
+			NEW_HOLDER = title:d_riverrun.holder
+			CHANGE_KINGDOM_TITLE = title:k_the_riverlands
+			TYPE = granted
+		}
+		ac_change_vassals = {
+			OLD_HOLDER = root
+			NEW_HOLDER = title:d_riverrun.holder
+			CHANGE_VASSALS_OF_TITLE = title:k_the_riverlands
+			TYPE = granted
+		}
+		hidden_effect = {
+			title:d_riverrun.holder = {
+				add_legitimacy = 1400
+				add_opinion = {
+					target = root
+					modifier = pleased_opinion
+					opinion = 100
+					years = 10
+				}
+			}
+			
+		}
+	}
+
+}
+
+conq_events.0003 = { # vale
+	type = character_event
+	title = conq_events.0003.t
+	desc = conq_events.0003.desc
+
+	theme = martial
+
+	right_portrait = {
+		character = root
+		animation = personality_bold
+	}
+	left_portrait = {
+		character = scope:defender
+		animation = personality_bold
+	}
+
+	immediate = {
+		if = {
+			limit = { has_variable = ac_started_conquest }
+			change_variable = { name = ac_started_conquest add = 1 }
+		}
+		ac_change_vassals = {
+			OLD_HOLDER = scope:defender
+			NEW_HOLDER = root
+			CHANGE_VASSALS_OF_TITLE = title:k_the_vale
+			TYPE = conquest
+		}
+		destroy_title = title:e_the_vale
+	}
+
+	option = {
+		name = conq_events.0003.a # keep titles
+	}
+
+	option = {
+		name = conq_events.0003.b # ronnel gets titles back and becomes lord paramount
+		ac_change_titles = { # give titles to ronnel
+			OLD_HOLDER = root
+			NEW_HOLDER = dynasty:dynn_Arryn.dynast
+			GIVE_TITLES_IN_TITLE = title:k_the_vale
+			TYPE = granted
+		}
+		ac_change_kingdom_title = {
+			NEW_HOLDER = dynasty:dynn_Arryn.dynast
+			CHANGE_KINGDOM_TITLE = title:k_the_vale
+			TYPE = granted
+		}
+		ac_change_vassals = {
+			OLD_HOLDER = root
+			NEW_HOLDER = dynasty:dynn_Arryn.dynast
+			CHANGE_VASSALS_OF_TITLE = title:k_the_vale
+			TYPE = granted
+		}
+		hidden_effect = {
+			dynasty:dynn_Arryn.dynast = {
+				add_legitimacy = 1400
+				add_opinion = {
+					target = root
+					modifier = pleased_opinion
+					opinion = 100
+					years = 10
+				}
+			}
+			
+		}
+	}
+}
+
+conq_events.0004 = { # stormlands
+	type = character_event
+	title = conq_events.0004.t
+	desc = conq_events.0004.desc
+
+	theme = martial
+
+	right_portrait = {
+		character = root
+		animation = personality_bold
+	}
+	left_portrait = {
+		character = scope:defender
+		animation = personality_bold
+	}
+	immediate = {
+		if = {
+			limit = { has_variable = ac_started_conquest }
+			change_variable = { name = ac_started_conquest add = 1 }
+		}
+		ac_change_vassals = {
+			OLD_HOLDER = scope:defender
+			NEW_HOLDER = root
+			CHANGE_VASSALS_OF_TITLE = title:k_the_stormlands
+			TYPE = conquest
+		}
+		destroy_title = title:e_the_stormlands
+	}
+
+	option = {
+		name = conq_events.0004.a # keep titles
+	}
+	option = {
+		name = conq_events.0004.b # argilac gets titles back and becomes lord paramount
+		ac_change_titles = { # give titles to argilac
+			OLD_HOLDER = root
+			NEW_HOLDER = dynasty:dynn_Durrandon.dynast
+			GIVE_TITLES_IN_TITLE = title:k_the_stormlands
+			TYPE = granted
+		}
+		ac_change_kingdom_title = {
+			NEW_HOLDER = dynasty:dynn_Durrandon.dynast
+			CHANGE_KINGDOM_TITLE = title:k_the_stormlands
+			TYPE = granted
+		}
+		ac_change_vassals = {
+			OLD_HOLDER = root
+			NEW_HOLDER = dynasty:dynn_Durrandon.dynast
+			CHANGE_VASSALS_OF_TITLE = title:k_the_stormlands
+			TYPE = granted
+		}
+		hidden_effect = {
+			dynasty:dynn_Durrandon.dynast = {
+				add_legitimacy = 1400
+				add_opinion = {
+					target = root
+					modifier = pleased_opinion
+					opinion = 100
+					years = 10
+				}
+			}
+			
+		}
+	}
+	option = {
+		name = conq_events.0004.c # argilacs daughter will be the new ruler
+		trigger = {
+			character:Durrandon_88 = { is_alive = yes }
+		}
+		ac_change_titles = { # give titles to argilacs daughter
+		OLD_HOLDER = root
+		NEW_HOLDER = character:Durrandon_88
+		GIVE_TITLES_IN_TITLE = title:k_the_stormlands
+		TYPE = granted
+		}
+		ac_change_kingdom_title = {
+			NEW_HOLDER = character:Durrandon_88
+			CHANGE_KINGDOM_TITLE = title:k_the_stormlands
+			TYPE = granted
+		}
+		ac_change_vassals = {
+			OLD_HOLDER = root
+			NEW_HOLDER = character:Durrandon_88
+			CHANGE_VASSALS_OF_TITLE = title:k_the_stormlands
+			TYPE = granted
+		}
+		hidden_effect = {
+			character:Durrandon_88 = {
+				add_legitimacy = 800
+				add_opinion = {
+					target = root
+					modifier = pleased_opinion
+					opinion = 100
+					years = 10
+				}
+			}
+			
+		}
+	}
+}
+
+conq_events.0005 = { # reach
+	type = character_event
+	title = conq_events.0005.t
+	desc = conq_events.0005.desc
+
+	theme = martial
+
+	right_portrait = {
+		character = root
+		animation = personality_bold
+	}
+	left_portrait = {
+		character = scope:defender
+		animation = personality_bold
+	}
+	lower_left_portrait = {
+		character = dynasty:dynn_Tyrell.dynast
+		animation = personality_bold
+	}
+
+
+	immediate = {
+		if = {
+			limit = { has_variable = ac_started_conquest }
+			change_variable = { name = ac_started_conquest add = 1 }
+		}
+		ac_change_vassals = {
+			OLD_HOLDER = scope:defender
+			NEW_HOLDER = root
+			CHANGE_VASSALS_OF_TITLE = title:k_the_reach
+			TYPE = conquest
+		}
+		destroy_title = title:e_the_reach
+	}
+
+	option = {
+		name = conq_events.0005.a # keep titles
+	}
+
+	option = {
+		name = conq_events.0005.b # gardener gets titles back and becomes lord paramount
+		ac_change_titles = { # give titles to Gardener
+			OLD_HOLDER = root
+			NEW_HOLDER = dynasty:dynn_Gardener.dynast
+			GIVE_TITLES_IN_TITLE = title:k_the_reach
+			TYPE = granted
+		}
+		ac_change_kingdom_title = {
+			NEW_HOLDER = dynasty:dynn_Gardener.dynast
+			CHANGE_KINGDOM_TITLE = title:k_the_reach
+			TYPE = granted
+		}
+		ac_change_vassals = {
+			OLD_HOLDER = root
+			NEW_HOLDER = dynasty:dynn_Gardener.dynast
+			CHANGE_VASSALS_OF_TITLE = title:k_the_reach
+			TYPE = granted
+		}
+		hidden_effect = {
+			dynasty:dynn_Gardener.dynast = {
+				add_legitimacy = 1400
+				add_opinion = {
+					target = root
+					modifier = pleased_opinion
+					opinion = 100
+					years = 10
+				}
+			}
+			
+		}
+	}
+
+	option = {
+		name = conq_events.0005.c # give titles to tyrells
+		ac_change_titles = { # give titles to Tyrells
+			OLD_HOLDER = root
+			NEW_HOLDER = dynasty:dynn_Tyrell.dynast
+			GIVE_TITLES_IN_TITLE = title:k_the_reach
+			TYPE = granted
+		}
+		ac_change_kingdom_title = {
+			NEW_HOLDER = dynasty:dynn_Tyrell.dynast
+			CHANGE_KINGDOM_TITLE = title:k_the_reach
+			TYPE = granted
+		}
+		ac_change_vassals = {
+			OLD_HOLDER = root
+			NEW_HOLDER = dynasty:dynn_Tyrell.dynast
+			CHANGE_VASSALS_OF_TITLE = title:k_the_reach
+			TYPE = granted
+		}
+		hidden_effect = {
+			dynasty:dynn_Tyrell.dynast = {
+				add_legitimacy = 500
+				add_opinion = {
+					target = root
+					modifier = pleased_opinion
+					opinion = 100
+					years = 10
+				}
+			}
+			
+		}
+	}
+
+}
+
+conq_events.0006 = { # westerlands
+	type = character_event
+	title = conq_events.0006.t
+	desc = conq_events.0006.desc
+
+	theme = martial
+
+	right_portrait = {
+		character = root
+		animation = personality_bold
+	}
+	left_portrait = {
+		character = scope:defender
+		animation = personality_bold
+	}
+
+	immediate = {
+		if = {
+			limit = { has_variable = ac_started_conquest }
+			change_variable = { name = ac_started_conquest add = 1 }
+		}
+		ac_change_vassals = {
+			OLD_HOLDER = scope:defender
+			NEW_HOLDER = root
+			CHANGE_VASSALS_OF_TITLE = title:k_the_westerlands
+			TYPE = conquest
+		}
+		destroy_title = title:e_the_westerlands
+	}
+
+	option = {
+		name = conq_events.0006.a # keep titles
+	}
+
+	option = {
+		name = conq_events.0006.b # lannisters get titles back and become lord paramount
+		ac_change_titles = { # give titles to lannisters
+			OLD_HOLDER = root
+			NEW_HOLDER = dynasty:dynn_Lannister.dynast
+			GIVE_TITLES_IN_TITLE = title:k_the_westerlands
+			TYPE = granted
+		}
+		ac_change_kingdom_title = {
+			NEW_HOLDER = dynasty:dynn_Lannister.dynast
+			CHANGE_KINGDOM_TITLE = title:k_the_westerlands
+			TYPE = granted
+		}
+		ac_change_vassals = {
+			OLD_HOLDER = root
+			NEW_HOLDER = dynasty:dynn_Lannister.dynast
+			CHANGE_VASSALS_OF_TITLE = title:k_the_westerlands
+			TYPE = granted
+		}
+		hidden_effect = {
+			dynasty:dynn_Lannister.dynast = {
+				add_legitimacy = 1400
+				add_opinion = {
+					target = root
+					modifier = pleased_opinion
+					opinion = 100
+					years = 10
+				}
+			}
+			
+		}
+	}
+
+}
+
+conq_events.0007 = { # north
+	type = character_event
+	title = conq_events.0007.t
+	desc = conq_events.0007.desc
+
+	theme = martial
+
+	right_portrait = {
+		character = root
+		animation = personality_bold
+	}
+	left_portrait = {
+		character = scope:defender
+		animation = personality_bold
+	}
+
+	immediate = {
+		if = {
+			limit = { has_variable = ac_started_conquest }
+			change_variable = { name = ac_started_conquest add = 1 }
+		}
+		ac_change_vassals = {
+			OLD_HOLDER = scope:defender
+			NEW_HOLDER = root
+			CHANGE_VASSALS_OF_TITLE = title:k_the_north
+			TYPE = conquest
+		}
+		destroy_title = title:e_the_north
+	}
+
+	option = {
+		name = conq_events.0007.a #keep titles
+	}
+
+	option = {
+		name = conq_events.0007.b # starks get titles back and become lord paramount
+		ac_change_titles = { # give titles to Starks
+			OLD_HOLDER = root
+			NEW_HOLDER = dynasty:dynn_Stark.dynast
+			GIVE_TITLES_IN_TITLE = title:k_the_north
+			TYPE = granted
+		}
+		ac_change_kingdom_title = {
+			NEW_HOLDER = dynasty:dynn_Stark.dynast
+			CHANGE_KINGDOM_TITLE = title:k_the_north
+			TYPE = granted
+		}
+		ac_change_vassals = {
+			OLD_HOLDER = root
+			NEW_HOLDER = dynasty:dynn_Stark.dynast
+			CHANGE_VASSALS_OF_TITLE = title:k_the_north
+			TYPE = granted
+		}
+		hidden_effect = {
+			dynasty:dynn_Stark.dynast = {
+				add_legitimacy = 1400
+				add_opinion = {
+					target = root
+					modifier = pleased_opinion
+					opinion = 100
+					years = 10
+				}
+			}
+			
+		}
+	}
+
+}
+
+conq_events.0008 = { # dorne
+	type = character_event
+	title = conq_events.0008.t
+	desc = conq_events.0008.desc
+
+	theme = martial
+
+	right_portrait = {
+		character = root
+		animation = personality_bold
+	}
+	left_portrait = {
+		character = scope:defender
+		animation = personality_bold
+	}
+
+	immediate = {
+		if = {
+			limit = { has_variable = ac_started_conquest }
+			change_variable = { name = ac_started_conquest add = 1 }
+		}
+		ac_change_vassals = {
+			OLD_HOLDER = scope:defender
+			NEW_HOLDER = root
+			CHANGE_VASSALS_OF_TITLE = title:k_dorne
+			TYPE = conquest
+		}
+		destroy_title = title:e_dorne
+	}
+
+	option = {
+		name = conq_events.0008.a # keep titles
+	}
+
+	option = {
+		name = conq_events.0008.b # martells get titles back and become lord paramount
+		ac_change_titles = { # give titles to 
+			OLD_HOLDER = root
+			NEW_HOLDER = dynasty:dynn_Martell.dynast
+			GIVE_TITLES_IN_TITLE = title:k_dorne
+			TYPE = granted
+		}
+		ac_change_kingdom_title = {
+			NEW_HOLDER = dynasty:dynn_Martell.dynast
+			CHANGE_KINGDOM_TITLE = title:k_dorne
+			TYPE = granted
+		}
+		ac_change_vassals = {
+			OLD_HOLDER = root
+			NEW_HOLDER = dynasty:dynn_Martell.dynast
+			CHANGE_VASSALS_OF_TITLE = title:k_dorne
+			TYPE = granted
+		}
+		hidden_effect = {
+			dynasty:dynn_Martell.dynast = {
+				add_legitimacy = 1400
+				vassal_contract_set_obligation_level = {
+					type = special_contract
+					level = 3
+				}
+				add_opinion = {
+					target = root
+					modifier = pleased_opinion
+					opinion = 100
+					years = 10
+				}
+			}
+			
+		}
+	}
+
+}
+
+conq_events.0009 = { # form iron throne when ac variable > 5
+	type = character_event
+	title = conq_events.0009.t
+	desc = conq_events.0009.desc
+
+	theme = martial
+
+	right_portrait = {
+		character = root
+		animation = personality_bold
+	}
+
+	option = {
+		name = conq_events.0009.a # form iron throne
+			get_title = title:e_the_iron_throne
+			destroy_title = title:e_aegons_host
+			title:e_the_iron_throne = {
+				set_variable = is_paramountcy_realm
+			}
+			if = {
+				limit = { NOT = { has_government = lp_feudal_government } }
+				root = {
+					change_government = lp_feudal_government
+				}
+			}
+			add_prestige = 7000
+			dynasty = { add_dynasty_prestige = 3500 }
+			add_legitimacy = 2100 #Max Legitimacy
+			add_dread = 100
+			add_tyranny	= -35
+			gain_legitimizing_legend_seed_tooltip_effect = yes
+			give_nickname = nick_the_conqueror
+			agot_create_artifact_iron_throne_effect = { OWNER = this }
+			hidden_effect = {
+				legend_seed_great_deed_dynasty_effect = yes
+				every_vassal_or_below = {
+					limit = {
+						has_government = feudal_government
+					}
+					change_government = lp_feudal_government
+				}
+			}
+			spawn_army = {
+				name = iron_throne_decision_troops
+				men_at_arms = {
+					type = westerosi_sellswords
+					men = 100
+				}
+				men_at_arms = {
+					type = barrow_knights #replace these with a riverlands cav MAA if they ever get one
+					men = 100
+				}
+				men_at_arms = {
+					type = winged_knights
+					men = 100
+				}
+				men_at_arms = {
+					type = summer_knights
+					men = 100
+				}
+				men_at_arms = {
+					type = storm_knights
+					men = 100
+				}
+				men_at_arms = {
+					type = westerlands_knights
+					men = 100
+				}
+				men_at_arms = {
+					type = sand_steeds
+					men = 100
+				}
+				inheritable = no
+				location = title:d_kings_landing.holder.capital_province
+				origin = title:d_kings_landing.holder.capital_province
+			}
+	
+			hidden_effect = {
+				scope:fake_artifact = {
+					add_durability = -1000
+				}
+			}
+	}
+
+	option = {
+		name = conq_events.0009.b # form new valyrian freehold
+		custom_tooltip = conq_events.0009.b_tt
+		title:e_aegons_host = {
+			set_title_name = e_valyrian_freehold
+		}
+	}
+
+	#option = {
+	#	name = conq_events.0009.c # stay still and do nothing
+	#}
+}
+
+conq_events.0010 = { # durrandon marriage event
+	type = character_event
+	title = conq_events.0010.t
+	desc = conq_events.0010.desc
+
+	theme = martial
+
+	right_portrait = {
+		character = character:Baratheon_14
+		animation = personality_bold
+	}
+
+	left_portrait = {
+		character = character:Durrandon_88
+		animation = personality_bold
+	}
+
+	lower_left_portrait = {
+		character = root
+		animation = personality_bold
+	}
+
+	option = {
+		name = conq_events.0010.a # marry orys to argilacs daughter and integrate
+		trigger = {
+			character:Baratheon_14 = { is_alive = yes }
+			character:Baratheon_14 = { is_married = no }
+			character:Durrandon_88 = { is_alive = yes }
+			character:Durrandon_88 = { is_married = no }
+		}
+		character:Baratheon_14 = {
+			marry = character:Durrandon_88
+			set_culture = culture:stormlander
+			set_character_faith = faith:the_seven_main
+		}
+		ac_change_titles = { # give titles to argilac
+		OLD_HOLDER = root
+		NEW_HOLDER = character:Baratheon_14
+		GIVE_TITLES_IN_TITLE = title:k_the_stormlands
+		TYPE = granted
+		}
+		ac_change_kingdom_title = {
+			NEW_HOLDER = character:Baratheon_14
+			CHANGE_KINGDOM_TITLE = title:k_the_stormlands
+			TYPE = granted
+		}
+		ac_change_vassals = {
+			OLD_HOLDER = root
+			NEW_HOLDER = character:Baratheon_14
+			CHANGE_VASSALS_OF_TITLE = title:k_the_stormlands
+			TYPE = granted
+		}
+		dynasty:dynn_Baratheon = { set_coa = dynn_Durrandon }
+		character:Baratheon_14.house = { set_coa = dynn_Durrandon }
+		title:k_the_stormlands = { set_coa = dynn_Durrandon }
+
+		hidden_effect = {
+			character:Baratheon_14 = {
+				add_legitimacy = 850
+				add_opinion = {
+					target = root
+					modifier = pleased_opinion
+					opinion = 100
+					years = 10
+				}
+			}
+			
+		}
+	}
+
+	option = {
+		name = conq_events.0010.b # OR DONT LMAO
+		trigger_event = conq_events.0004
+	}
+}
+

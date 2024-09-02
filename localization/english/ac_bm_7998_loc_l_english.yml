@@ -62,3 +62,77 @@
  ac_val_polygamy_doctrine_name:0 "Valyrian Polygamy"
  ac_val_polygamy_doctrine_desc:0 "This tradition allows for the taking of an additional spouse. This will allow us to follow the old way, even after converting to the Faith of the Seven."
  ac_fots_polygamy_tt:0 "[THIS.Char.GetCulture.GetName] gains [GetCultureTradition('ac_val_polygamy_doctrine').GetName]."
+ ####### 2nd update
+ k_aegons_host:0 "Aegon's Host"
+
+ conq_events.0001.t:0 "Land in Westeros"
+ conq_events.0001.desc:0 "Two years before the conquest, Aegon and his sisters landed with a force at the mouth of the Blackwater Rush, intent on conquering the continent of Westeros. On the tallest of the three hills they began construction on a crude fortress they called the Aegonfort. \n\nAs time passed, a town sprang up around the growing fort. This emerging town and the strategic location may have influenced Aegon's decision to make it the place for his new capital, which would eventually become known as King's Landing."
+
+ e_aegons_host:0 "Aegon's Host"
+ 
+ ac_conquest_cb:0 "Conquer [Kingdom|E]"
+ AEGONS_CONQUEST_WAR_NAME:0 "$ORDER$ [ATTACKER.GetPrimaryTitle.GetAdjective] Draconic Conquest of the [TITLE.GetBaseName]"
+ AEGONS_CONQUEST_WAR_NAME_BASE:0 "[ATTACKER.GetPrimaryTitle.GetAdjective][DEFENDER.GetPrimaryTitle.GetName]"
+ AEGONS_CONQUEST_KINGDOM_CB_NAME:0 "Aegon's Conquest"
+
+ e_valyrian_freehold:0 "New Valyria"
+
+ conq_events.0001.t:0 "Aegon's landing"
+ conq_events.0002.t:0 "Conquest of the Riverlands"
+ conq_events.0003.t:0 "Conquest of the Vale"
+ conq_events.0004.t:0 "Conquest of the Stormlands"
+ conq_events.0005.t:0 "Conquest of the Reach"
+ conq_events.0006.t:0 "Conquest of the Westerlands"
+ conq_events.0007.t:0 "Conquest of the North"
+ conq_events.0008.t:0 "Conquest of Dorne"
+ conq_events.0009.t:0 "Formation of the Iron Throne"
+ conq_events.0010.t:0 "A modest proposal"
+ 
+ conq_events.0001.desc:0 "Aegon Targaryen has landed on the shores of Westeros with his sisters and an army, intent on claiming the Seven Kingdoms as his own."
+ conq_events.0002.desc:0 "The Riverlands have been conquered by Aegon the Conqueror. The fate of the region and its lords now lies in his hands."
+ conq_events.0003.desc:0 "The Vale of Arryn has fallen to Aegon the Conqueror. The future of the region now hangs in the balance."
+ conq_events.0004.desc:0 "The Stormlands have been brought to heel by Aegon the Conqueror. The fate of House Durrandon and their lands now lies with him."
+ conq_events.0005.desc:0 "The Reach has been subjugated by Aegon the Conqueror. The mighty House Gardener must now answer to the Dragonlord."
+ conq_events.0006.desc:0 "The Westerlands have succumbed to the might of Aegon the Conqueror. The future of the Lannisters and their lands is now uncertain."
+ conq_events.0007.desc:0 "The North has fallen to the forces of Aegon the Conqueror. The Stark lords must now decide their fate."
+ conq_events.0008.desc:0 "Dorne has been brought under the control of Aegon the Conqueror. The fate of the Martells and their lands is now in his hands."
+ conq_events.0009.desc:0 "Having conquered a vast portion of Westeros, Aegon must now decide how to rule his newly acquired lands."
+ conq_events.0010.desc:0 "Marrying Orys to Argilac's daughter would secure the Stormlands for the forseeable future."
+ 
+ conq_events.0001.a:0 "Claim the Aegonfort"
+ conq_events.0001.b:0 "Not yet"
+
+ conq_events.0002.a:0 "Keep the titles to distribute later"
+ conq_events.0002.b:0 "House Qoherys will become the lords Paramount of the Riverlands"
+ conq_events.0002.c:0 "House Qoherys will become lords of Harrenhal but not lords paramount"
+
+ conq_events.0003.a:0 "Keep the titles to distribute later"
+ conq_events.0003.b:0 "House Arryns will become the lords Paramount of the Vale"
+ 
+ conq_events.0004.a:0 "Keep the titles to distribute later"
+ conq_events.0004.b:0 "The Durrandon's will retain their lands"
+ conq_events.0004.c:0 "Argilac's daughter will rule the Stormlands"
+
+ conq_events.0005.a:0 "Keep the titles to distribute later"
+ conq_events.0005.b:0 "House Gardener must continue ruling the reach"
+ conq_events.0005.c:0 "House Tyrell will be raised up to great lords"
+
+ conq_events.0006.a:0 "Keep the titles to distribute later"
+ conq_events.0006.b:0 "House Lannister must continue ruling the Westerlands"
+
+ conq_events.0007.a:0 "Keep the titles to distribute later"
+ conq_events.0007.b:0 "House Stark will be allowed to continue ruling the North"
+
+ conq_events.0008.a:0 "Keep the titles to distribute later"
+ conq_events.0008.b:0 "House Martell will continue to rule Dorne"
+
+ conq_events.0009.a:0 "Form the Iron Throne"
+ conq_events.0009.b:0 "The Valyrian Freehold will live again"
+ conq_events.0009.c:0 "I have come far enough"
+ 
+ conq_events.0010.a:0 "Orys could be the future of the Stormlands"
+ conq_events.0010.b:0 "I need my brother by my side"
+
+ ac_claim_aegonfort_warning_tt:0 "#X @warning_icon! If you decide to wait and conquer later please use the decision to Land in Westeros first as it enables the special casus belli.#!"
+
+ conq_events.0009.b_tt:0 "[GetTitleByKey('e_aegons_host').GetName] will become known as New Valyria"

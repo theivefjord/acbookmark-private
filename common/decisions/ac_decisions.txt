@@ -127,6 +127,7 @@ ac_claim_aegonfort = {
 	is_shown = {
 		root = character:Targaryen_27
 		NOT = { has_title = title:c_kings_landing }
+		NOT = { has_variable = ac_started_conquest }
 	}
 
 	is_valid = {
@@ -134,11 +135,15 @@ ac_claim_aegonfort = {
 	}
 
 	effect = {
+		custom_tooltip = ac_claim_aegonfort_custom_tt
+
 		create_title_and_vassal_change = {
 			type = created
 			save_scope_as = change
 			add_claim_on_loss = no
 		}
+		get_title = title:e_aegons_host
+		get_title = title:d_kings_landing
 		
 		title:c_kings_landing = {
 			set_title_name = c_aegonfort
@@ -147,9 +152,49 @@ ac_claim_aegonfort = {
 				change = scope:change
 			}
 		}
+		title:c_bramsfort = {
+			limit = { NOT = { holder = root } }
+			change_title_holder = {
+				holder = root
+				change = scope:change
+			}
+		}
+		title:c_riverline = {
+			limit = { NOT = { holder = root } }
+			change_title_holder = {
+				holder = root
+				change = scope:change
+			}
+		}
+		title:c_shinebridge = {
+			limit = { NOT = { holder = root } }
+			change_title_holder = {
+				holder = root
+				change = scope:change
+			}
+		}
+		get_title = title:k_the_crownlands		
+		title:d_kings_landing = {
+			set_de_jure_liege_title = title:k_the_crownlands
+		}
 		
 		resolve_title_and_vassal_change = scope:change
-		custom_tooltip = ac_claim_aegonfort_custom_tt
+
+		
+		hidden_effect = {
+			set_variable = { name = ac_started_conquest value = 0 }
+			
+			title:e_aegons_host = {
+				set_variable = is_paramountcy_realm
+			}
+			character:Targaryen_27 = {
+				change_government = lp_feudal_government
+			}
+			#set_primary_title_to = title:k_the_crownlands
+			#title:c_kings_landing = {
+			#	set_de_jure_liege_title = k_the_crownlands
+			#}
+		}
 	}
 
 	ai_potential = {
@@ -159,4 +204,36 @@ ac_claim_aegonfort = {
 	ai_will_do = {
 		base = 100
 	}
+}
+
+ac_why_was_my_iron_throne_deleted_temp_solution = {
+	picture = "gfx/interface/illustrations/decisions/decision_destiny_goal.dds"
+
+	major = yes
+
+
+	desc = "give it back :angry:"
+
+	ai_check_interval = 12
+
+	is_shown = {
+		has_title = title:e_the_iron_throne
+		has_title = title:c_kings_landing
+		NOT = { any_character_artifact = { has_variable = iron_throne } }
+		root.capital_county = title:c_kings_landing
+	}
+
+	is_valid = {
+		NOT = { has_title = title:c_kings_landing }
+	}
+
+	effect = {
+		agot_create_artifact_iron_throne_effect = { OWNER = this }
+	}
+	ai_potential = {
+			always = yes
+		}
+	ai_will_do = {
+			base = 100
+		}
 }
