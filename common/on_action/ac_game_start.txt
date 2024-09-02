@@ -8,6 +8,17 @@ ac_game_start = {
 	effect = {
 		if = {
 			limit = { game_start_date = 7998.1.1 }
+			if = {
+				limit = { 
+					any_province = {
+						geographical_region = graphical_starfall
+					}
+				 }
+				 set_global_variable = {
+					name = CoW_is_loaded
+					value = yes
+				 }
+			}
 			ac_7998_scenario_setup = yes
 			character:Targaryen_27 = {
 				trigger_event = {

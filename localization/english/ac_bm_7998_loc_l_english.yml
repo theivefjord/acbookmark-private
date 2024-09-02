@@ -136,3 +136,8 @@
  ac_claim_aegonfort_warning_tt:0 "#X @warning_icon! If you decide to wait and conquer later please use the decision to Land in Westeros first as it enables the special casus belli.#!"
 
  conq_events.0009.b_tt:0 "[GetTitleByKey('e_aegons_host').GetName] will become known as New Valyria"
+
+ ac_kl_builddragonpit_if_septoremem:0 "Convert Sept to Dragonpit"
+ ac_kl_builddragonpit_if_septoremem_desc:0 "The Sept of Remembrance is a beautiful structure, but could it not be put to better use? The builders say it may be possible to convert the Sept into a Dragonpit. This would allow the dragons to be kept in a secure location, preventing any accidents, escapes or unwanted encounters."
+ ac_kl_builddragonpit_if_septoremem_tt:0 "The Sept of Remembrance will be destroyed and replaced with a Dragonpit"
+ ac_kl_builddragonpit_if_septoremem_confirm:0 "Convert Sept to Dragonpit"

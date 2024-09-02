@@ -16,6 +16,7 @@
 	character:Targaryen_27 ?= { # Aegon
 		if = {
 			limit = { is_alive = yes }
+			add_stewardship_skill = 6
 			set_character_faith = faith:valyrian
 			remove_concubine = character:Targaryen_29
 			marry = character:Targaryen_29
@@ -41,5 +42,12 @@
 	title:c_dragonstone = {
 		set_county_faith = faith:valyrian
 	}
-	province:1934 = { add_special_building = harrenhal_01}
+	if = {
+		limit = { has_global_variable = CoW_is_loaded }
+		province:1934 = { add_special_building = ruins_harrenhal_07 }
+	}
+	if = {
+		limit = { NOT = { has_global_variable = CoW_is_loaded } }
+		province:1934 = { add_special_building = harrenhal_01 }
+	}
 }

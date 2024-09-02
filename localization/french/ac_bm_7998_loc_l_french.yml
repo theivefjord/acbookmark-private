@@ -137,3 +137,9 @@
  ac_claim_aegonfort_warning_tt:0 "#X @warning_icon! Si vous décidez d'attendre et de conquérir plus tard, veuillez utiliser la décision d'atterrir à Westeros d'abord car elle active le casus belli spécial.#!"
  
  conq_events.0009.b_tt:0 "[GetTitleByKey('e_aegons_host').GetName] sera connu sous le nom de Nouvelle Valyria"
+
+ ac_kl_builddragonpit_if_septoremem:0 "Convertir le Septuaire en Fosse aux Dragons"
+ ac_kl_builddragonpit_if_septoremem_desc:0 "Le Septuaire du Souvenir est une structure magnifique, mais ne pourrait-il pas être mieux utilisé ? Les bâtisseurs disent qu'il pourrait être possible de convertir le Septuaire en une Fosse aux Dragons. Cela permettrait de garder les dragons dans un endroit sécurisé, évitant ainsi tout accident, fuite ou rencontre indésirable."
+ ac_kl_builddragonpit_if_septoremem_tt:0 "Le Septuaire du Souvenir sera détruit et remplacé par une Fosse aux Dragons"
+ ac_kl_builddragonpit_if_septoremem_confirm:0 "Convertir le Septuaire en Fosse aux Dragons"
+

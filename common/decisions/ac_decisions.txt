@@ -212,8 +212,8 @@ ac_why_was_my_iron_throne_deleted_temp_solution = {
 	major = yes
 
 
-	desc = "give it back :angry:"
-
+	desc = "i being poor have only my dreams. i have spread my dreams under your feet, tread softly, because you tread on my dreams"
+	selection_tooltip = "a heavy cost, i pay it gladly"
 	ai_check_interval = 12
 
 	is_shown = {
@@ -224,7 +224,7 @@ ac_why_was_my_iron_throne_deleted_temp_solution = {
 	}
 
 	is_valid = {
-		NOT = { has_title = title:c_kings_landing }
+		has_title = title:c_kings_landing 
 	}
 
 	effect = {
@@ -233,6 +233,42 @@ ac_why_was_my_iron_throne_deleted_temp_solution = {
 	ai_potential = {
 			always = yes
 		}
+	ai_will_do = {
+			base = 100
+		}
+}
+
+ac_kl_builddragonpit_if_septoremem = {
+	picture = "gfx/interface/illustrations/decisions/decision_destiny_goal.dds"
+
+	major = yes
+
+
+	desc = ac_kl_builddragonpit_if_septoremem_desc
+	selection_tooltip = ac_kl_builddragonpit_if_septoremem_tt
+
+	ai_check_interval = 12
+
+	is_shown = {
+		has_title = title:c_kings_landing
+		province:4152 = { has_building = dragonpit_01 }
+		province:4152 = { NOT = { has_building = dragonpit_02 } }		
+	}
+
+	is_valid = {
+		has_trait = dragonrider
+		province:4152 = { has_building = dragonpit_01 }
+	}
+
+	effect = {
+		province:4152 = { 
+			remove_building = dragonpit_01 
+			add_special_building = dragonpit_02
+		}
+	}
+	ai_potential = {
+		always = yes
+	}
 	ai_will_do = {
 			base = 100
 		}
