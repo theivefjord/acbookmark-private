@@ -135,6 +135,12 @@ conq_events.0002 = { # riverlands
 			GIVE_TITLES_IN_TITLE = title:k_the_riverlands
 			TYPE = granted
 		}
+		ac_change_titles = { # give boyos titles to qoherys
+			OLD_HOLDER = scope:defender
+			NEW_HOLDER = dynasty:dynn_Qoherys.dynast
+			GIVE_TITLES_IN_TITLE = title:k_the_riverlands
+			TYPE = granted
+		}
 		ac_change_kingdom_title = {
 			NEW_HOLDER = dynasty:dynn_Qoherys.dynast
 			CHANGE_KINGDOM_TITLE = title:k_the_riverlands
@@ -164,6 +170,12 @@ conq_events.0002 = { # riverlands
 		name = conq_events.0002.c
 		ac_change_titles = { # give titles to qoherys
 			OLD_HOLDER = root
+			NEW_HOLDER = dynasty:dynn_Qoherys.dynast
+			GIVE_TITLES_IN_TITLE = title:k_the_riverlands
+			TYPE = granted
+		}
+		ac_change_titles = { # give boyos titles to qoherys
+			OLD_HOLDER = scope:defender
 			NEW_HOLDER = dynasty:dynn_Qoherys.dynast
 			GIVE_TITLES_IN_TITLE = title:k_the_riverlands
 			TYPE = granted
