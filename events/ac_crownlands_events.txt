@@ -1,0 +1,170 @@
+﻿namespace = ac_crownlands_events
+
+ac_crownlands_events.0001 = { # Massey's buddyhop
+	type = character_event
+	title = ac_crownlands_events.0001.t
+	desc = ac_crownlands_events.0001.desc
+
+	theme = martial
+
+	left_portrait = {
+		character = root
+		animation = idle
+	}
+	right_portrait = {
+		character = title:d_masseys_hook.holder
+		animation = personality_bold
+	}
+
+	option = { # accept their fealty
+		name = ac_crownlands_events.0001.a
+		ac_change_liege = {
+			TARGET = title:d_masseys_hook.holder
+			NEW_LIEGE = root
+		}
+		title:d_masseys_hook = {
+			set_de_jure_liege_title = title:k_the_crownlands
+		}
+	}
+
+	option = { # pass bro
+		name = ac_crownlands_events.0001.b 
+	}
+
+	after = {
+		trigger_event = {
+			id = ac_crownlands_events.0002
+			days = 7
+		}
+		trigger_event = {
+			id = ac_crownlands_events.0003
+			days = 2
+		}
+	}
+}
+
+ac_crownlands_events.0002 = { # crownlands wars
+	type = character_event
+	title = ac_crownlands_events.0002.t
+	desc = ac_crownlands_events.0002.desc
+
+	theme = intrigue
+
+	left_portrait = {
+		character = root
+		animation = idle
+	}
+	lower_left_portrait = {
+		character = title:d_rosby.holder
+		animation = personality_bold
+	}
+	lower_center_portrait = {
+		character = title:d_stokeworth.holder
+		animation = personality_bold
+	}
+	lower_right_portrait = {
+		character = title:d_duskendale.holder
+		animation = personality_bold
+	}
+
+	option = { # go to war with rosby, stokeworth, and duskendale | also change their de jure liege and culture
+		name = ac_crownlands_events.0002.a
+		title:d_rosby.holder = { add_to_list = crownlands_targets }
+		title:d_stokeworth.holder = { add_to_list = crownlands_targets }
+		title:d_duskendale.holder = { add_to_list = crownlands_targets }
+
+
+		hidden_effect = {
+			create_title_and_vassal_change = {
+				type = independency
+				save_scope_as = change
+				add_claim_on_loss = no
+			}
+			every_in_list = {
+				list = crownlands_targets
+				save_scope_as = crownlands_target
+				becomes_independent = { change = scope:change }
+			}
+			resolve_title_and_vassal_change = scope:change
+			add_prestige = 700
+
+		}
+		
+		every_in_list = {
+			list = crownlands_targets
+			save_scope_as = crownlands_target
+			root = {
+				start_war = {
+					casus_belli = dragon_subjugation_cb
+					target = scope:crownlands_target
+				}
+			}
+			primary_title = {
+				set_de_jure_liege_title = title:k_the_crownlands
+			}
+		}
+	}
+	
+	option = { # or not 
+		name = ac_crownlands_events.0002.b  # do red text here that this war adds to the crownlands de_jure
+	}
+}
+
+ac_crownlands_events.0003 = { # send ravens to the independent boyos at crackclaw point
+	type = character_event
+	title = ac_crownlands_events.0003.t
+	desc = ac_crownlands_events.0003.desc
+
+	theme = intrigue
+
+	left_portrait = {
+		character = root
+		animation = idle
+	}
+	lower_left_portrait = {
+		character = title:c_needlewater.holder
+		animation = personality_bold
+	}
+	lower_center_portrait = {
+		character = title:c_strongbox.holder
+		animation = personality_bold
+	}
+	lower_right_portrait = {
+		character = title:c_bronzeholm.holder
+		animation = personality_bold
+	}
+	right_portrait = {
+		character = c_dyre_den.holder
+		animation = personality_bold
+	}
+
+	option = { # send ravens
+		name = ac_crownlands_events.0003.a
+		title:d_crackclaw_point = {
+			set_de_jure_liege_title = title:k_the_crownlands
+			every_de_jure_county = {
+				limit = {
+					holder = { is_independent_ruler = yes }
+				}
+				holder = {
+					add_to_list = crackclaw_targets
+				}
+			}
+		}
+		every_in_list = {
+			list = crackclaw_targets
+			save_scope_as = crackclaw_target
+			random = {
+				chance = 70
+				ac_crownlands_vassalization_effect = {
+					TARGET_VASSAL = scope:crackclaw_target
+					LIEGE = root
+				}
+			}
+		}
+	}
+
+	option = { # or not
+		name = ac_crownlands_events.0003.b # do red text here that this war adds to the crownlands de_jure
+	}
+}

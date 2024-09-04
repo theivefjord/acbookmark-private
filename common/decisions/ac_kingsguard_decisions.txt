@@ -1,0 +1,74 @@
+﻿#Possible new decisions
+#form kingsguard decision; for Aegon's conquest or newly found eligible empire kingdoms
+#allow female members
+
+ac_form_kingsguard = {
+	ai_check_interval = 12
+	picture = "gfx/interface/illustrations/decisions/decision_realm.dds"
+
+	major = yes
+
+	desc = ac_form_kingsguard_desc
+
+	selection_tooltip = ac_form_kingsguard_tooltip
+
+	is_shown = {
+		primary_title = title:e_the_iron_throne
+		title:d_kingsguard = { is_title_created = no }
+		has_kingsguard = no
+	}
+
+	effect = {
+		custom_tooltip = ac_form_kingsguard_effect_tooltip
+		trigger_event = ac_kingsguard.0001
+	}
+
+	ai_potential = {
+		always = yes
+	}
+
+	ai_will_do = {
+		base = 100
+	}
+}
+
+ #ac_kingsguard_break_serve_for_live_tradition_decision = {
+ #	ai_check_interval = 0
+ #	picture = "gfx/interface/illustrations/decisions/decision_realm.dds"
+ #	desc = ac_kingsguard_break_serve_for_live_tradition_decision_desc
+ #	selection_tooltip = ac_kingsguard_break_serve_for_live_tradition_decision_tooltip
+ #	is_shown = {
+ #		has_kingsguard = yes
+ #		primary_title = { NOT = { has_variable = agot_kingsguard_can_fire_yes } }
+ #	}
+ #	effect = {
+ #		custom_tooltip = ac_kingsguard_break_serve_for_live_tradition_decision_effect_tooltip
+ #		primary_title = { set_variable = agot_kingsguard_can_fire_yes }
+ #	}
+ #	ai_potential = {
+ #		always = yes
+ #	}
+ #	ai_will_do = {
+ #		base = 0 # TODO add modifiers
+ #	}
+ #}
+ #ac_kingsguard_adopt_serve_for_live_tradition_decision = {
+ #	ai_check_interval = 0
+ #	picture = "gfx/interface/illustrations/decisions/decision_realm.dds"
+ #	desc = ac_kingsguard_adopt_serve_for_live_tradition_decision_desc
+ #	selection_tooltip = ac_kingsguard_adopt_serve_for_live_tradition_decision_tooltip
+ #	is_shown = {
+ #		has_kingsguard = yes
+ #		primary_title = { has_variable = agot_kingsguard_can_fire_yes }
+ #	}
+ #	effect = {
+ #        custom_tooltip = ac_kingsguard_adopt_serve_for_live_tradition_decision_effect_tooltip
+ #		primary_title = { remove_variable = agot_kingsguard_can_fire_yes }
+ #	}
+ #	ai_potential = {
+ #		always = yes
+ #	}
+ #	ai_will_do = {
+ #		base = 0 # TODO add modifiers
+ #	}
+ #}

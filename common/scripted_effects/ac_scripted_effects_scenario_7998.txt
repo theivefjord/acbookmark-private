@@ -39,6 +39,14 @@
 			set_character_faith = faith:the_seven_main
 		}
 	}
+
+	character:Baratheon_14 ?= { # Orys
+		if = {
+			limit = { is_alive = yes }
+			add_trait = refusing_marriage
+		}
+	}
+
 	title:c_dragonstone = {
 		set_county_faith = faith:valyrian
 	}

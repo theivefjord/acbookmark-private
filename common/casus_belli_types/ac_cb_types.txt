@@ -23,6 +23,7 @@
 			scope:defender = { has_title = title:e_the_stormlands }
 			scope:defender = { has_title = title:e_the_vale }
 			scope:defender = { has_title = title:e_the_westerlands }
+			scope:defender = { has_title = title:e_the_iron_islands }
 		}
 		scope:attacker = {
 			ALL_FALSE = {
@@ -222,11 +223,21 @@
 				trigger_event = conq_events.0006
 			}
 		}
+		else_if = {
+			limit = { scope:defender= { has_title = title:e_the_iron_islands } }
+			scope:attacker = { 
+				get_title = title:k_the_iron_islands
+				trigger_event = conq_events.0011
+			}
+		}
 
 		if = {
 			limit = { scope:attacker = { var:ac_started_conquest = 1 } }
 			province:4152 = {
 				set_holding_type = city_holding
+			}
+			title:b_rhaenyss_hill = {
+				set_title_name = b_rhaenys_hh
 			}
 		}
 		else_if = {
@@ -253,6 +264,9 @@
 			}
 			province:4153 = {
 				set_holding_type =  church_holding
+			}
+			title:b_visenyas_hill = {
+				set_title_name = b_visenyas_hh
 			}
 			scope:attacker = { 
 				trigger_event = conq_events.0009 # form iron throne when ac variable > 4

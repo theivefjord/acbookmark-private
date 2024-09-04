@@ -102,29 +102,29 @@
  conq_events.0001.a:0 "Claim the Aegonfort"
  conq_events.0001.b:0 "Not yet"
 
- conq_events.0002.a:0 "Keep the titles to distribute later"
- conq_events.0002.b:0 "House Qoherys will become the lords Paramount of the Riverlands"
- conq_events.0002.c:0 "House Qoherys will become lords of Harrenhal but not lords paramount"
+ conq_events.0002.c:0 "Keep the titles to distribute later"
+ conq_events.0002.a:0 "House Qoherys will become the lords Paramount of the Riverlands"
+ conq_events.0002.b:0 "House Qoherys will become lords of Harrenhal but not lords paramount"
 
- conq_events.0003.a:0 "Keep the titles to distribute later"
- conq_events.0003.b:0 "House Arryns will become the lords Paramount of the Vale"
+ conq_events.0003.b:0 "Keep the titles to distribute later"
+ conq_events.0003.a:0 "House Arryns will become the lords Paramount of the Vale"
  
- conq_events.0004.a:0 "Keep the titles to distribute later"
- conq_events.0004.b:0 "The Durrandon's will retain their lands"
- conq_events.0004.c:0 "Argilac's daughter will rule the Stormlands"
+ conq_events.0004.c:0 "Keep the titles to distribute later"
+ conq_events.0004.a:0 "The Durrandon's will retain their lands"
+ conq_events.0004.b:0 "Argilac's daughter will rule the Stormlands"
 
- conq_events.0005.a:0 "Keep the titles to distribute later"
- conq_events.0005.b:0 "House Gardener must continue ruling the reach"
- conq_events.0005.c:0 "House Tyrell will be raised up to great lords"
+ conq_events.0005.c:0 "Keep the titles to distribute later"
+ conq_events.0005.a:0 "House Gardener must continue ruling the reach"
+ conq_events.0005.b:0 "House Tyrell will be raised up to great lords"
 
- conq_events.0006.a:0 "Keep the titles to distribute later"
- conq_events.0006.b:0 "House Lannister must continue ruling the Westerlands"
+ conq_events.0006.b:0 "Keep the titles to distribute later"
+ conq_events.0006.a:0 "House Lannister must continue ruling the Westerlands"
 
- conq_events.0007.a:0 "Keep the titles to distribute later"
- conq_events.0007.b:0 "House Stark will be allowed to continue ruling the North"
+ conq_events.0007.b:0 "Keep the titles to distribute later"
+ conq_events.0007.a:0 "House Stark will be allowed to continue ruling the North"
 
- conq_events.0008.a:0 "Keep the titles to distribute later"
- conq_events.0008.b:0 "House Martell will continue to rule Dorne"
+ conq_events.0008.b:0 "Keep the titles to distribute later"
+ conq_events.0008.a:0 "House Martell will continue to rule Dorne"
 
  conq_events.0009.a:0 "Form the Iron Throne"
  conq_events.0009.b:0 "The Valyrian Freehold will live again"
@@ -141,3 +141,17 @@
  ac_kl_builddragonpit_if_septoremem_desc:0 "The Sept of Remembrance is a beautiful structure, but could it not be put to better use? The builders say it may be possible to convert the Sept into a Dragonpit. This would allow the dragons to be kept in a secure location, preventing any accidents, escapes or unwanted encounters."
  ac_kl_builddragonpit_if_septoremem_tt:0 "The Sept of Remembrance will be destroyed and replaced with a Dragonpit"
  ac_kl_builddragonpit_if_septoremem_confirm:0 "Convert Sept to Dragonpit"
+
+ ac_kl_cobbler_square_if_missed_oppurtunity:0 "Build Cobbler's Square"
+ ac_kl_cobbler_square_if_missed_oppurtunity_desc:0 "The Cobbler's Square is a bustling marketplace in King's Landing, where cobblers and other craftsmen ply their trade. It is a hub of commerce and activity, and a vital part of the city's economy. Building a Cobbler's Square would help to revitalize the area, providing a central location for merchants and artisans to sell their wares. \n\n #X @warning_icon! This is the building that gives the King's Landing model its walls. If the walls are still missing afterward, save and re-load to update.#!"
+ ac_kl_cobbler_square_if_missed_oppurtunity_tt:0 "The Cobbler's Square will be built in King's Landing"
+ ac_kl_cobbler_square_if_missed_oppurtunity_confirm:0 "Build Cobbler's Square"
+
+ conq_events.0011.desc:0 "The Iron Islands must be dealt with."
+ conq_events.0011.a:0 "The Hoare's will retain their lands"
+ conq_events.0011.b:0 "The Greyjoy's must rule the Iron Islands"
+ conq_events.0011.c:0 "Keep the titles to distribute later"
+
+ b_aegons_hh:0 "Aegon's High Hill"
+ b_visenyas_hh:0 "Visenya's Hill"
+ b_rhaenys_hh:0 "Rhaenys's Hill"

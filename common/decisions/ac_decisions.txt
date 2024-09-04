@@ -11,9 +11,9 @@
 	is_shown = {
 		faith = faith:valyrian
 		root = character:Targaryen_27
-		NOT = {
-			has_title = title:e_the_iron_throne
-		}
+		#NOT = {
+		#	has_title = title:e_the_iron_throne
+		#}
 		#is_ai = no
 	}
 
@@ -264,6 +264,40 @@ ac_kl_builddragonpit_if_septoremem = {
 		province:4152 = { 
 			remove_building = dragonpit_01 
 			add_special_building = dragonpit_02
+		}
+	}
+	ai_potential = {
+		always = yes
+	}
+	ai_will_do = {
+			base = 100
+		}
+}
+
+ac_kl_cobbler_square_if_missed_oppurtunity = {
+	picture = "gfx/interface/illustrations/decisions/decision_destiny_goal.dds"
+
+	major = yes
+
+
+	desc = ac_kl_cobbler_square_if_missed_oppurtunity_desc
+	selection_tooltip = ac_kl_cobbler_square_if_missed_oppurtunity_tt
+
+	ai_check_interval = 12
+
+	is_shown = {
+		has_title = title:c_kings_landing
+		province:4151 = { has_building = the_red_keep_03 }
+		province:4151 = { NOT = { has_building = the_red_keep_01 } }
+		province:4155 = { NOT = { has_building = cobblers_square_01 } }
+	}
+
+	is_valid = {
+	}
+
+	effect = {
+		province:4155 = { 
+			add_special_building = cobblers_square_01
 		}
 	}
 	ai_potential = {
