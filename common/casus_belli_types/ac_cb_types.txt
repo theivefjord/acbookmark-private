@@ -293,9 +293,7 @@
 			}
 		}
 		else_if = {
-			limit = { 
-				scope:attacker = { var:ac_started_conquest = 5 } 
-			}
+			limit = { scope:attacker = { var:ac_started_conquest = 5 } }
 			province:4153 = {
 				set_holding_type =  church_holding
 			}
@@ -305,6 +303,12 @@
 			scope:attacker = { 
 				trigger_event = conq_events.0009 # form iron throne when ac variable > 4
 			}
+		}
+		else_if = {
+			limit = {
+				scope:attacker = { var:ac_started_conquest = 8 }
+			}
+			remove_variable = ac_started_conquest
 		}
 
 		

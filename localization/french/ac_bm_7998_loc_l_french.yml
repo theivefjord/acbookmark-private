@@ -78,7 +78,6 @@
  
  e_valyrian_freehold:0 "Nouvelle Valyria"
  
- conq_events.0001.t:0 "Atterrissage d'Aegon"
  conq_events.0002.t:0 "Conquête des Terres de l'Ouest"
  conq_events.0003.t:0 "Conquête du Val"
  conq_events.0004.t:0 "Conquête des Terres de l'Orage"
@@ -89,7 +88,6 @@
  conq_events.0009.t:0 "Formation du Trône de Fer"
  conq_events.0010.t:0 "Une proposition modeste"
  
- conq_events.0001.desc:0 "Aegon Targaryen a débarqué sur les côtes de Westeros avec ses sœurs et une armée, avec l'intention de revendiquer les Sept Couronnes pour lui-même."
  conq_events.0002.desc:0 "Les Terres de l'Ouest ont été conquises par Aegon le Conquérant. Le sort de la région et de ses seigneurs est désormais entre ses mains."
  conq_events.0003.desc:0 "Le Val d'Arryn est tombé aux mains d'Aegon le Conquérant. L'avenir de la région est désormais en suspens."
  conq_events.0004.desc:0 "Les Terres de l'Orage ont été soumises par Aegon le Conquérant. Le sort de la Maison Durrandon et de leurs terres repose désormais sur lui."
@@ -143,3 +141,74 @@
  ac_kl_builddragonpit_if_septoremem_tt:0 "Le Septuaire du Souvenir sera détruit et remplacé par une Fosse aux Dragons"
  ac_kl_builddragonpit_if_septoremem_confirm:0 "Convertir le Septuaire en Fosse aux Dragons"
 
+ ac_kl_cobbler_square_if_missed_oppurtunity:0 "Construire la Place des Cordonniers"
+ ac_kl_cobbler_square_if_missed_oppurtunity_desc:0 "La Place des Cordonniers est un marché animé à Port-Réal, où cordonniers et autres artisans exercent leur métier. C'est un centre de commerce et d'activité, et une partie vitale de l'économie de la ville. Construire une Place des Cordonniers aiderait à revitaliser la zone, offrant un lieu central pour que les marchands et artisans vendent leurs produits. \n\n #X @warning_icon! C'est le bâtiment qui donne ses murs au modèle de Port-Réal. Si les murs sont encore absents après, sauvegardez et rechargez pour mettre à jour.#!"
+ ac_kl_cobbler_square_if_missed_oppurtunity_tt:0 "La Place des Cordonniers sera construite à Port-Réal"
+ ac_kl_cobbler_square_if_missed_oppurtunity_confirm:0 "Construire la Place des Cordonniers"
+ 
+ conq_events.0011.t:0 "Gérer les Îles de Fer"
+ conq_events.0011.desc:0 "Les Îles de Fer doivent être traitées."
+ conq_events.0011.a:0 "Au plus fort"
+ conq_events.0011.b:0 "Les Greyjoy doivent gouverner les Îles de Fer"
+ conq_events.0011.c:0 "Garder les titres pour les distribuer plus tard"
+ 
+ b_aegons_hh:0 "Colline d'Aegon"
+ b_visenyas_hh:0 "Colline de Visenya"
+ b_rhaenys_hh:0 "Colline de Rhaenys"
+
+ ####### 3rd update
+
+ ac_crownlands_events.0001.t:0 "House Massey"
+ ac_crownlands_events.0001.desc:0 "En raison de nos liens étroits, la maison [mr_massey.GetDynasty.GetBaseName] a rompu son serment envers la maison [mr_durrandon.GetDynasty.GetBaseName] et a juré allégeance à nous. Cela présente une grande opportunité de renforcer notre domaine royal et d'assurer l'avenir de la maison [ROOT.Char.GetDynasty.GetBaseName]"
+ ac_crownlands_events.0001.a:0 "Accepter leur allégeance"
+ ac_crownlands_events.0001.b:0 "Je n'ai besoin d'aucune aide"
+ 
+ ac_crownlands_events.0002.t:0 "Casseront-ils avant de plier?"
+ ac_crownlands_events.0002.desc:0 "Il semble que ces petits seigneurs refusent de plier le genou. Il est peut-être temps de rappeler au royaume le pouvoir de la maison [ROOT.Char.GetDynasty.GetBaseName]."
+ ac_crownlands_events.0002.a:0 "Brûlez-les tous"
+ ac_crownlands_events.0002.a_tt:0 "Cela déclenchera des guerres pour vassaliser [GetTitleByKey('d_rosby').GetHolder.GetFullName], [GetTitleByKey('d_stokeworth').GetHolder.GetFullName], et [GetTitleByKey('d_duskendale').GetHolder.GetFullName]"
+ ac_crownlands_events.0002.b:0 "Ils apprendront avec le temps"
+ 
+ ac_crownlands_events.0003.t:0 "Crackclaw Point"
+ ac_crownlands_events.0003.desc:0 "Je pourrais envoyer des corbeaux aux seigneurs et dames de [GetTitleByKey('d_crackclaw_point').GetNameNoTier], leur demandant de prêter allégeance. Ils plieront le genou ou subiront la colère de la maison [ROOT.Char.GetDynasty.GetBaseName]."
+ ac_crownlands_events.0003.a:0 "Envoyez les corbeaux"
+ ac_crownlands_events.0003.b:0 "Laissez-les tranquilles"
+ ac_crownlands_events.0003.a_tt:0 "Des corbeaux seront envoyés aux seigneurs et dames de [GetTitleByKey('d_crackclaw_point').GetNameNoTier] pour exiger leur allégeance"
+ 
+ ac_crownlands_events.0001.a_tt:0 "#X @warning_icon! Cette décision renoncera à une opportunité d'étendre les terres de jure de [GetTitleByKey('k_the_crownlands').GetNameNoTier].#!"
+ 
+ conq_events.0011.a_tt:0 "[GetTitleByKey('k_the_iron_islands').GetName] sera détruit et tous ses vassaux deviendront indépendants"
+ 
+ conq_events.0012.a_tt:0 "[GetTitleByKey('c_kings_landing').GetName] sera connu sous le nom de King's Landing"
+ conq_events.0012.b_tt:0 "Je continuerai de régner depuis [GetTitleByKey('c_dragonstone').GetNameNoTier]"
+ 
+ conq_events.0012.t:0 "La nouvelle capitale"
+ conq_events.0012.desc:0 "J'ai forgé mon royaume et dois maintenant décider d'où je vais gouverner. L'Aegonfort est encore une forteresse grossière, mais sa position stratégique et la ville qui grandit autour pourraient en faire un puissant siège de pouvoir. Je pourrais aussi choisir de continuer à régner depuis Dragonstone, le siège ancestral de ma famille."
+ conq_events.0012.a:0 "Je régnerai depuis King's Landing"
+ conq_events.0012.b:0 "Je régnerai depuis Dragonstone"
+ 
+ ac_why_was_my_iron_throne_deleted_temp_solution:0 "Créer le Trône de Fer, solution temporaire"
+ ac_why_was_my_iron_throne_deleted_temp_solution_desc:0 "Étant pauvre, je n'ai que mes rêves. Je les ai étendus sous vos pieds, marchez doucement, car vous marchez sur mes rêves"
+ ac_why_was_my_iron_throne_deleted_temp_solution_tt:0 "un lourd prix, que je paie volontiers"
+ ac_why_was_my_iron_throne_deleted_temp_solution_confirm:0 "Le créer"
+ 
+ ac_form_kingsguard:0 "Former la Garde Royale"
+ ac_form_kingsguard_desc:0 "Former la Garde Royale renforcera mon règne et protégera ma famille et moi."
+ ac_form_kingsguard_tooltip:0 "La Garde Royale sera formée"
+ ac_form_kingsguard_effect_tooltip:0 "Un événement se déclenchera créant [GetTitleByKey('d_kingsguard').GetName] et vous permettant de choisir le premier Lord Commandant"
+ ac_form_kingsguard_confirm:0 "Former la Garde Royale"
+ 
+ ac_kingsguard.0001.t:0 "Choisir le premier Lord Commandant"
+ ac_kingsguard.0001.desc:0 "La Garde Royale est une fraternité de sept chevaliers qui sont considérés comme les meilleurs du royaume. En prêtant des serments sacrés, ils jurent de protéger le roi et la famille royale de leur vie, d'obéir au roi, et de garder ses secrets."
+ ac_kingsguard.0001.a:0 "[velaryon_lc.GetName] sera le premier Lord Commandant et choisira les membres"
+ ac_kingsguard.0001.b:0 "[baratheon_lc.GetName] sera le premier Lord Commandant et choisira les membres"
+ ac_kingsguard.0001.c:0 "[kg_new_boyo.GetName] sera le premier Lord Commandant et choisira les membres"
+ ac_kingsguard.0001.d:0 "[kg_new_boyo.GetName] sera le premier Lord Commandant mais je choisirai les membres"
+ 
+ ac_kingsguard.0001.a_tt:0 "[velaryon_lc.GetFullName] deviendra [GetPlayer.GetCouncillorPosition('kingsguard_lord_commander').GetPositionName]\n[goode_4_kg.GetFullName] deviendra un frère juré de la Garde Royale\n[goode_3_kg.GetFullName] deviendra un frère juré de la Garde Royale\n[darklyn_9_kg.GetFullName] deviendra un frère juré de la Garde Royale\n[roote_7_kg.GetFullName] deviendra un frère juré de la Garde Royale\n[kingsguard_1_kg.GetFullName] deviendra un frère juré de la Garde Royale"
+ 
+ ac_kingsguard.0001.b_tt:0 "[baratheon_lc.GetFullName] deviendra [GetPlayer.GetCouncillorPosition('kingsguard_lord_commander').GetPositionName]\n[goode_4_kg.GetFullName] deviendra un frère juré de la Garde Royale\n[goode_3_kg.GetFullName] deviendra un frère juré de la Garde Royale\n[darklyn_9_kg.GetFullName] deviendra un frère juré de la Garde Royale\n[roote_7_kg.GetFullName] deviendra un frère juré de la Garde Royale\n[kingsguard_1_kg.GetFullName] deviendra un frère juré de la Garde Royale"
+ 
+ ac_kingsguard.0001.c_tt:0 "[kg_new_boyo.GetFullName] deviendra [GetPlayer.GetCouncillorPosition('kingsguard_lord_commander').GetPositionName]\n[goode_4_kg.GetFullName] deviendra un frère juré de la Garde Royale\n[goode_3_kg.GetFullName] deviendra un frère juré de la Garde Royale\n[darklyn_9_kg.GetFullName] deviendra un frère juré de la Garde Royale\n[roote_7_kg.GetFullName] deviendra un frère juré de la Garde Royale\n[kingsguard_1_kg.GetFullName] deviendra un frère juré de la Garde Royale"
+ 
+ ac_kingsguard.0001.d_tt:0 "[kg_new_boyo.GetFullName] deviendra [GetPlayer.GetCouncillorPosition('kingsguard_lord_commander').GetPositionName]"

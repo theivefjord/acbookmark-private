@@ -145,8 +145,9 @@
  ac_kl_cobbler_square_if_missed_oppurtunity_tt:0 "The Cobbler's Square will be built in King's Landing"
  ac_kl_cobbler_square_if_missed_oppurtunity_confirm:0 "Build Cobbler's Square"
 
+ conq_events.0011.t:0 "Dealing with the Iron Islands"
  conq_events.0011.desc:0 "The Iron Islands must be dealt with."
- conq_events.0011.a:0 "The Hoare's will retain their lands"
+ conq_events.0011.a:0 "To the strongest"
  conq_events.0011.b:0 "The Greyjoy's must rule the Iron Islands"
  conq_events.0011.c:0 "Keep the titles to distribute later"
 
@@ -155,3 +156,60 @@
  b_rhaenys_hh:0 "Rhaenys's Hill"
 
  ####### 3rd update
+
+ conq_events.0012.t:0 "The new capital"
+ conq_events.0012.desc:0 "I have forged my realm and must now decide where to rule from. The Aegonfort is still a crude fortress, yet the strategic position and the town growing around it could make for a powerful new seat. I could also choose to continue ruling from Dragonstone, my family's ancestral seat."
+ conq_events.0012.a:0 "I will rule from King's Landing"
+ conq_events.0012.b:0 "I will rule from Dragonstone"
+
+ ac_why_was_my_iron_throne_deleted_temp_solution:0 "Make iron throne, temporary solution"
+ ac_why_was_my_iron_throne_deleted_temp_solution_desc:0 "I being poor have only my dreams. I have spread my dreams under your feet, tread softly, because you tread on my dreams"
+ ac_why_was_my_iron_throne_deleted_temp_solution_tt:0 "a heavy cost, I pay it gladly"
+ ac_why_was_my_iron_throne_deleted_temp_solution_confirm:0 "Make it"
+
+ ac_form_kingsguard:0 "Form the Kingsguard"
+ ac_form_kingsguard_desc:0 "Forming the Kingsguard will bolster my rule and protect me and my family."
+ ac_form_kingsguard_tooltip:0 "The Kingsguard will be formed"
+ ac_form_kingsguard_effect_tooltip:0 "An event will trigger creating [GetTitleByKey('d_kingsguard').GetName] and allowing you to choose the first Lord Commander"
+ ac_form_kingsguard_confirm:0 "Form the Kingsguard"
+
+ ac_kingsguard.0001.t:0 "Choose the first Lord Commander"
+ ac_kingsguard.0001.desc:0 "The Kingsguard is a sworn brotherhood of seven knights who are regarded as the finest knights in the realm. Swearing sacred oaths, they vow to protect the King and the royal family with their lives, to obey the King, and to keep his secrets."
+ ac_kingsguard.0001.a:0 "[velaryon_lc.GetName] will be the first Lord Commander and choose members"
+ ac_kingsguard.0001.b:0 "[baratheon_lc.GetName] will be the first Lord Commander and choose members"
+ ac_kingsguard.0001.c:0 "[kg_new_boyo.GetName] will be the first Lord Commander and choose members"
+ ac_kingsguard.0001.d:0 "[kg_new_boyo.GetName] will be the first Lord Commander but I will choose the members"
+
+ ac_kingsguard.0001.a_tt:0 "[velaryon_lc.GetFullName] will become [GetPlayer.GetCouncillorPosition( 'kingsguard_lord_commander' ).GetPositionName]\n[goode_4_kg.GetFullName] will become a sworn brother of the Kingsguard\n[goode_3_kg.GetFullName] will become a sworn brother of the Kingsguard\n[darklyn_9_kg.GetFullName] will become a sworn brother of the Kingsguard\n[roote_7_kg.GetFullName] will become a sworn brother of the Kingsguard\n[kingsguard_1_kg.GetFullName] will become a sworn brother of the Kingsguard"
+
+ ac_kingsguard.0001.b_tt:0 "[baratheon_lc.GetFullName] will become [GetPlayer.GetCouncillorPosition( 'kingsguard_lord_commander' ).GetPositionName]\n[goode_4_kg.GetFullName] will become a sworn brother of the Kingsguard\n[goode_3_kg.GetFullName] will become a sworn brother of the Kingsguard\n[darklyn_9_kg.GetFullName] will become a sworn brother of the Kingsguard\n[roote_7_kg.GetFullName] will become a sworn brother of the Kingsguard\n[kingsguard_1_kg.GetFullName] will become a sworn brother of the Kingsguard"
+
+ ac_kingsguard.0001.c_tt:0 "[kg_new_boyo.GetFullName] will become [GetPlayer.GetCouncillorPosition( 'kingsguard_lord_commander' ).GetPositionName]\n[goode_4_kg.GetFullName] will become a sworn brother of the Kingsguard\n[goode_3_kg.GetFullName] will become a sworn brother of the Kingsguard\n[darklyn_9_kg.GetFullName] will become a sworn brother of the Kingsguard\n[roote_7_kg.GetFullName] will become a sworn brother of the Kingsguard\n[kingsguard_1_kg.GetFullName] will become a sworn brother of the Kingsguard"
+
+ ac_kingsguard.0001.d_tt:0 "[kg_new_boyo.GetFullName] will become [GetPlayer.GetCouncillorPosition( 'kingsguard_lord_commander' ).GetPositionName]"
+ 
+
+ ac_crownlands_events.0001.t:0 "House Massey"
+ ac_crownlands_events.0001.desc:0 "Because of our close ties, House [mr_massey.GetDynasty.GetBaseName] has broken their oath to House [mr_durrandon.GetDynasty.GetBaseName] and sworn fealty to us.\nThis presents a great opportunity to strengthen our royal domain and secure the future of House [ROOT.Char.GetDynasty.GetBaseName]"
+ ac_crownlands_events.0001.a:0 "Accept their fealty"
+ ac_crownlands_events.0001.b:0 "I need no help"
+
+ ac_crownlands_events.0002.t:0 "Will they break before they bend?"
+ ac_crownlands_events.0002.desc:0 "It appears that the these petty lords refuse to bend the knee. Perhaps it is time to remind the realm of the power of House [ROOT.Char.GetDynasty.GetBaseName]."
+ ac_crownlands_events.0002.a:0 "Burn them all"
+ ac_crownlands_events.0002.a_tt:0 "Will start wars to vassalize [GetTitleByKey('d_rosby').GetHolder.GetFullName], [GetTitleByKey('d_stokeworth').GetHolder.GetFullName], and [GetTitleByKey('d_duskendale').GetHolder.GetFullName]"
+ ac_crownlands_events.0002.b:0 "They will learn eventually"
+
+ ac_crownlands_events.0003.t:0 "Crackclaw Point"
+ ac_crownlands_events.0003.desc:0 "I might send ravens to the lords and ladies of [GetTitleByKey('d_crackclaw_point').GetNameNoTier], demanding their fealty. They will either bend the knee or suffer the wrath of House [ROOT.Char.GetDynasty.GetBaseName]."
+ ac_crownlands_events.0003.a:0 "Send the ravens"
+ ac_crownlands_events.0003.b:0 "Leave them be"
+ ac_crownlands_events.0003.a_tt:0 "Ravens will be sent to the lords and ladies of [GetTitleByKey('d_crackclaw_point').GetNameNoTier] demanding their fealty"
+
+ ac_crownlands_events.0001.a_tt:0 "#X @warning_icon! This decision will forgo an opportunity to expand the de jure lands of [GetTitleByKey('k_the_crownlands').GetNameNoTier].#!"
+
+ conq_events.0011.a_tt:0 "[GetTitleByKey('k_the_iron_islands').GetName] will be destroyed and all its vassals will become independent"
+
+ conq_events.0012.a_tt:0 "[GetTitleByKey('c_kings_landing').GetName] will become known as King's Landing"
+ conq_events.0012.b_tt:0 "I will continue to rule from [GetTitleByKey('c_dragonstone').GetNameNoTier]"
+

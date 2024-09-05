@@ -209,8 +209,8 @@ ac_why_was_my_iron_throne_deleted_temp_solution = {
 	major = yes
 
 
-	desc = "i being poor have only my dreams. i have spread my dreams under your feet, tread softly, because you tread on my dreams"
-	selection_tooltip = "a heavy cost, i pay it gladly"
+	desc = ac_why_was_my_iron_throne_deleted_temp_solution_desc
+	selection_tooltip = ac_why_was_my_iron_throne_deleted_temp_solution_tt
 	ai_check_interval = 12
 
 	is_shown = {

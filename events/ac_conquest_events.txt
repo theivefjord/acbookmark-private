@@ -6,14 +6,17 @@ conq_events.0001 = { # aegon d-day
 	desc = conq_events.0001.desc
 
 	theme = martial
+	override_background = {
+		reference = farmland
+	}
 
 	right_portrait = {
 		character = root
-		animation = personality_bold
+		animation = war_over_win
 	}
 	left_portrait = {
 		character = title:e_the_riverlands.holder
-		animation = personality_bold
+		animation = disbelief
 	}
 
 	option = { # claim aegonfort(kings landing)
@@ -112,15 +115,19 @@ conq_events.0002 = { # riverlands
 	title = conq_events.0002.t
 	desc = conq_events.0002.desc
 
+	override_background = {
+		reference = agot_pk_riverlands
+	}
+
 	theme = martial
 
 	right_portrait = {
 		character = root
-		animation = personality_bold
+		animation = war_over_win
 	}
 	left_portrait = {
 		character = scope:defender
-		animation = personality_bold
+		animation = throne_room_kneel_1
 	}
 	lower_right_portrait = {
 		character = dynasty:dynn_Qoherys.dynast
@@ -231,15 +238,19 @@ conq_events.0003 = { # vale
 	title = conq_events.0003.t
 	desc = conq_events.0003.desc
 
+	override_background = {
+		reference = agot_pk_vale
+	}
+
 	theme = martial
 
 	right_portrait = {
 		character = root
-		animation = personality_bold
+		animation = war_over_win
 	}
 	left_portrait = {
 		character = scope:defender
-		animation = personality_bold
+		animation = throne_room_kneel_1
 	}
 
 	immediate = {
@@ -297,15 +308,19 @@ conq_events.0004 = { # stormlands
 	title = conq_events.0004.t
 	desc = conq_events.0004.desc
 
+	override_background = {
+		reference = agot_pk_stormlands
+	}
+
 	theme = martial
 
 	right_portrait = {
 		character = root
-		animation = personality_bold
+		animation = war_over_win
 	}
 	left_portrait = {
 		character = scope:defender
-		animation = personality_bold
+		animation = throne_room_kneel_1
 	}
 	immediate = {
 		if = {
@@ -340,6 +355,9 @@ conq_events.0004 = { # stormlands
 			TYPE = granted
 		}
 		hidden_effect = {
+			character:Durrandon_88 = {
+				remove_trait = refusing_marriage
+			}
 			dynasty:dynn_Durrandon.dynast = {
 				add_legitimacy = 1400
 				add_opinion = {
@@ -376,6 +394,7 @@ conq_events.0004 = { # stormlands
 		}
 		hidden_effect = {
 			character:Durrandon_88 = {
+				remove_trait = refusing_marriage
 				add_legitimacy = 800
 				add_opinion = {
 					target = root
@@ -397,17 +416,21 @@ conq_events.0005 = { # reach
 	title = conq_events.0005.t
 	desc = conq_events.0005.desc
 
+	override_background = {
+		reference = agot_pk_reach
+	}
+
 	theme = martial
 
 	right_portrait = {
 		character = root
-		animation = personality_bold
+		animation = war_over_win
 	}
 	left_portrait = {
 		character = scope:defender
-		animation = personality_bold
+		animation = throne_room_kneel_1
 	}
-	lower_left_portrait = {
+	lower_right_portrait = {
 		character = dynasty:dynn_Tyrell.dynast
 		animation = personality_bold
 	}
@@ -502,15 +525,19 @@ conq_events.0006 = { # westerlands
 	title = conq_events.0006.t
 	desc = conq_events.0006.desc
 
+	override_background = {
+		reference = agot_pk_westerlands
+	}
+
 	theme = martial
 
 	right_portrait = {
 		character = root
-		animation = personality_bold
+		animation = war_over_win
 	}
 	left_portrait = {
 		character = scope:defender
-		animation = personality_bold
+		animation = throne_room_kneel_1
 	}
 
 	immediate = {
@@ -568,15 +595,19 @@ conq_events.0007 = { # north
 	title = conq_events.0007.t
 	desc = conq_events.0007.desc
 
+	override_background = {
+		reference = agot_frozen_forest
+	}
+
 	theme = martial
 
 	right_portrait = {
 		character = root
-		animation = personality_bold
+		animation = war_over_win
 	}
 	left_portrait = {
 		character = scope:defender
-		animation = personality_bold
+		animation = throne_room_kneel_1
 	}
 
 	immediate = {
@@ -636,15 +667,19 @@ conq_events.0008 = { # dorne
 	title = conq_events.0008.t
 	desc = conq_events.0008.desc
 
+	override_background = {
+		reference = agot_pk_dorne
+	}
+
 	theme = martial
 
 	right_portrait = {
 		character = root
-		animation = personality_bold
+		animation = war_over_win
 	}
 	left_portrait = {
 		character = scope:defender
-		animation = personality_bold
+		animation = throne_room_kneel_1
 	}
 
 	immediate = {
@@ -707,9 +742,17 @@ conq_events.0009 = { # form iron throne when ac variable > 5
 	title = conq_events.0009.t
 	desc = conq_events.0009.desc
 
+	override_background = {
+		reference = agot_iron_throne
+	}
+
 	theme = martial
 
 	right_portrait = {
+		character = root.primary_spouse
+		animation = toast_goblet
+	}
+	left_portrait = {
 		character = root
 		animation = personality_bold
 	}
@@ -805,16 +848,20 @@ conq_events.0010 = { # durrandon marriage event
 	title = conq_events.0010.t
 	desc = conq_events.0010.desc
 
+	override_background = {
+		reference = agot_pk_stormlands
+	}
+
 	theme = martial
 
 	right_portrait = {
 		character = character:Baratheon_14
-		animation = personality_bold
+		animation = marshal
 	}
 
 	left_portrait = {
 		character = character:Durrandon_88
-		animation = personality_bold
+		animation = grief
 	}
 
 	lower_left_portrait = {
@@ -881,6 +928,10 @@ conq_events.0011 = { # iron islands FOR vodrux
 	title = conq_events.0011.t
 	desc = conq_events.0011.desc
 
+	override_background = {
+		reference = agot_pk_iron_islands
+	}
+
 	theme = martial
 
 	right_portrait = {
@@ -889,7 +940,7 @@ conq_events.0011 = { # iron islands FOR vodrux
 	}
 	left_portrait = {
 		character = scope:defender
-		animation = personality_bold
+		animation = throne_room_kneel_1
 	}
 
 	immediate = {
@@ -908,16 +959,19 @@ conq_events.0011 = { # iron islands FOR vodrux
 
 	option = {
 		name = conq_events.0011.a # to the strongest
-		ac_independize = {
-			INDEPENDIZE_DE_JURE_VASSALS_OF = title:k_the_iron_islands
+		custom_tooltip = {
+			text = conq_events.0011.a_tt
+			ac_independize = {
+				INDEPENDIZE_DE_JURE_VASSALS_OF = title:k_the_iron_islands
+			}
+			ac_change_titles = {
+				OLD_HOLDER = root
+				NEW_HOLDER = dynasty:dynn_Greyjoy.dynast
+				GIVE_TITLES_IN_TITLE = title:k_the_iron_islands
+				TYPE = granted
+			}
+			destroy_title = title:k_the_iron_islands
 		}
-		ac_change_titles = {
-			OLD_HOLDER = root
-			NEW_HOLDER = dynasty:dynn_Greyjoy.dynast
-			GIVE_TITLES_IN_TITLE = title:k_the_iron_islands
-			TYPE = granted
-		}
-		destroy_title = title:k_the_iron_islands
 	}
 
 	option = {
@@ -973,15 +1027,15 @@ conq_events.0012 = { # pick capital and do renames
 	title = conq_events.0012.t
 	desc = conq_events.0012.desc
 
+	override_background = {
+		reference = bp1_courtyard_indian
+	}
+
 	theme = martial
 
-	right_portrait = {
-		character = character:Targaryen_28
-		animation = personality_bold
-	}
 	left_portrait = {
 		character = root
-		animation = personality_bold
+		animation = marshal
 	}
 	immediate = {
 		title:b_the_red_keep = {
@@ -990,17 +1044,21 @@ conq_events.0012 = { # pick capital and do renames
 	}
 	option = {
 		name = conq_events.0012.a # rename to kings landing and make capital
+		set_realm_capital = title:c_kings_landing 
 		title:c_kings_landing = {
 			set_title_name = c_kings_landing
 		}
 		title:b_goldguard_heights = {
 			set_title_name = b_goldguard_heights
 		}
-		set_realm_capital = title:c_kings_landing 
+		custom_tooltip = {
+			text = conq_events.0012.a_tt
+		}
 	}
 
 	option = {
 		name = conq_events.0012.b # rename to kings landing but keep capital as dragonstone
+		custom_tooltip = conq_events.0012.b_tt
 		title:c_kings_landing = {
 			set_title_name = c_kings_landing
 		}

@@ -2,8 +2,13 @@
 
 ac_kingsguard.0001 = {
 	type = character_event
-	title = conq_events.0001.t
-	desc = conq_events.0001.desc
+	title = ac_kingsguard.0001.t
+	desc = ac_kingsguard.0001.desc
+
+	override_background = {
+		reference = agot_iron_throne
+	}
+
 
 	theme = martial
 
@@ -12,34 +17,79 @@ ac_kingsguard.0001 = {
 		animation = personality_bold
 	}
 	right_portrait = {
+		character = title:k_the_most_devout.holder
+		animation = idle
+	}
+	lower_left_portrait = {
 		character = character:Velaryon_15
+		animation = idle
+	}
+	lower_right_portrait = {
+		character = character:Baratheon_14
+		animation = idle
+	}
+	lower_center_portrait = {
+		character = scope:kg_new_boyo
 		animation = idle
 	}
 	immediate = {
 		primary_title = { set_variable = { name = kingsguard value = yes } }
-		get_title = title:d_kingsguard
-		create_title_and_vassal_change = {
-			type = granted
-			save_scope_as = kg_fix
-			add_claim_on_loss = no
-		}
-		title:d_kingsguard.holder = {
-			change_liege = {
-				liege = title:e_the_iron_throne.holder
-				change = scope:kg_fix
+		hidden_effect = {
+			get_title = title:d_kingsguard
+			create_title_and_vassal_change = {
+				type = granted
+				save_scope_as = kg_fix
+				add_claim_on_loss = no
 			}
+			title:d_kingsguard.holder = {
+				change_liege = {
+					liege = title:e_the_iron_throne.holder
+					change = scope:kg_fix
+				}
+			}
+			resolve_title_and_vassal_change = scope:kg_fix
 		}
-		resolve_title_and_vassal_change = scope:kg_fix
-		character:Darklyn_9 = { add_to_list = conquest_kg_members }
-		character:Kingsguard_1 = { add_to_list = conquest_kg_members }
-		character:Roote_7 = { add_to_list = conquest_kg_members }
+		character:Goode_4 = { 
+			add_to_list = conquest_kg_members
+			save_scope_as = goode_4_kg
+		}
+		character:Goode_3 = { 
+			add_to_list = conquest_kg_members
+			save_scope_as = goode_3_kg
+		}
+		character:Darklyn_9 = { 
+			add_to_list = conquest_kg_members
+			save_scope_as = darklyn_9_kg
+		}
+		character:Roote_7 = { 
+			add_to_list = conquest_kg_members
+			save_scope_as = roote_7_kg
+		}
+		character:Kingsguard_1 = { 
+			add_to_list = conquest_kg_members
+			save_scope_as = kingsguard_1_kg
+		}
+		character:Velaryon_15 = { 
+			add_to_list = conquest_kg_members
+			save_scope_as = velaryon_lc
+		}
 		if = {
 			limit = { current_date > 8007.2.5 }
 			character:Swyft_15 = { add_to_list = conquest_kg_members }
 		}
-		character:Goode_4 = { add_to_list = conquest_kg_members }
-		character:Goode_3 = { add_to_list = conquest_kg_members }
-		character:Velaryon_15 = { add_to_list = conquest_kg_members }
+		if = {
+			limit = { 
+				character:Baratheon_14 = {
+					is_alive = yes
+					is_landed = no
+					is_married = no
+				}
+			}
+			character:Baratheon_14 = {
+				add_to_list = conquest_kg_members
+				save_scope_as = baratheon_lc
+			}
+		}
 		create_character = {
 			location = root.capital_province
 			template = bp1_yearly_2021_martial_person_template
@@ -53,17 +103,20 @@ ac_kingsguard.0001 = {
 			character:Velaryon_15 = { is_alive = yes }
 			character:Velaryon_15 = { is_landed = no }
 		}
-		every_in_list = {
-			list = conquest_kg_members
-			save_scope_as = conquest_kg_member
-			agot_join_kingsguard_effect = {
-				KINGSGUARD = scope:conquest_kg_member
+		custom_tooltip = {
+			text = ac_kingsguard.0001.a_tt
+			every_in_list = {
+				list = conquest_kg_members
+				save_scope_as = conquest_kg_member
+				agot_join_kingsguard_effect = {
+					KINGSGUARD = scope:conquest_kg_member
+					KING = root
+				}
+			}
+			agot_assign_lord_commander_effect = {
+				COMMANDER = character:Velaryon_15
 				KING = root
 			}
-		}
-		agot_assign_lord_commander_effect = {
-			COMMANDER = character:Velaryon_15
-			KING = root
 		}
 		hidden_effect = {
 			scope:kg_new_boyo = { death = { death_reason = death_disappearance } }
@@ -71,74 +124,81 @@ ac_kingsguard.0001 = {
 	}
 
 	option = {
-		name = ac_kingsguard_0001.b # Orys if not married
+		name = ac_kingsguard.0001.b # Orys if not married
 		trigger = {
 			character:Baratheon_14 = { is_married = no }
 			character:Baratheon_14 = { is_alive = yes }
 			character:Baratheon_14 = { is_landed = no }
 		}
-		character:Targaryen_27 = { set_variable = { name = is_adding_kg value = 0 } }
-		every_in_list = {
-			list = conquest_kg_members
-			limit = { NOT = { character:Targaryen_27.var:is_adding_kg > 6 } }
-			save_scope_as = conquest_kg_member
+		custom_tooltip = {
+			text = ac_kingsguard.0001.b_tt
+			character:Targaryen_27 = { set_variable = { name = is_adding_kg value = 0 } }
+			every_in_list = {
+				list = conquest_kg_members
+				limit = { NOT = { character:Targaryen_27.var:is_adding_kg > 6 } }
+				save_scope_as = conquest_kg_member
+				agot_join_kingsguard_effect = {
+					KINGSGUARD = scope:conquest_kg_member
+					KING = root
+				}
+				character:Targaryen_27 = { change_variable = { name = is_adding_kg add = 1 } }
+			}
 			agot_join_kingsguard_effect = {
-				KINGSGUARD = scope:conquest_kg_member
+				KINGSGUARD = character:Baratheon_14
 				KING = root
 			}
-			character:Targaryen_27 = { change_variable = { name = is_adding_kg add = 1 } }
-		}
-		agot_join_kingsguard_effect = {
-			KINGSGUARD = character:Baratheon_14
-			KING = root
-		}
-		agot_assign_lord_commander_effect = {
-			COMMANDER = character:Baratheon_14
-			KING = root
-		}
-		character:Targaryen_27 = { remove_variable = is_adding_kg }
-		hidden_effect = {
+			agot_assign_lord_commander_effect = {
+				COMMANDER = character:Baratheon_14
+				KING = root
+			}
+			character:Targaryen_27 = { remove_variable = is_adding_kg }
 			scope:kg_new_boyo = { death = { death_reason = death_disappearance } }
 		}
 	}
 
 	option = {
-		name = ac_kingsguard_0001.c # Who gives a fuck just give to this rando boyo
+		name = ac_kingsguard.0001.c # Who gives a fuck just give to this rando boyo
 		character:Targaryen_27 = { set_variable = { name = is_adding_kg value = 0 } }
 		hidden_effect = {
 			agot_join_kingsguard_effect = {
 				KINGSGUARD = scope:kg_new_boyo
 				KING = root
 			}
-		}
-		every_in_list = {
-			list = conquest_kg_members
-			limit = { NOT = { character:Targaryen_27.var:is_adding_kg > 6 } }
-			save_scope_as = conquest_kg_member
-			agot_join_kingsguard_effect = {
-				KINGSGUARD = scope:conquest_kg_member
+			every_in_list = {
+				list = conquest_kg_members
+				limit = { NOT = { character:Targaryen_27.var:is_adding_kg > 6 } }
+				save_scope_as = conquest_kg_member
+				agot_join_kingsguard_effect = {
+					KINGSGUARD = scope:conquest_kg_member
+					KING = root
+				}
+				character:Targaryen_27 = { change_variable = { name = is_adding_kg add = 1 } }
+			}
+			agot_assign_lord_commander_effect = {
+				COMMANDER = scope:kg_new_boyo
 				KING = root
 			}
-			character:Targaryen_27 = { change_variable = { name = is_adding_kg add = 1 } }
+			character:Targaryen_27 = { remove_variable = is_adding_kg }
 		}
-		agot_assign_lord_commander_effect = {
-			COMMANDER = scope:kg_new_boyo
-			KING = root
+		custom_tooltip = {
+			text = ac_kingsguard.0001.c_tt
 		}
-		character:Targaryen_27 = { remove_variable = is_adding_kg }
 	}
 
 	option = {
-		name = ac_kingsguard_0001.d # make rando valyrian lc and pick all kg yourself
+		name = ac_kingsguard.0001.d # make rando valyrian lc and pick all kg yourself
 		hidden_effect = {
 			agot_join_kingsguard_effect = {
 				KINGSGUARD = scope:kg_new_boyo
 				KING = root
 			}
 		}
-		agot_assign_lord_commander_effect = {
-			COMMANDER = scope:kg_new_boyo
-			KING = root
+		custom_tooltip = {
+			text = ac_kingsguard.0001.d_tt
+			agot_assign_lord_commander_effect = {
+				COMMANDER = scope:kg_new_boyo
+				KING = root
+			}
 		}
 	}
 }
