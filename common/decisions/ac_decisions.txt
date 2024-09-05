@@ -153,21 +153,18 @@ ac_claim_aegonfort = {
 			}
 		}
 		title:c_bramsfort = {
-			limit = { NOT = { holder = root } }
 			change_title_holder = {
 				holder = root
 				change = scope:change
 			}
 		}
 		title:c_riverline = {
-			limit = { NOT = { holder = root } }
 			change_title_holder = {
 				holder = root
 				change = scope:change
 			}
 		}
 		title:c_shinebridge = {
-			limit = { NOT = { holder = root } }
 			change_title_holder = {
 				holder = root
 				change = scope:change

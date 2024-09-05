@@ -136,6 +136,12 @@ conq_events.0002 = { # riverlands
 			limit = { has_variable = ac_started_conquest }
 			change_variable = { name = ac_started_conquest add = 1 }
 		}
+		ac_change_vassals = {
+			OLD_HOLDER = scope:defender
+			NEW_HOLDER = root
+			CHANGE_VASSALS_OF_TITLE = title:k_the_riverlands
+			TYPE = conquest
+		}
 		destroy_title = title:e_the_riverlands
 	}
 	option = { # give titles to qoherys and make him lord paramount
@@ -872,8 +878,8 @@ conq_events.0010 = { # durrandon marriage event
 
 conq_events.0011 = { # iron islands FOR vodrux
 	type = character_event
-	title = conq_events.0008.t
-	desc = conq_events.0008.desc
+	title = conq_events.0011.t
+	desc = conq_events.0011.desc
 
 	theme = martial
 
@@ -901,48 +907,17 @@ conq_events.0011 = { # iron islands FOR vodrux
 	}
 
 	option = {
-		name = conq_events.0011.a # Hoares get titles back and become lord paramount
-		trigger = {
-			dynasty:dynn_Hoare = {
-				any_living_character = { 
-					is_alive = yes
-					NOT = { has_government = nights_watch_government }
-				}
-			}
+		name = conq_events.0011.a # to the strongest
+		ac_independize = {
+			INDEPENDIZE_DE_JURE_VASSALS_OF = title:k_the_iron_islands
 		}
-		ac_change_titles = { # give titles to 
+		ac_change_titles = {
 			OLD_HOLDER = root
-			NEW_HOLDER = dynasty:dynn_Hoare.dynast
+			NEW_HOLDER = dynasty:dynn_Greyjoy.dynast
 			GIVE_TITLES_IN_TITLE = title:k_the_iron_islands
 			TYPE = granted
 		}
-		ac_change_kingdom_title = {
-			NEW_HOLDER = dynasty:dynn_Hoare.dynast
-			CHANGE_KINGDOM_TITLE = title:k_the_iron_islands
-			TYPE = granted
-		}
-		ac_change_vassals = {
-			OLD_HOLDER = root
-			NEW_HOLDER = dynasty:dynn_Hoare.dynast
-			CHANGE_VASSALS_OF_TITLE = title:k_the_iron_islands
-			TYPE = granted
-		}
-		hidden_effect = {
-			dynasty:dynn_Hoare.dynast = {
-				add_legitimacy = 1400
-				vassal_contract_set_obligation_level = {
-					type = special_contract
-					level = 3
-				}
-				add_opinion = {
-					target = root
-					modifier = pleased_opinion
-					opinion = 100
-					years = 10
-				}
-			}
-			
-		}
+		destroy_title = title:k_the_iron_islands
 	}
 
 	option = {
@@ -967,7 +942,7 @@ conq_events.0011 = { # iron islands FOR vodrux
 		}
 		ac_change_vassals = {
 			OLD_HOLDER = root
-			NEW_HOLDER = dynasty:dynn_GreyjoyGreyjoy.dynast
+			NEW_HOLDER = dynasty:dynn_Greyjoy.dynast
 			CHANGE_VASSALS_OF_TITLE = title:k_the_iron_islands
 			TYPE = granted
 		}

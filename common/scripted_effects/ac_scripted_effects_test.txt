@@ -187,3 +187,36 @@ ac_crownlands_vassalization_effect = {
 	}
 	resolve_title_and_vassal_change = scope:change
 }
+
+ac_change_culture_effect = {
+	TARGET_HOLDER = $TARGET_HOLDER$
+	CHANGE_TO_CULTURE = $CHANGE_TO_CULTURE$
+
+	$TARGET_HOLDER$ = {
+		set_culture = $CHANGE_TO_CULTURE$
+		every_courtier = {
+			set_culture = $CHANGE_TO_CULTURE$
+		}
+		every_vassal = {
+			set_culture = $CHANGE_TO_CULTURE$
+			every_held_title = {
+				limit = {
+					tier = tier_county
+				}
+				set_county_culture = $CHANGE_TO_CULTURE$
+			}
+		}
+		every_held_title = {
+			limit = {
+				tier = tier_county
+			}
+			set_county_culture = $CHANGE_TO_CULTURE$
+		}
+	}
+
+	$TARGET_HOLDER$.dynasty = {
+		every_dynasty_member = {
+			set_culture = $CHANGE_TO_CULTURE$
+		}
+	}
+}

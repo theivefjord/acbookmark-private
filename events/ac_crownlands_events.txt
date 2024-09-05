@@ -25,6 +25,12 @@ ac_crownlands_events.0001 = { # Massey's buddyhop
 		title:d_masseys_hook = {
 			set_de_jure_liege_title = title:k_the_crownlands
 		}
+		hidden_effect = {
+			ac_change_culture_effect = {
+				TARGET_HOLDER = title:d_masseys_hook.holder
+				CHANGE_TO_CULTURE = culture:crownlander
+			}
+		}
 	}
 
 	option = { # pass bro
@@ -84,6 +90,10 @@ ac_crownlands_events.0002 = { # crownlands wars
 				list = crownlands_targets
 				save_scope_as = crownlands_target
 				becomes_independent = { change = scope:change }
+				ac_change_culture_effect = {
+					TARGET_HOLDER = scope:crownlands_target
+					CHANGE_TO_CULTURE = culture:crownlander
+				}
 			}
 			resolve_title_and_vassal_change = scope:change
 			add_prestige = 700
@@ -156,6 +166,10 @@ ac_crownlands_events.0003 = { # send ravens to the independent boyos at crackcla
 			save_scope_as = crackclaw_target
 			random = {
 				chance = 70
+				ac_change_culture_effect = {
+					TARGET_HOLDER = scope:crackclaw_target
+					CHANGE_TO_CULTURE = culture:crownlander
+				}
 				ac_crownlands_vassalization_effect = {
 					TARGET_VASSAL = scope:crackclaw_target
 					LIEGE = root

@@ -156,80 +156,114 @@
 	}
 
 	on_victory = {
-		if = {
-			limit = { scope:defender = { has_title = title:e_dorne } }
-			scope:attacker = { 
-				get_title = title:k_dorne
-				trigger_event = conq_events.0008
-			}
-		}
-		else_if = {
-			limit = { scope:defender = { has_title = title:e_the_north } }
-			scope:attacker = { 
-				get_title = title:k_the_north
-				trigger_event = conq_events.0007
-			}
-		}
-		else_if = {
-			limit = { scope:defender = { has_title = title:e_the_reach } }
-			scope:attacker = { 
-				get_title = title:k_the_reach
-				trigger_event = conq_events.0005
-			}
-		}
-		else_if = {
-			limit = { scope:defender = { has_title = title:e_the_riverlands } }
-			scope:attacker = { 
-				get_title = title:k_the_riverlands
-				trigger_event = conq_events.0002
-			}
-		}
-		else_if = {
-			limit = { scope:defender = { has_title = title:e_the_stormlands } }
+		every_in_list = {
+			list = target_titles
 			if = {
+				limit = { this = title:k_the_iron_islands }
+				save_scope_as = iron_islands_title
+			}
+			if = {
+				limit = { this = title:k_the_riverlands }
+				save_scope_as = the_riverlands_title
+			}
+		}
+		if = {
+			limit = {
+				OR = {
+					scope:defender = { has_title = title:e_dorne }
+					scope:defender = { has_title = title:e_the_iron_islands }
+					scope:defender = { primary_title = title:e_the_north }
+					scope:defender = { primary_title = title:e_the_reach }
+					scope:defender = { has_title = title:e_the_riverlands }
+					scope:defender = { primary_title = title:e_the_stormlands }
+					scope:defender = { primary_title = title:e_the_vale }
+					scope:defender = { primary_title = title:e_the_westerlands }
+				}
+			}
+			if = {
+				limit = { scope:defender.primary_title = title:e_dorne  }
+				scope:attacker = { 
+					get_title = title:k_dorne
+					trigger_event = conq_events.0008
+				}
+			}
+			else_if = { # if has both but target is riverlands
 				limit = {
-					character:Baratheon_14 = { is_alive = yes }
-					character:Durrandon_88 = { is_alive = yes }
+					scope:defender = { has_title = title:e_the_riverlands }
+					exists = scope:the_riverlands_title
 				}
 				scope:attacker = { 
-					get_title = title:k_the_stormlands
-					trigger_event = conq_events.0010 # send orys event first
+					get_title = title:k_the_riverlands
+					trigger_event = conq_events.0002
+				}
+			}
+			else_if = { # if has both but target is isles
+				limit = {
+					scope:defender.primary_title = title:e_the_iron_islands 
+					exists = scope:iron_islands_title
+				}
+				scope:attacker = { 
+					get_title = title:k_the_iron_islands
+					trigger_event = conq_events.0011
+				}
+			}
+			
+			else_if = {
+				limit = { scope:defender.primary_title = title:e_the_north  }
+				scope:attacker = { 
+					get_title = title:k_the_north
+					trigger_event = conq_events.0007
 				}
 			}
 			else_if = {
-				limit = { 
-					OR = {
-						character:Baratheon_14 = { is_alive = no }
-						character:Durrandon_88 = { is_alive = no }
+				limit = { scope:defender.primary_title = title:e_the_reach  }
+				scope:attacker = { 
+					get_title = title:k_the_reach
+					trigger_event = conq_events.0005
+				}
+			}
+			else_if = {
+				limit = { scope:defender.primary_title = title:e_the_vale  }
+				scope:attacker = { 
+					get_title = title:k_the_vale
+					trigger_event = conq_events.0003
+				}
+			}
+			else_if = {
+				limit = { scope:defender.primary_title = title:e_the_westerlands  }
+				scope:attacker = { 
+					get_title = title:k_the_westerlands
+					trigger_event = conq_events.0006
+				}
+			}
+			else_if = {
+				limit = { scope:defender.primary_title = title:e_the_stormlands  }
+				if = {
+					limit = {
+						character:Baratheon_14 = { is_alive = yes }
+						character:Durrandon_88 = { is_alive = yes }
+					}
+					scope:attacker = { 
+						get_title = title:k_the_stormlands
+						trigger_event = conq_events.0010 # send orys event first
 					}
 				}
-				scope:attacker = {
-					get_title = title:k_the_stormlands
-					trigger_event = conq_events.0004
+				else_if = {
+					limit = { 
+						OR = {
+							character:Baratheon_14 = { is_alive = no }
+							character:Durrandon_88 = { is_alive = no }
+						}
+					}
+					scope:attacker = {
+						get_title = title:k_the_stormlands
+						trigger_event = conq_events.0004
+					}
 				}
 			}
 		}
-		else_if = {
-			limit = { scope:defender = { has_title = title:e_the_vale } }
-			scope:attacker = { 
-				get_title = title:k_the_vale
-				trigger_event = conq_events.0003
-			}
-		}
-		else_if = {
-			limit = { scope:defender = { has_title = title:e_the_westerlands } }
-			scope:attacker = { 
-				get_title = title:k_the_westerlands
-				trigger_event = conq_events.0006
-			}
-		}
-		else_if = {
-			limit = { scope:defender= { has_title = title:e_the_iron_islands } }
-			scope:attacker = { 
-				get_title = title:k_the_iron_islands
-				trigger_event = conq_events.0011
-			}
-		}
+
+		######## for buildings and renames ########
 
 		if = {
 			limit = { scope:attacker = { var:ac_started_conquest = 1 } }

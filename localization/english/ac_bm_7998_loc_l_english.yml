@@ -77,7 +77,6 @@
 
  e_valyrian_freehold:0 "New Valyria"
 
- conq_events.0001.t:0 "Aegon's landing"
  conq_events.0002.t:0 "Conquest of the Riverlands"
  conq_events.0003.t:0 "Conquest of the Vale"
  conq_events.0004.t:0 "Conquest of the Stormlands"
@@ -88,7 +87,6 @@
  conq_events.0009.t:0 "Formation of the Iron Throne"
  conq_events.0010.t:0 "A modest proposal"
  
- conq_events.0001.desc:0 "Aegon Targaryen has landed on the shores of Westeros with his sisters and an army, intent on claiming the Seven Kingdoms as his own."
  conq_events.0002.desc:0 "The Riverlands have been conquered by Aegon the Conqueror. The fate of the region and its lords now lies in his hands."
  conq_events.0003.desc:0 "The Vale of Arryn has fallen to Aegon the Conqueror. The future of the region now hangs in the balance."
  conq_events.0004.desc:0 "The Stormlands have been brought to heel by Aegon the Conqueror. The fate of House Durrandon and their lands now lies with him."
@@ -155,3 +153,5 @@
  b_aegons_hh:0 "Aegon's High Hill"
  b_visenyas_hh:0 "Visenya's Hill"
  b_rhaenys_hh:0 "Rhaenys's Hill"
+
+ ####### 3rd update
