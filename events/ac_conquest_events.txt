@@ -1059,6 +1059,7 @@ conq_events.0012 = { # pick capital and do renames
 	option = {
 		name = conq_events.0012.b # rename to kings landing but keep capital as dragonstone
 		custom_tooltip = conq_events.0012.b_tt
+		custom_tooltip = conq_events.0012.a_tt
 		title:c_kings_landing = {
 			set_title_name = c_kings_landing
 		}
