@@ -1,0 +1,19 @@
+﻿harrenhal_burnation_trigger = {
+	location = province:1934
+	army_owner = {
+		any_character_war = {
+			using_cb = ac_conquest_cb
+			is_attacker = character:Targaryen_27
+			is_defender = title:d_harrenhal.holder
+		}
+	}
+}
+
+missing_crownlands_trigger = {
+	target_is_de_jure_liege_or_above = title:k_the_crownlands
+	any_de_jure_county = {
+		holder = {
+			is_independent_ruler = yes
+		}
+	}
+}

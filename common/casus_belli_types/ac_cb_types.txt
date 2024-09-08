@@ -143,6 +143,28 @@
 
 	on_declaration = {
 		on_declared_war = yes
+		if = {
+			limit = {
+				scope:defender = { primary_title = title:e_the_north }
+			}
+			scope:attacker = {
+				trigger_event = {
+					id = ac_war_events.0004
+					days = 20
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				scope:defender = { primary_title = title:e_the_stormlands }
+			}
+			scope:attacker = {
+				trigger_event = {
+					id = ac_war_events.0007
+					days = 5
+				}
+			}
+		}
 	}
 
 	on_victory_desc = {

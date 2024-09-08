@@ -7,13 +7,3 @@
 		has_relation_lover = $MOTHER$
 	}
 }
-
-targaryen_polygamy_trigger = {
-	trigger_if = {
-		root = {
-			faith = {
-				has_doctrine_parameter = targaryen_polygamy_active
-			}
-		}
-	}
-}

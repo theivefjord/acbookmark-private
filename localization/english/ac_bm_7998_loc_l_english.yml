@@ -84,51 +84,51 @@
  conq_events.0006.t:0 "Conquest of the Westerlands"
  conq_events.0007.t:0 "Conquest of the North"
  conq_events.0008.t:0 "Conquest of Dorne"
- conq_events.0009.t:0 "Formation of the Iron Throne"
- conq_events.0010.t:0 "A modest proposal"
+ conq_events.0009.t:0 "the Future of the Realm"
+ conq_events.0010.t:0 "a Modest Proposal"
  
- conq_events.0002.desc:0 "The Riverlands have been conquered by Aegon the Conqueror. The fate of the region and its lords now lies in his hands."
- conq_events.0003.desc:0 "The Vale of Arryn has fallen to Aegon the Conqueror. The future of the region now hangs in the balance."
- conq_events.0004.desc:0 "The Stormlands have been brought to heel by Aegon the Conqueror. The fate of House Durrandon and their lands now lies with him."
- conq_events.0005.desc:0 "The Reach has been subjugated by Aegon the Conqueror. The mighty House Gardener must now answer to the Dragonlord."
- conq_events.0006.desc:0 "The Westerlands have succumbed to the might of Aegon the Conqueror. The future of the Lannisters and their lands is now uncertain."
- conq_events.0007.desc:0 "The North has fallen to the forces of Aegon the Conqueror. The Stark lords must now decide their fate."
- conq_events.0008.desc:0 "Dorne has been brought under the control of Aegon the Conqueror. The fate of the Martells and their lands is now in his hands."
- conq_events.0009.desc:0 "Having conquered a vast portion of Westeros, Aegon must now decide how to rule his newly acquired lands."
- conq_events.0010.desc:0 "Marrying Orys to Argilac's daughter would secure the Stormlands for the forseeable future."
+ conq_events.0002.desc:0 "[GetTitleByKey('k_the_riverlands').GetNameNoTier] have been conquered by me. The fate of the region and its lords now lies in my hands."
+ conq_events.0003.desc:0 "[GetTitleByKey('k_the_vale').GetNameNoTier] of Arryn has fallen to me. The future of the region now hangs in the balance."
+ conq_events.0004.desc:0 "I have brought [GetTitleByKey('k_the_stormlands').GetNameNoTier] to heel. The fate of House [defender.GetHouse.GetBaseName] and their lands now lies with me."
+ conq_events.0005.desc:0 "[GetTitleByKey('k_the_reach').GetNameNoTier] has been subjugated by me, and its lords must now answer to the Dragon."
+ conq_events.0006.desc:0 "[GetTitleByKey('k_the_westerlands').GetNameNoTier] have succumbed to my might. The future of house [defender.GetHouse.GetBaseName] and their lands is now uncertain."
+ conq_events.0007.desc:0 "[GetTitleByKey('k_the_north').GetNameNoTier] has fallen to the forces of me. The Stark lords will now face my decision."
+ conq_events.0008.desc:0 "[GetTitleByKey('k_dorne').GetNameNoTier] has been brought under my control. The fate of the Martells and their lands is now in my hands."
+ conq_events.0009.desc:0 "Having conquered a vast portion of Westeros, I must now make a decision about the future of my realm."
+ conq_events.0010.desc:0 "Marrying [orys.GetName] to the last Storm King's daughter would give him legitimacy and secure his position as Lord Paramount of [GetTitleByKey('k_the_stormlands').GetNameNoTier]."
  
  conq_events.0001.a:0 "Claim the Aegonfort"
  conq_events.0001.b:0 "Not yet"
 
  conq_events.0002.c:0 "Keep the titles to distribute later"
- conq_events.0002.a:0 "House Qoherys will become the lords Paramount of the Riverlands"
- conq_events.0002.b:0 "House Qoherys will become lords of Harrenhal but not lords paramount"
+ conq_events.0002.a:0 "House [qoherys.GetHouse.GetBaseName] will get [GetTitleByKey('k_the_riverlands').GetName]"
+ conq_events.0002.b:0 "House [qoherys.GetHouse.GetBaseName] will become lords of Harrenhal but House [tully.GetHouse.GetBaseName] will rule over them"
 
  conq_events.0003.b:0 "Keep the titles to distribute later"
- conq_events.0003.a:0 "House Arryns will become the lords Paramount of the Vale"
+ conq_events.0003.a:0 "House [defender.GetHouse.GetBaseName] will get [GetTitleByKey('k_the_vale').GetName]"
  
  conq_events.0004.c:0 "Keep the titles to distribute later"
- conq_events.0004.a:0 "The Durrandon's will retain their lands"
- conq_events.0004.b:0 "Argilac's daughter will rule the Stormlands"
+ conq_events.0004.a:0 "House [defender.GetHouse.GetBaseName] will retain their lands"
+ conq_events.0004.b:0 "[argilacs_daughter.GetFullName] will rule the Stormlands"
 
  conq_events.0005.c:0 "Keep the titles to distribute later"
- conq_events.0005.a:0 "House Gardener must continue ruling the reach"
- conq_events.0005.b:0 "House Tyrell will be raised up to great lords"
+ conq_events.0005.a:0 "House [defender.GetHouse.GetBaseName] will continue ruling the reach"
+ conq_events.0005.b:0 "House [tyrell.GetHouse.GetBaseName] will be raised up to great lords"
 
  conq_events.0006.b:0 "Keep the titles to distribute later"
- conq_events.0006.a:0 "House Lannister must continue ruling the Westerlands"
+ conq_events.0006.a:0 "House [defender.GetHouse.GetBaseName] will continue ruling [GetTitleByKey('k_the_westerlands').GetName]"
 
  conq_events.0007.b:0 "Keep the titles to distribute later"
- conq_events.0007.a:0 "House Stark will be allowed to continue ruling the North"
+ conq_events.0007.a:0 "House [defender.GetHouse.GetBaseName] will be allowed to continue ruling the North"
 
  conq_events.0008.b:0 "Keep the titles to distribute later"
- conq_events.0008.a:0 "House Martell will continue to rule Dorne"
+ conq_events.0008.a:0 "House [defender.GetHouse.GetBaseName] will continue to rule Dorne"
 
  conq_events.0009.a:0 "Form the Iron Throne"
  conq_events.0009.b:0 "The Valyrian Freehold will live again"
  conq_events.0009.c:0 "I have come far enough"
  
- conq_events.0010.a:0 "Orys could be the future of the Stormlands"
+ conq_events.0010.a:0 "[orys.GetName] [orys.GetHouse.GetName] is the future of the Stormlands"
  conq_events.0010.b:0 "I need my brother by my side"
 
  ac_claim_aegonfort_warning_tt:0 "#X @warning_icon! If you decide to wait and conquer later please use the decision to Land in Westeros first as it enables the special casus belli.#!"
@@ -148,7 +148,7 @@
  conq_events.0011.t:0 "Dealing with the Iron Islands"
  conq_events.0011.desc:0 "The Iron Islands must be dealt with."
  conq_events.0011.a:0 "To the strongest"
- conq_events.0011.b:0 "The Greyjoy's must rule the Iron Islands"
+ conq_events.0011.b:0 "House [greyjoy.GetHouse.GetName] will rule the Iron Islands"
  conq_events.0011.c:0 "Keep the titles to distribute later"
 
  b_aegons_hh:0 "Aegon's High Hill"
@@ -213,3 +213,51 @@
  conq_events.0012.a_tt:0 "[GetTitleByKey('c_kings_landing').GetName] will become known as King's Landing"
  conq_events.0012.b_tt:0 "I will continue to rule from [GetTitleByKey('c_dragonstone').GetNameNoTier]"
 
+
+ ###### 4th update
+ ac_war_events.0001.t:0 "the siege of Harrenhal"
+ ac_war_events.0001.desc:0 "At the the parley I offer [GetTitleByKey('d_harrenhal').GetHolder.GetName] an opportunity to surrender and remain king of the Iron Islands, so that his line might continue."
+ ac_war_events.0001.a:0 "When the sun sets, your line shall end"
+ ac_war_events.0001.a_tt:0 "#X @warning_icon! This will trigger an event that leads to the extinction of House [GetTitleByKey('d_harrenhal').GetHolder.GetHouse.GetBaseName], turns Harrenhal into a ruin, and ends the war.#!"
+ ac_war_events.0001.b:0 "Very well, we will lay siege to the castle"
+
+ ac_war_events.0002.t:0 "The time has come"
+ ac_war_events.0002.desc:0 "Harren has decided that stone does not burn and that he is safe within his colossal walls. He is wrong, and I will show him the folly of his arrogance."
+ ac_war_events.0002.a:0 "Dracarys"
+ ac_war_events.0002.b:0 "I will not burn innocents"
+ ac_war_events.0002.a_tt:0 "You will win [harrenhal_war.GetName]"
+ ac_harrenhal_siege.d.tt:0 "#N Everyone inside [harrenhal.GetNameNoTooltip] will be killed.#!"
+ 
+ ac_war_events.0003.t:0 "the Field of Fire"
+ ac_war_events.0003.desc:0 "Soaring above the chaos of the battlefield, I catch sight of [GetTitleByKey('d_highgarden').GetHolder.GetFullName].\n\nHis banners flutter in the wind as they marshal their troops, unaware of the fire that will soon rain down upon them."
+ ac_war_events.0003.a:0 "Burn them all"
+ ac_war_events.0003.b:0 "I will not burn whole families"
+ ac_war_events.0003.a_tt:0 "You will win [reach_war.GetName]"
+
+ conq_events.0005.d:0 "The [defender.GetDynasty.GetBaseName] dynasty will live on and continue ruling the Reach"
+
+ ac_war_events.0004.t:0 "the King in the North"
+ ac_war_events.0004.desc:0 "While marching north with my army, my outriders come upon a small party of four, three maesters led by [brandon.GetFullName].\n\nHe is quickly brought before me and speaks:\n"Your Grace, my brother [defender.GetFirstName] [defender.GetHouse.GetBaseName], the King in the North, seeks an audience with you.""
+ ac_war_events.0004.a:0 "I will hear him out"
+ ac_war_events.0004.b:0 "Words cannot shield you from the dragon"
+ ac_war_events.0004.c:0 "You were a fool to come here"
+ ac_war_events.0004.a_tt:0 "#X @warning_icon! Ends the King who Knelt event chain.#!"
+
+ ac_war_events.0005.t:0 "the King in the North"
+ ac_war_events.0005.desc:0 ""Your grace, I have come to bend the knee and swear fealty to you, so that my people might be spared the dragonfire that has ravaged the south.\n\nIn return, I ask only that you send any unwanted prisoners or criminals north to [GetTitleByKey('k_the_wall').GetNameNoTier] to take the black and defend the realm.\n\nWinter is coming, and the Wall is all that stands between us and the evil that stirs beyond.""
+ ac_war_events.0005.a:0 "A reasonable request, my lord"
+ ac_war_events.0005.b:0  "Words are wind"
+
+ ac_war_events.0006.t:0 "the King in the North"
+ ac_war_events.0006.desc:0 "[defender.GetFirstName] [defender.GetHouse.GetBaseName] kneels a king, and rises a lord.\n\nThe King in the North has bent the knee and sworn fealty to me, and in return, I grant him the title of Warden of the North."
+ ac_war_events.0006.a:0 "The North is yours"
+
+ ac_war_events.0007.t:0 "Sharp Point"
+ ac_war_events.0007.desc:0 "I have close ties with the lords and ladies of [GetTitleByKey('d_sharp_point').GetNameNoTier], and House [mr_sharp_point.GetDynasty.GetBaseName] offers me their fealty, as they do not wish to fight alongside [defender.GetName]."
+
+ ac_war_events.0008.t:0 "the Crownlands"
+ ac_war_events.0008.desc:0 "I have come far in my conquest. If I want to expand [GetTitleByKey('k_the_crownlands').GetNameNoTier], I must act now, before the lords and ladies of Westeros forget the power of the Dragon."
+ ac_war_events.0008.a:0 "I will war for the missing lands"
+ ac_war_events.0008.b:0 "I will only send ravens to inform of my claims"
+ ac_war_events.0008.c:0 "I will demand the vassals be given to me"
+ ac_war_events.0008.d:0 "The Crownlands are strong enough"

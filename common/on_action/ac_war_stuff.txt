@@ -1,0 +1,25 @@
+﻿on_army_enter_province = {
+	on_actions = {
+		ac_on_burn_harrenhal
+	}
+}
+
+ac_on_burn_harrenhal = {
+	trigger = {
+		exists = scope:army
+	}
+	effect = {
+		scope:army = {
+			if = {
+				limit = { harrenhal_burnation_trigger = yes }
+
+				army_owner = {
+					trigger_event = {
+						id = ac_war_events.0001
+						days = 1
+					}
+				}
+			}
+		}
+	}
+}

@@ -133,8 +133,7 @@ ac_crownlands_events.0002 = { # crownlands wars
 	}
 	
 	option = { # or not 
-		name = ac_crownlands_events.0002.b  # do red text here that this war adds to the crownlands de_jure
-		custom_tooltip = ac_crownlands_events.0001.a_tt
+		name = ac_crownlands_events.0002.b  
 	}
 }
 

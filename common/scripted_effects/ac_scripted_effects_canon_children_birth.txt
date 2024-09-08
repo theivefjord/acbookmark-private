@@ -22,20 +22,20 @@ ac_canon_children_birth_effect = {
 	#Rhaenys
 	if = {
 		limit = {
-			scope:mother = { has_character_flag = is_rhaenys_i_targaryen }
+			scope:mother = { has_inactive_trait = is_targaryen_29 }
 		}
 		if = { #aenys
-			limit = { agot_canon_children_check_pregnancy_child_trigger = { FLAG = is_aenys_i_targaryen } }
+			limit = { agot_canon_children_check_pregnancy_child_trigger = { FLAG = is_targaryen_30 } }
 			ac_canon_children_aenys_i_targaryen_birth_effect = yes
 		}
 	}
 	#Visenya 
 	if = {
 		limit = {
-			scope:mother = { has_character_flag = is_visenya_i_targaryen }
+			scope:mother = { has_inactive_trait = is_targaryen_28 }
 		}
 		if = { #maegor
-			limit = { agot_canon_children_check_pregnancy_child_trigger = { FLAG = is_maegor_i_targaryen } }
+			limit = { agot_canon_children_check_pregnancy_child_trigger = { FLAG = is_targaryen_31 } }
 			ac_canon_children_maegor_i_targaryen_birth_effect = yes
 		}
 	}
@@ -47,7 +47,8 @@ ac_canon_children_aenys_i_targaryen_birth_effect = {
 		agot_canon_children_after_birth_effect = {
 			NAME_MALE = "Aenys"
 			NAME_FEMALE = "Alysanne"
-			FLAG = is_aenys_i_targaryen
+			#FLAG = is_aenys_i_targaryen
+			TRAIT = is_targaryen_30
 			DNA = Dummy_Targaryen_68
 		}
 
@@ -72,7 +73,8 @@ ac_canon_children_maegor_i_targaryen_birth_effect = {
 		agot_canon_children_after_birth_effect = {
 			NAME_MALE = "Maegor"
 			NAME_FEMALE = "Maegelle"
-			FLAG = is_maegor_i_targaryen
+			#FLAG = is_maegor_i_targaryen
+			TRAIT = is_targaryen_31
 			DNA = Dummy_Targaryen_131
 		}
 

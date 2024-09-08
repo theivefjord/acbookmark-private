@@ -1,0 +1,65 @@
+﻿commander_ac_conq_joined_battle = {
+	type = commander
+
+	is_valid = {
+		has_variable = ac_started_conquest
+		NOT = { has_variable = decided_gardeners_fate }
+	}
+
+	chance = {
+		base = 0
+		modifier = {
+			add = 100000
+			scope:combat_side.enemy_side = {
+				OR = {
+					any_side_knight = {
+						is_alive = yes
+						limit = { house = dynasty:dynn_Gardener.dynast.house }
+					}
+					any_side_commander = {
+						is_alive = yes
+						limit = { house = dynasty:dynn_Gardener.dynast.house }
+					}
+				}
+			}
+		}
+	}
+
+	effect = {
+		root = {
+			trigger_event = ac_war_events.0003
+		}
+	}
+}
+
+knight_ac_conq_joined_battle = {
+	type = knight
+
+	is_valid = {
+		has_variable = ac_started_conquest
+		NOT = { has_variable = decided_gardeners_fate }
+	}
+
+	chance = {
+		base = 0
+		modifier = {
+			add = 100000
+			scope:combat_side.enemy_side = {
+				OR = {
+					any_side_knight = {
+						limit = { house = dynasty:dynn_Gardener.dynast.house }
+					}
+					any_side_commander = {
+						limit = { house = dynasty:dynn_Gardener.dynast.house }
+					}
+				}
+			}
+		}
+	}
+
+	effect = {
+		root = {
+			trigger_event = ac_war_events.0003
+		}
+	}
+}

@@ -1,0 +1,457 @@
+﻿namespace = ac_war_events
+
+ac_war_events.0001 = { # Burn harrenhal decide
+	type = character_event
+	title = ac_war_events.0001.t
+	desc = ac_war_events.0001.desc
+
+	theme = dragon
+	override_background = {
+		reference = ac_harrenhal
+	}
+
+	left_portrait = {
+		character = title:d_harrenhal.holder
+		animation = laugh
+	}
+	right_portrait = {
+		character = root
+		animation = disapproval
+	}
+	
+	option = {
+		name = ac_war_events.0001.a # tomorrow your line will end type shi
+		custom_tooltip = ac_war_events.0001.a_tt
+		trigger_event = {
+			id = ac_war_events.0002
+			days = 1
+		}
+	}
+
+	option = {
+		name = ac_war_events.0001.b # we siege the normal way bruh
+	}
+}
+
+ac_war_events.0002 = { # burn harrenhal event
+	type = character_event
+	window = dragon_character_event
+	title = ac_war_events.0002.t
+	desc = ac_war_events.0002.desc
+
+	theme = dragon
+	override_background = {
+		reference = agot_night_sky_video
+	}
+
+	right_portrait = {
+		character = character:dragon_balerion.var:current_rider
+		camera = camera_dragonrider_over_battlefield
+		animation = dragon_main
+		outfit_tags = { dragonrider linear_camera_zoom }
+	}
+
+	immediate = {
+		character:dragon_balerion.var:current_rider = { agot_set_dragon_animation_flag_effect = { FLAG = dragon_flying RIDING_DRAGON = yes } }
+
+		add_trait_xp = {
+			trait = dragonrider
+			track = dragon_training
+			value = {
+				integer_range = {
+					min = 1
+					max = 4
+				}
+			}
+		}
+	}
+
+	option = {
+		name = ac_war_events.0002.a # burn them all
+		hidden_effect = {
+			ac_burn_harrenhal = yes
+			root = {
+				every_character_war = {
+					limit = {
+						using_cb = ac_conquest_cb
+						is_defender = title:e_the_riverlands.holder
+					}
+					end_war = attacker
+				}
+			}
+			dynasty:dynn_Hoare.dynast.house = {
+				every_house_member = {
+					limit = { NOT = { has_trait = nightswatch } }
+					save_temporary_scope_as = hoare_boyo
+					ac_change_titles = { 
+					OLD_HOLDER = scope:hoare_boyo
+					NEW_HOLDER = root
+					GIVE_TITLES_IN_TITLE = title:k_the_riverlands
+					TYPE = conquest
+					}
+				}
+			}
+		}
+		dynasty:dynn_Hoare.dynast.house = {
+			every_house_member = {
+				limit = { NOT = { has_trait = nightswatch } }
+				death = {
+					death_reason = death_dragon_siege
+				}
+			}
+		}
+		root = {
+			every_character_war = {
+				limit = {
+					using_cb = ac_conquest_cb
+					is_defender = title:e_the_riverlands.holder
+				}
+				save_scope_as = harrenhal_war
+			}
+		}
+		custom_tooltip = ac_war_events.0002.a_tt
+		show_as_tooltip = {
+			ac_burn_harrenhal = yes
+		}
+	}
+
+	option = {
+		name = ac_war_events.0002.b # eh changed my mind
+	}
+}
+
+ac_war_events.0003 = { # field of fire
+	type = character_event
+	window = dragon_character_event
+	title = ac_war_events.0003.t
+	desc = ac_war_events.0003.desc
+
+	theme = dragon
+	override_background = {
+		reference = agot_flying_over_field
+	}
+
+	#left_portrait = {
+	#	character = dynasty:dynn_Gardener.dynast
+	#	animation = personality_bold
+	#}
+	left_portrait = {
+		character = dynasty:dynn_Gardener.dynast
+		animation = fear
+		camera = camera_soldier_on_battlefield
+	}
+	#right_portrait = {
+	#	character = root
+	#	animation = personality_bold
+	#}
+	right_portrait = {
+		character = character:dragon_balerion.var:current_rider
+		camera = camera_dragonrider_over_battlefield
+		animation = dragon_main
+		outfit_tags = { dragonrider linear_camera_zoom }
+	}
+	immediate = {
+		character:dragon_balerion.var:current_rider = { agot_set_dragon_animation_flag_effect = { FLAG = dragon_flying RIDING_DRAGON = yes } }
+
+		add_trait_xp = {
+			trait = dragonrider
+			track = dragon_training
+			value = {
+				integer_range = {
+					min = 1
+					max = 4
+				}
+			}
+		}
+		set_variable = decided_gardeners_fate
+	}
+
+	option = { # cook em
+		hidden_effect = {
+			character:Gardener_95.house = {
+				every_house_member = {
+					limit = { NOT = { has_trait = nightswatch } }
+					save_temporary_scope_as = gardener_boyo
+					ac_change_titles = { 
+					OLD_HOLDER = scope:gardener_boyo
+					NEW_HOLDER = root
+					GIVE_TITLES_IN_TITLE = title:k_the_reach
+					TYPE = conquest
+					}
+				}
+			}
+		}
+		name = ac_war_events.0003.a
+		character:Gardener_95.house = {
+			every_house_member = {
+				limit = { NOT = { has_trait = nightswatch } }
+				death = {
+					death_reason = death_dragon_siege
+				}
+			}
+		}
+		root = {
+			every_character_war = {
+				limit = {
+					using_cb = ac_conquest_cb
+					is_defender = title:e_the_reach.holder
+				}
+				save_scope_as = reach_war
+			}
+		}
+		trigger_event = {
+			id = ac_war_events.0099
+			days = 5
+		}
+		custom_tooltip = ac_war_events.0003.a_tt
+	}
+
+	option = { # eh changed my mind
+		name = ac_war_events.0003.b
+	}
+}
+
+ac_war_events.0004 = { # the king who knelt - start
+	type = character_event
+	title = ac_war_events.0004.t
+	desc = ac_war_events.0004.desc
+	theme = dragon
+	override_background = {
+		reference = AGOT_beach
+	}
+	right_portrait = {
+		character = root
+		animation = personality_honorable
+	}
+	left_portrait = {
+		character = character:Stark_67
+		animation = throne_room_messenger_3
+	}
+	immediate = {
+		character:Stark_67 = { save_scope_as = brandon }
+	}
+
+	option = {
+		name = ac_war_events.0004.a # discuss terms
+		trigger_event = ac_war_events.0005
+	}
+	option = {
+		name = ac_war_events.0004.b # the negotiations were short
+		custom_tooltip = ac_war_events.0004.a_tt
+	}
+	option = {
+		name = ac_war_events.0004.c # the negotiations were short and kidnap his brother
+		root = { 
+			imprison = {
+				target = character:Stark_67
+				type = dungeon
+			}
+			reverse_add_opinion = {
+				target = scope:defender
+				modifier = angry_opinion
+				opinion = -100
+				years = 20
+			}
+		}
+		custom_tooltip = ac_war_events.0004.a_tt
+	}
+}
+
+ac_war_events.0005 = { # the king who knelt - talk
+	type = character_event
+	title = ac_war_events.0005.t
+	desc = ac_war_events.0005.desc
+	theme = dragon
+	override_background = {
+		reference = AGOT_beach
+	}
+	right_portrait = {
+		character = root
+		animation = throne_room_conversation_4
+	}
+	left_portrait = {
+		character = scope:defender
+		animation = throne_room_conversation_1
+	}
+
+	option = {
+		name = ac_war_events.0005.a # explain prophecy
+		trigger_event = ac_war_events.0006
+	}
+	option = {
+		name = ac_war_events.0005.b # the negotiations were short
+		custom_tooltip = ac_war_events.0004.a_tt
+	}
+}
+
+ac_war_events.0006 = { # the king who - knelt
+	type = character_event
+	title = ac_war_events.0006.t
+	desc = ac_war_events.0006.desc
+	theme = dragon
+	override_background = {
+		reference = AGOT_beach
+	}
+	right_portrait = {
+		character = root
+		animation = war_over_win
+	}
+	left_portrait = {
+		character = scope:defender
+		animation = throne_room_kneel_1
+	}
+	immediate = {
+		root = {
+			every_character_war = {
+				limit = {
+					using_cb = ac_conquest_cb
+					is_defender = title:e_the_north.holder
+				}
+				end_war = invalidated
+			}
+		}
+		hidden_effect = {
+			ac_change_vassals = {
+				OLD_HOLDER = scope:defender
+				NEW_HOLDER = root
+				CHANGE_VASSALS_OF_TITLE = title:k_the_north
+				TYPE = granted
+			}
+			destroy_title = title:e_the_north
+			get_title = title:k_the_north
+		}
+		ac_change_liege = {
+			TARGET = scope:defender
+			NEW_LIEGE = root
+		}
+	}
+	option = {
+		name = ac_war_events.0006.a # kneels
+		ac_change_kingdom_title = {
+			NEW_HOLDER = scope:defender
+			CHANGE_KINGDOM_TITLE = title:k_the_north
+			TYPE = granted
+		}
+		scope:defender = {
+			give_nickname = nick_the_king_who_knelt
+		}
+		hidden_effect = {
+			ac_change_vassals = {
+				OLD_HOLDER = root
+				NEW_HOLDER = scope:defender
+				CHANGE_VASSALS_OF_TITLE = title:k_the_north
+				TYPE = granted
+			}
+			scope:defender = {
+				add_legitimacy = 1400
+				add_opinion = {
+					target = root
+					modifier = pleased_opinion
+					opinion = 150
+					years = 10
+				}
+			}
+		}
+	}
+	after = {
+		if = {
+			limit = { has_variable = ac_started_conquest }
+			change_variable = { name = ac_started_conquest add = 1 }
+		}
+	}
+}
+
+ac_war_events.0007 = { # bar emmon swears fealty
+	type = character_event
+	title = ac_war_events.0007.t
+	desc = ac_war_events.0007.desc
+
+	theme = dragon
+	override_background = {
+		reference = farmland
+	}
+
+	left_portrait = {
+		character = title:d_sharp_point.holder
+		animation = throne_room_kneel_1
+	}
+	right_portrait = {
+		character = root
+		animation = personality_bold
+	}
+	immediate = {
+		title:d_sharp_point.holder = {
+			save_scope_as = mr_sharp_point
+		}
+	}
+	option = { # accept their fealty
+		name = ac_crownlands_events.0001.a
+		ac_change_liege = {
+			TARGET = title:d_sharp_point.holder
+			NEW_LIEGE = root
+		}
+		title:d_sharp_point = {
+			set_de_jure_liege_title = title:k_dragonstone
+		}
+		hidden_effect = {
+			ac_change_culture_effect = {
+				TARGET_HOLDER = title:d_sharp_point.holder
+				CHANGE_TO_CULTURE = culture:crownlander
+			}
+		}
+	}
+
+	option = { # pass bro
+		name = ac_crownlands_events.0001.b 
+		custom_tooltip = ac_crownlands_events.0001.a_tt
+	}
+}
+
+ac_war_events.0008 = {
+	type = character_event
+	title = ac_war_events.0008.t
+	desc = ac_war_events.0008.desc
+
+	theme = dragon
+	override_background = {
+		reference = farmland
+	}
+	right_portrait = {
+		character = root
+		animation = personality_bold
+	}
+	option = { #  just make the crownlands de jure 
+		name = ac_war_events.0008.b
+		ac_claim_crownlands_effect = yes
+	}
+
+	option = { # go to war for all the crownlands for fun
+		name = ac_war_events.0008.a
+		ac_complete_crownlands_effect = yes
+	}
+
+	option = { # just change vassals and set liege
+		name = ac_war_events.0008.c 
+		ac_vassalize_crownlands_effect = yes
+	}
+
+	option = { # pass
+		name = ac_war_events.0008.d
+		custom_tooltip = ac_crownlands_events.0001.a_tt
+	}
+}
+
+ac_war_events.0099 = {
+	hidden = yes
+	immediate = {
+		root = {
+			every_character_war = {
+				limit = {
+					using_cb = ac_conquest_cb
+					is_defender = title:e_the_reach.holder
+				}
+				end_war = attacker
+			}
+		}
+	}
+}

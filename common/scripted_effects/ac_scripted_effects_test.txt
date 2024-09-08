@@ -142,7 +142,7 @@ targ_dark_sister_holder_give_to_maegor_effect = { # no scope
 	character:Targaryen_27 = {
 		every_heir = {
 			limit = {
-				has_character_flag = is_maegor_i_targaryen
+				is_character_targaryen_31 = yes
 			}
 			save_scope_as = dark_sister_recipient
 		}

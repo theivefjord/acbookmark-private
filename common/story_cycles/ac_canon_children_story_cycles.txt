@@ -3,20 +3,20 @@ story_ac_canon_children_aegon_targaryen = {
 	on_setup = {
 		agot_canon_children_setup_father_effect = {
 			FATHER = story_owner
-			FATHER_FLAG = is_aegon_i_targaryen
+			FATHER_TRAIT = is_targaryen_27
 		}
 
 		agot_canon_children_setup_mother_effect = {
 			FATHER = story_owner
 			MOTHER = character:Targaryen_28
-			MOTHER_FLAG = is_visenya_i_targaryen
+			MOTHER_TRAIT = is_targaryen_28
 			PREVENT_PREGNANCY = yes
 		}
 
 		agot_canon_children_setup_mother_effect = {
 			FATHER = story_owner
 			MOTHER = character:Targaryen_29
-			MOTHER_FLAG = is_rhaenys_i_targaryen
+			MOTHER_TRAIT = is_targaryen_29
 			PREVENT_PREGNANCY = yes
 		}
 
@@ -42,7 +42,8 @@ story_ac_canon_children_aegon_targaryen = {
 						# 1 Rhaenys
 						if = {
 							limit = {
-								has_character_flag = is_rhaenys_i_targaryen
+								#has_character_flag = is_rhaenys_i_targaryen
+								has_inactive_trait = is_targaryen_29
 								scope:canon_father = {
 									agot_canon_children_force_pregnancy_spouse_trigger = {
 										SPOUSE = scope:canon_mother
@@ -55,12 +56,13 @@ story_ac_canon_children_aegon_targaryen = {
 								limit = {
 									agot_canon_children_child_pregnancy_trigger = {
 										ID = Targaryen_30
-										FLAG = is_aenys_i_targaryen
+										#FLAG = is_aenys_i_targaryen
+										TRAIT = is_targaryen_30
 										BIRTH_YEAR = ac_canon_children_birth_year_aenys_targaryen
 									}
 								}
 								agot_canon_children_force_pregnancy_basic_effect = {
-									CHILD_FLAG = is_aenys_i_targaryen
+									CHILD_FLAG = is_targaryen_30 #is_aenys_i_targaryen
 									IS_FEMALE = no
 								}
 							}
@@ -68,14 +70,15 @@ story_ac_canon_children_aegon_targaryen = {
 							# lifecycle
 							agot_canon_children_life_cycle_effect = {
 								MOTHER = scope:canon_mother
-								FINAL_CHILD_FLAG = is_aenys_i_targaryen
+								#FINAL_CHILD_FLAG = is_aenys_i_targaryen
+								FINAL_CHILD_TRAIT = is_targaryen_30
 								FINAL_CHILD_ID = Targaryen_30
 							}
 						}
 						# 2 Visenya
 						else_if = {
 							limit = {
-								has_character_flag = is_visenya_i_targaryen
+								has_inactive_trait = is_targaryen_28
 								scope:canon_father = {
 									agot_canon_children_force_pregnancy_spouse_trigger = {
 										SPOUSE = scope:canon_mother
@@ -88,12 +91,13 @@ story_ac_canon_children_aegon_targaryen = {
 								limit = {
 									agot_canon_children_child_pregnancy_trigger = {
 										ID = Targaryen_31
-										FLAG = is_maegor_i_targaryen
+										#FLAG = is_maegor_i_targaryen
+										TRAIT = is_targaryen_31
 										BIRTH_YEAR = ac_canon_children_birth_year_maegor_targaryen
 									}
 								}
 								agot_canon_children_force_pregnancy_basic_effect = {
-									CHILD_FLAG = is_maegor_i_targaryen
+									CHILD_FLAG = is_targaryen_31 #is_maegor_i_targaryen
 									IS_FEMALE = no
 								}
 							}
@@ -101,7 +105,8 @@ story_ac_canon_children_aegon_targaryen = {
 							#lifecycle
 							agot_canon_children_life_cycle_effect = {
 								MOTHER = scope:canon_mother
-								FINAL_CHILD_FLAG = is_maegor_i_targaryen
+								#FINAL_CHILD_FLAG = is_maegor_i_targaryen
+								FINAL_CHILD_TRAIT = is_targaryen_31
 								FINAL_CHILD_ID = Targaryen_31
 							}
 						}
