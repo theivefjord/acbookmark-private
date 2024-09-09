@@ -107,7 +107,8 @@ conq_events.0001 = { # aegon d-day
 
 	after = {
 		root = {
-			give_crowns_to_sisters = yes
+			agot_create_artifact_rhaenys_circlet_effect = { OWNER = this } 
+			give_crowns_to_sisters = yes 
 		}
 	}
 }
@@ -453,6 +454,7 @@ conq_events.0005 = { # reach
 
 
 	immediate = {
+		dynasty:dynn_Gardener.dynast = { save_scope_as = gardener }
 		dynasty:dynn_Tyrell.dynast = { save_scope_as = tyrell }
 		hidden_effect = {
 			ac_change_vassals = {

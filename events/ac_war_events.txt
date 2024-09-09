@@ -128,7 +128,7 @@ ac_war_events.0003 = { # field of fire
 
 	theme = dragon
 	override_background = {
-		reference = agot_flying_over_field
+		reference = ac_fieldofire
 	}
 
 	#left_portrait = {

@@ -234,7 +234,7 @@
  ac_war_events.0003.b:0 "I will not burn whole families"
  ac_war_events.0003.a_tt:0 "You will win [reach_war.GetName]"
 
- conq_events.0005.d:0 "The [defender.GetDynasty.GetBaseName] dynasty will live on and continue ruling the Reach"
+ conq_events.0005.d:0 "The [gardener.GetDynasty.GetBaseName] dynasty will live on and continue ruling the Reach"
 
  ac_war_events.0004.t:0 "the King in the North"
  ac_war_events.0004.desc:0 "While marching north with my army, my outriders come upon a small party of four, three maesters led by [brandon.GetFullName].\n\nHe is quickly brought before me and speaks:\n"Your Grace, my brother [defender.GetFirstName] [defender.GetHouse.GetBaseName], the King in the North, seeks an audience with you.""

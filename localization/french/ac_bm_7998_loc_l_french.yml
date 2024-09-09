@@ -234,7 +234,7 @@
  ac_war_events.0003.b:0 "Je ne brûlerai pas des familles entières"
  ac_war_events.0003.a_tt:0 "Vous gagnerez [reach_war.GetName]"
 
- conq_events.0005.d:0 "La dynastie [defender.GetDynasty.GetBaseName] vivra et continuera de régner sur le Bief"
+ conq_events.0005.d:0 "La dynastie [gardener.GetDynasty.GetBaseName] vivra et continuera de régner sur le Bief"
 
  ac_war_events.0004.t:0 "le Roi du Nord"
  ac_war_events.0004.desc:0 "En marchant vers le nord avec mon armée, mes éclaireurs tombent sur un petit groupe de quatre personnes, trois mestres dirigés par [brandon.GetFullName].\n\nIl est rapidement amené devant moi et dit:\n\"Votre Grâce, mon frère [defender.GetFirstName] [defender.GetHouse.GetBaseName], le Roi du Nord, souhaite avoir audience avec vous.\""
