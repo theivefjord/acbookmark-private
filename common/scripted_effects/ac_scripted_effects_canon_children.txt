@@ -1,0 +1,32 @@
+﻿ac_cc_setup_mom_when_shes_born_effect = {
+	$HUSBAND$ = { save_scope_as = canon_husband } # story owner
+
+	ac_cc_get_canon_wife_effect = {
+		TRAIT = $WIFE_TRAIT$ # trait of wife
+		SCOPE = canon_wife # finds the canon but non-historical wife 
+	}
+
+	scope:canon_wife ?= { # Setup wife + mom
+
+		agot_canon_children_setup_mother_effect = {
+			FATHER = $HUSBAND$
+			MOTHER = scope:canon_wife
+			MOTHER_TRAIT = $WIFE_TRAIT$
+			PREVENT_PREGNANCY = yes #AGOTCCH-TODO: should it prevent?
+		}
+
+		scope:canon_husband = {
+			add_to_variable_list = {
+				name = canon_wives
+				target = scope:canon_wife
+			}
+		}
+	}
+}
+ac_cc_get_canon_wife_effect = {
+	random_in_global_list = {
+		variable = agot_born_canon_children_scopes
+		limit = { has_inactive_trait = $TRAIT$ }
+		save_scope_as = $SCOPE$
+	}
+}

@@ -28,6 +28,22 @@
 					type = dragonkeepers
 					stacks = 20
 				}
+				men_at_arms = {
+					type = mangonel
+					stacks = 8
+				}
+				men_at_arms = {
+					type = mangonel
+					stacks = 8
+				}
+				men_at_arms = {
+					type = mangonel
+					stacks = 8
+				}
+				men_at_arms = {
+					type = mangonel
+					stacks = 8
+				}
 				location = capital_province
 				origin = capital_province
 			}

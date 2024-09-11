@@ -1,9 +1,11 @@
 ﻿harrenhal_burnation_trigger = {
 	location = province:1934
+	exists = army_commander
+	army_commander = root
 	army_owner = {
 		any_character_war = {
 			using_cb = ac_conquest_cb
-			is_attacker = character:Targaryen_27
+			is_attacker = root
 			is_defender = title:d_harrenhal.holder
 		}
 	}

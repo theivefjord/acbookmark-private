@@ -1,0 +1,253 @@
+﻿story_ai_aegons_conquest = {
+	on_setup = {
+		debug_log = "AI Aegon Scenario Started"
+
+		set_variable = {
+			name = ai_aegons_conquest_wars
+			value = 1
+		}
+	}
+	on_end = {
+	}
+	on_owner_death = {
+		end_story = yes
+	}
+
+	effect_group = {
+		days = 7
+
+		triggered_effect = { # 1st war - riverlands
+			trigger = {
+				var:ai_aegons_conquest_wars = 1
+				character:Targaryen_27 = { has_variable = ac_started_conquest }
+			}
+			effect = {
+				character:Targaryen_27 = { 
+					start_war = {
+						casus_belli = ac_conquest_cb
+						target = title:e_the_riverlands.holder
+						target_title = title:k_the_riverlands
+					}
+				}
+				if = {
+					limit = {
+						character:Targaryen_27 = {
+							is_at_war_with = title:e_the_riverlands.holder
+							is_at_war_as_attacker = yes
+						}
+						character:Hoare_31 = { is_alive = no }
+					}
+					character:Targaryen_27 = {
+						every_character_war = {
+							limit = { primary_defender = title:e_the_riverlands.holder }
+							end_war = attacker
+						}
+					}
+				}
+				if = {
+					limit = {
+						character:Targaryen_27 = {
+							is_at_war = no
+						}
+					}
+					set_variable = {
+						name = ai_aegons_conquest_wars
+						value = 2
+					}
+				}
+			}
+		}
+
+		triggered_effect = { # 2nd war - stormlands
+			trigger = {
+				var:ai_aegons_conquest_wars = 2
+			}
+			effect = {
+				character:Targaryen_27 = { 
+					start_war = {
+						casus_belli = ac_conquest_cb
+						target = title:e_the_stormlands.holder
+						target_title = title:k_the_stormlands
+					}
+				}
+				if = {
+					limit = {
+						character:Targaryen_27 = {
+							is_at_war_with = title:e_the_stormlands.holder
+							is_at_war_as_attacker = yes
+						}
+						character:Durrandon_87 = { is_alive = no }
+					}
+					character:Targaryen_27 = {
+						every_character_war = {
+							limit = { primary_defender = title:e_the_stormlands.holder }
+							end_war = attacker
+						}
+					}
+				}
+				if = {
+					limit = {
+						character:Targaryen_27 = {
+							is_at_war = no
+						}
+					}
+					set_variable = {
+						name = ai_aegons_conquest_wars
+						value = 3
+					}
+				}
+			}
+		}
+
+		triggered_effect = { # 3rd war - the reach
+			trigger = {
+				var:ai_aegons_conquest_wars = 3
+			}
+			effect = {
+				character:Targaryen_27 = { 
+					start_war = {
+						casus_belli = ac_conquest_cb
+						target = title:e_the_reach.holder
+						target_title = title:k_the_reach
+					}
+				}
+				if = {
+					limit = {
+						character:Targaryen_27 = {
+							is_at_war = no
+						}
+					}
+					set_variable = {
+						name = ai_aegons_conquest_wars
+						value = 4
+					}
+				}
+			}
+		}
+		triggered_effect = { # 4th war - the westerlands
+			trigger = {
+				var:ai_aegons_conquest_wars = 4
+			}
+			effect = {
+				character:Targaryen_27 = { 
+					start_war = {
+						casus_belli = ac_conquest_cb
+						target = title:e_the_westerlands.holder
+						target_title = title:k_the_westerlands
+					}
+				}
+				if = {
+					limit = {
+						character:Targaryen_27 = {
+							is_at_war = no
+						}
+					}
+					set_variable = {
+						name = ai_aegons_conquest_wars
+						value = 5
+					}
+				}
+			}
+		}
+		triggered_effect = { # 5th war - the north
+			trigger = {
+				var:ai_aegons_conquest_wars = 5
+			}
+			effect = {
+				character:Targaryen_27 = { 
+					start_war = {
+						casus_belli = ac_conquest_cb
+						target = title:e_the_north.holder
+						target_title = title:k_the_north
+					}
+				}
+				if = {
+					limit = {
+						character:Targaryen_27 = {
+							is_at_war = no
+						}
+					}
+					set_variable = {
+						name = ai_aegons_conquest_wars
+						value = 6
+					}
+				}
+			}
+		}
+		triggered_effect = { # 6th war - the vale
+			trigger = {
+				var:ai_aegons_conquest_wars = 6
+			}
+			effect = {
+				character:Targaryen_27 = { 
+					start_war = {
+						casus_belli = ac_conquest_cb
+						target = title:e_the_vale.holder
+						target_title = title:k_the_vale
+					}
+				}
+				if = {
+					limit = {
+						character:Targaryen_27 = {
+							is_at_war = no
+						}
+					}
+					set_variable = {
+						name = ai_aegons_conquest_wars
+						value = 7
+					}
+				}
+			}
+		}
+		triggered_effect = { # 7th war - the iron islands
+			trigger = {
+				var:ai_aegons_conquest_wars = 7
+			}
+			effect = {
+				character:Targaryen_27 = { 
+					start_war = {
+						casus_belli = ac_conquest_cb
+						target = title:e_the_iron_islands.holder
+						target_title = title:k_the_iron_islands
+					}
+				}
+				if = {
+					limit = {
+						character:Targaryen_27 = {
+							is_at_war = no
+						}
+					}
+					set_variable = {
+						name = ai_aegons_conquest_wars
+						value = 8
+					}
+				}
+			}
+		}
+		triggered_effect = { # 8th war - dorne
+			trigger = {
+				var:ai_aegons_conquest_wars = 8
+			}
+			effect = {
+				character:Targaryen_27 = { 
+					start_war = {
+						casus_belli = ac_conquest_cb
+						target = title:e_dorne.holder
+						target_title = title:k_dorne
+					}
+				}
+				if = {
+					limit = {
+						character:Targaryen_27 = {
+							is_at_war = no
+						}
+					}
+					set_variable = {
+						name = ai_aegons_conquest_wars
+						value = 9
+					}
+				}
+			}
+		}
+	}
+}

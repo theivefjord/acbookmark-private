@@ -26,6 +26,9 @@ ac_war_events.0001 = { # Burn harrenhal decide
 			id = ac_war_events.0002
 			days = 1
 		}
+		ai_chance = {
+			base = 100
+		}
 	}
 
 	option = {
@@ -112,6 +115,9 @@ ac_war_events.0002 = { # burn harrenhal event
 		custom_tooltip = ac_war_events.0002.a_tt
 		show_as_tooltip = {
 			ac_burn_harrenhal = yes
+		}
+		ai_chance = {
+			base = 100
 		}
 	}
 
@@ -204,6 +210,9 @@ ac_war_events.0003 = { # field of fire
 			days = 5
 		}
 		custom_tooltip = ac_war_events.0003.a_tt
+		ai_chance = {
+			base = 100
+		}
 	}
 
 	option = { # eh changed my mind
@@ -234,6 +243,9 @@ ac_war_events.0004 = { # the king who knelt - start
 	option = {
 		name = ac_war_events.0004.a # discuss terms
 		trigger_event = ac_war_events.0005
+		ai_chance = {
+			base = 100
+		}
 	}
 	option = {
 		name = ac_war_events.0004.b # the negotiations were short
@@ -277,6 +289,9 @@ ac_war_events.0005 = { # the king who knelt - talk
 	option = {
 		name = ac_war_events.0005.a # explain prophecy
 		trigger_event = ac_war_events.0006
+		ai_chance = {
+			base = 100
+		}
 	}
 	option = {
 		name = ac_war_events.0005.b # the negotiations were short
@@ -332,7 +347,7 @@ ac_war_events.0006 = { # the king who - knelt
 			CHANGE_KINGDOM_TITLE = title:k_the_north
 			TYPE = granted
 		}
-		scope:defender = {
+		scope:defender ?= {
 			give_nickname = nick_the_king_who_knelt
 		}
 		hidden_effect = {
@@ -342,7 +357,7 @@ ac_war_events.0006 = { # the king who - knelt
 				CHANGE_VASSALS_OF_TITLE = title:k_the_north
 				TYPE = granted
 			}
-			scope:defender = {
+			scope:defender ?= {
 				add_legitimacy = 1400
 				add_opinion = {
 					target = root
@@ -351,6 +366,9 @@ ac_war_events.0006 = { # the king who - knelt
 					years = 10
 				}
 			}
+		}
+		ai_chance = {
+			base = 100
 		}
 	}
 	after = {
@@ -399,6 +417,9 @@ ac_war_events.0007 = { # bar emmon swears fealty
 				CHANGE_TO_CULTURE = culture:crownlander
 			}
 		}
+		ai_chance = {
+			base = 100
+		}
 	}
 
 	option = { # pass bro
@@ -433,6 +454,9 @@ ac_war_events.0008 = {
 	option = { # just change vassals and set liege
 		name = ac_war_events.0008.c 
 		ac_vassalize_crownlands_effect = yes
+		ai_chance = {
+			base = 100
+		}
 	}
 
 	option = { # pass

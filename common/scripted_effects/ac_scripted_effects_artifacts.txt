@@ -1,0 +1,92 @@
+﻿give_crowns_to_sisters = { # root should be Targaryen_27
+	random_character_artifact = {
+		limit = { has_variable = circlet_visenya_artifact }
+		save_scope_as = visenya_crown
+	}
+	random_character_artifact = {
+		limit = { has_variable = circlet_rhaenys_artifact }
+		save_scope_as = rhaenys_crown
+	}
+	random_character_artifact = {
+		limit = { has_variable = crown_aegon_i_artifact }
+		equip_artifact_to_owner_replace = yes
+	}
+	scope:visenya_crown ?= {
+		set_owner = {
+			target = character:Targaryen_28
+			history = {
+				actor = character:Targaryen_27
+				recipient = character:Targaryen_28
+				type = given
+			}
+		}
+		equip_artifact_to_owner_replace = yes
+	}
+	scope:rhaenys_crown ?= {
+		set_owner = {
+			target = character:Targaryen_29
+			history = {
+				actor = character:Targaryen_27
+				recipient = character:Targaryen_29
+				type = given
+			}
+		}
+		equip_artifact_to_owner_replace = yes
+	}
+}
+
+targ_dark_sister_holder_give_to_maegor_effect = { # no scope
+	dynasty:dynn_Targaryen = {
+		every_dynasty_member = {
+			limit = { 
+				any_character_artifact = {
+					has_variable = dark_sister_artifact
+				}
+			}
+			save_scope_as = dark_sister_holder
+		}
+	}
+	character:Targaryen_27 = {
+		every_heir = {
+			limit = {
+				is_character_targaryen_31 = yes
+			}
+			save_scope_as = dark_sister_recipient
+		}
+		}
+	
+	scope:dark_sister_holder = {
+		every_character_artifact = {
+			limit = {
+				has_variable = dark_sister_artifact
+			}
+			set_owner = {
+				target = scope:dark_sister_recipient
+				history = {
+					actor = scope:dark_sister_holder
+					recipient = scope:dark_sister_recipient
+					type = given
+				}
+				}
+				equip_artifact_to_owner_replace = yes
+		}
+	}
+}
+
+create_rhaenys_crown_if_missing = {
+	if = {
+		limit = {
+			NOR = {
+				any_character_artifact = {
+					has_variable = circlet_rhaenys_artifact 
+				}
+				character:Targaryen_29 = {
+					any_character_artifact = {
+						has_variable = circlet_rhaenys_artifact 
+					}
+				}
+			}
+		}
+		agot_create_artifact_rhaenys_circlet_effect = { OWNER = this } 
+	}
+}

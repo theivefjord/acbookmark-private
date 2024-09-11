@@ -31,7 +31,6 @@ conq_events.0001 = { # aegon d-day
 
 		
 		title:c_kings_landing = {
-			limit = { NOT = { holder = root } }
 			change_title_holder = {
 				holder = root
 				change = scope:change
@@ -39,7 +38,6 @@ conq_events.0001 = { # aegon d-day
 			set_county_culture = culture:crownlander
 		}
 		title:c_bramsfort = {
-			limit = { NOT = { holder = root } }
 			change_title_holder = {
 				holder = root
 				change = scope:change
@@ -47,7 +45,6 @@ conq_events.0001 = { # aegon d-day
 			set_county_culture = culture:crownlander
 		}
 		title:c_riverline = {
-			limit = { NOT = { holder = root } }
 			change_title_holder = {
 				holder = root
 				change = scope:change
@@ -55,7 +52,6 @@ conq_events.0001 = { # aegon d-day
 			set_county_culture = culture:crownlander
 		}
 		title:c_shinebridge = {
-			limit = { NOT = { holder = root } }
 			change_title_holder = {
 				holder = root
 				change = scope:change
@@ -107,8 +103,13 @@ conq_events.0001 = { # aegon d-day
 
 	after = {
 		root = {
-			agot_create_artifact_rhaenys_circlet_effect = { OWNER = this } 
+			create_rhaenys_crown_if_missing = yes
 			give_crowns_to_sisters = yes 
+			if = {
+				limit = { is_ai = yes }
+				add_prowess_skill = 30
+				create_story = { type = story_ai_aegons_conquest }
+			}
 		}
 	}
 }
@@ -231,6 +232,9 @@ conq_events.0002 = { # riverlands
 			}
 			
 		}
+		ai_chance = {
+			base = 100
+		}
 	}
 	option = { # keep titles to hand out yourself
 	name = conq_events.0002.c
@@ -303,6 +307,9 @@ conq_events.0003 = { # vale
 					years = 10
 				}
 			}
+		}
+		ai_chance = {
+			base = 100
 		}
 	}
 	option = {
@@ -414,7 +421,9 @@ conq_events.0004 = { # stormlands
 					years = 10
 				}
 			}
-			
+		}
+		ai_chance = {
+			base = 100
 		}
 	}
 	option = {
@@ -535,6 +544,9 @@ conq_events.0005 = { # reach
 				}
 			}
 		}
+		ai_chance = {
+			base = 100
+		}
 	}
 	option = {
 		name = conq_events.0005.c # keep titles
@@ -619,6 +631,9 @@ conq_events.0006 = { # westerlands
 	}
 	option = {
 		name = conq_events.0006.a # lannisters get titles back and become lord paramount
+		ai_chance = {
+			base = 100
+		}
 		ac_change_titles = { # give titles to lannisters
 			OLD_HOLDER = root
 			NEW_HOLDER = dynasty:dynn_Lannister.dynast
@@ -721,6 +736,9 @@ conq_events.0007 = { # north
 				}
 			}
 		}
+		ai_chance = {
+			base = 100
+		}
 	}
 	option = {
 		name = conq_events.0007.b #keep titles
@@ -798,6 +816,9 @@ conq_events.0008 = { # dorne
 				}
 			}
 		}
+		ai_chance = {
+			base = 100
+		}
 	}
 	option = {
 		name = conq_events.0008.b # keep titles
@@ -832,75 +853,78 @@ conq_events.0009 = { # form iron throne when ac variable > 5
 
 	option = {
 		name = conq_events.0009.a # form iron throne
-			get_title = title:e_the_iron_throne
-			destroy_title = title:e_aegons_host
-			title:e_the_iron_throne = {
-				set_variable = is_paramountcy_realm
+		get_title = title:e_the_iron_throne
+		destroy_title = title:e_aegons_host
+		title:e_the_iron_throne = {
+			set_variable = is_paramountcy_realm
+		}
+		if = {
+			limit = { NOT = { has_government = lp_feudal_government } }
+			root = {
+				change_government = lp_feudal_government
 			}
-			if = {
-				limit = { NOT = { has_government = lp_feudal_government } }
-				root = {
-					change_government = lp_feudal_government
+		}
+		add_prestige = 7000
+		dynasty = { add_dynasty_prestige = 3500 }
+		add_legitimacy = 2100 #Max Legitimacy
+		add_dread = 100
+		add_tyranny	= -35
+		gain_legitimizing_legend_seed_tooltip_effect = yes
+		give_nickname = nick_the_conqueror
+		agot_create_artifact_iron_throne_effect = { OWNER = this }
+		hidden_effect = {
+			legend_seed_great_deed_dynasty_effect = yes
+			every_vassal_or_below = {
+				limit = {
+					has_government = feudal_government
 				}
+				change_government = lp_feudal_government
 			}
-			add_prestige = 7000
-			dynasty = { add_dynasty_prestige = 3500 }
-			add_legitimacy = 2100 #Max Legitimacy
-			add_dread = 100
-			add_tyranny	= -35
-			gain_legitimizing_legend_seed_tooltip_effect = yes
-			give_nickname = nick_the_conqueror
-			agot_create_artifact_iron_throne_effect = { OWNER = this }
-			hidden_effect = {
-				legend_seed_great_deed_dynasty_effect = yes
-				every_vassal_or_below = {
-					limit = {
-						has_government = feudal_government
-					}
-					change_government = lp_feudal_government
-				}
+		}
+		spawn_army = {
+			name = iron_throne_decision_troops
+			men_at_arms = {
+				type = westerosi_sellswords
+				men = 100
 			}
-			spawn_army = {
-				name = iron_throne_decision_troops
-				men_at_arms = {
-					type = westerosi_sellswords
-					men = 100
-				}
-				men_at_arms = {
-					type = barrow_knights #replace these with a riverlands cav MAA if they ever get one
-					men = 100
-				}
-				men_at_arms = {
-					type = winged_knights
-					men = 100
-				}
-				men_at_arms = {
-					type = summer_knights
-					men = 100
-				}
-				men_at_arms = {
-					type = storm_knights
-					men = 100
-				}
-				men_at_arms = {
-					type = westerlands_knights
-					men = 100
-				}
-				men_at_arms = {
-					type = sand_steeds
-					men = 100
-				}
-				inheritable = no
-				location = title:d_kings_landing.holder.capital_province
-				origin = title:d_kings_landing.holder.capital_province
+			men_at_arms = {
+				type = barrow_knights #replace these with a riverlands cav MAA if they ever get one
+				men = 100
 			}
-			trigger_event = conq_events.0012
+			men_at_arms = {
+				type = winged_knights
+				men = 100
+			}
+			men_at_arms = {
+				type = summer_knights
+				men = 100
+			}
+			men_at_arms = {
+				type = storm_knights
+				men = 100
+			}
+			men_at_arms = {
+				type = westerlands_knights
+				men = 100
+			}
+			men_at_arms = {
+				type = sand_steeds
+				men = 100
+			}
+			inheritable = no
+			location = title:d_kings_landing.holder.capital_province
+			origin = title:d_kings_landing.holder.capital_province
+		}
+		trigger_event = conq_events.0012
 	
-			hidden_effect = {
-				scope:fake_artifact = {
-					add_durability = -1000
-				}
+		hidden_effect = {
+			scope:fake_artifact = {
+				add_durability = -1000
 			}
+		}
+		ai_chance = {
+			base = 100
+		}
 	}
 
 	option = {
@@ -1007,7 +1031,9 @@ conq_events.0010 = { # durrandon marriage event
 			character:Durrandon_88 = {
 				remove_trait = refusing_marriage
 			}
-			
+		}
+		ai_chance = {
+			base = 100
 		}
 	}
 
@@ -1118,6 +1144,9 @@ conq_events.0011 = { # iron islands FOR vodrux
 				}
 			}
 		}
+		ai_chance = {
+			base = 100
+		}
 	}
 		option = {
 		name = conq_events.0011.c # keep titles
@@ -1155,6 +1184,9 @@ conq_events.0012 = { # pick capital and do renames
 		set_realm_capital = title:c_kings_landing 
 		custom_tooltip = {
 			text = conq_events.0012.a_tt
+		}
+		ai_chance = {
+			base = 100
 		}
 	}
 

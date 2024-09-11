@@ -43,6 +43,9 @@ ac_crownlands_events.0001 = { # Massey's buddyhop
 				CHANGE_TO_CULTURE = culture:crownlander
 			}
 		}
+		ai_chance = {
+			base = 100
+		}
 	}
 
 	option = { # pass bro
@@ -134,6 +137,9 @@ ac_crownlands_events.0002 = { # crownlands wars
 	
 	option = { # or not 
 		name = ac_crownlands_events.0002.b  
+		ai_chance = {
+			base = 100
+		}
 	}
 }
 
@@ -170,39 +176,38 @@ ac_crownlands_events.0003 = { # send ravens to the independent boyos at crackcla
 
 	option = { # send ravens
 		name = ac_crownlands_events.0003.a
-		hidden_effect = {
-			
-		}
-
-			custom_tooltip = {
-				text = ac_crownlands_events.0003.a_tt
-				title:d_crackclaw_point = {
-					set_de_jure_liege_title = title:k_the_crownlands
-					every_de_jure_county = {
-						limit = {
-							holder = { is_independent_ruler = yes }
-						}
-						holder = {
-							add_to_list = crackclaw_targets
-						}
+		custom_tooltip = {
+			text = ac_crownlands_events.0003.a_tt
+			title:d_crackclaw_point = {
+				set_de_jure_liege_title = title:k_the_crownlands
+				every_de_jure_county = {
+					limit = {
+						holder = { is_independent_ruler = yes }
 					}
-				}
-				every_in_list = {
-					list = crackclaw_targets
-					save_scope_as = crackclaw_target
-					random = {
-						chance = 70
-						ac_change_culture_effect = {
-							TARGET_HOLDER = scope:crackclaw_target
-							CHANGE_TO_CULTURE = culture:crownlander
-						}
-						ac_crownlands_vassalization_effect = {
-							TARGET_VASSAL = scope:crackclaw_target
-							LIEGE = root
-						}
+					holder = {
+						add_to_list = crackclaw_targets
 					}
 				}
 			}
+			every_in_list = {
+				list = crackclaw_targets
+				save_scope_as = crackclaw_target
+				random = {
+					chance = 70
+					ac_change_culture_effect = {
+						TARGET_HOLDER = scope:crackclaw_target
+						CHANGE_TO_CULTURE = culture:crownlander
+					}
+					ac_crownlands_vassalization_effect = {
+						TARGET_VASSAL = scope:crackclaw_target
+						LIEGE = root
+					}
+				}
+			}
+		}
+		ai_chance = {
+			base = 100
+		}
 	}
 
 

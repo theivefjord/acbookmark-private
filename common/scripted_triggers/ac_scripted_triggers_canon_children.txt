@@ -7,3 +7,38 @@
 		has_relation_lover = $MOTHER$
 	}
 }
+
+ac_cc_marriage_trigger = {
+	save_temporary_scope_as = wife
+	NOT = {
+		ac_cc_was_married_trigger = {
+			HUSBAND_ID = $HUSBAND_ID$
+			WIFE = scope:wife
+		}
+	}
+	ac_cc_marriage_year_trigger = { MARRIAGE_YEAR = $MARRIAGE_YEAR$ }
+	is_alive = yes
+}
+
+ac_cc_marriage_year_trigger = {
+	OR = {
+		AND = {
+			current_year >= $MARRIAGE_YEAR$_min
+			current_month >= 4
+		}
+		current_year >= $MARRIAGE_YEAR$
+	}
+}
+
+ac_cc_was_married_trigger = {
+	OR = {
+		character:$HUSBAND_ID$ = {
+			exists = this
+			is_married = no
+		}
+		$WIFE$ = {
+			exists = this
+			is_married = no
+		}
+	}
+}

@@ -1,4 +1,75 @@
-﻿# Aegoon I Targaryen
+﻿#Orys Baratheon
+story_ac_canon_children_orys_baratheon = {
+	on_setup = {
+		agot_canon_children_setup_father_effect = {
+			FATHER = story_owner
+			FATHER_TRAIT = is_baratheon_14
+		}
+		agot_canon_children_setup_mother_effect = {
+			FATHER = story_owner
+			MOTHER = character:Durrandon_88
+			MOTHER_TRAIT = is_durrandon_88
+			PREVENT_PREGNANCY = yes
+		}
+	}
+	on_end = {}
+
+	on_owner_death = { agot_canon_children_on_owner_death_effect = yes }
+
+	effect_group = {
+		months = agot_canon_children_pregnancies_cycle_months
+
+		triggered_effect = {
+			effect = {
+				story_owner = {
+					save_scope_as = canon_father
+					every_in_list = {
+						variable = canon_mothers
+						save_scope_as = canon_mother
+
+			
+
+						# 1 Argella Durrandon
+						if = {
+							limit = {
+								has_inactive_trait = is_durrandon_88
+								scope:canon_father = {
+									agot_canon_children_force_pregnancy_spouse_trigger = {
+										SPOUSE = scope:canon_mother
+									}
+								}
+							}
+
+							# 1-1 Davos
+							if = {
+								limit = {
+									agot_canon_children_child_pregnancy_trigger = {
+										ID = Baratheon_16
+										TRAIT = is_baratheon_16
+										BIRTH_YEAR = ac_canon_children_birth_year_davos_baratheon
+									}
+								}
+								agot_canon_children_force_pregnancy_basic_effect = {
+									CHILD_FLAG = is_baratheon_16 
+									IS_FEMALE = no
+								}
+							}
+
+							# lifecycle
+							agot_canon_children_life_cycle_effect = {
+								MOTHER = scope:canon_mother
+								FINAL_CHILD_TRAIT = is_baratheon_16
+								FINAL_CHILD_ID = Baratheon_16
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+# Aegoon I Targaryen
 story_ac_canon_children_aegon_targaryen = {
 	on_setup = {
 		agot_canon_children_setup_father_effect = {
@@ -42,7 +113,6 @@ story_ac_canon_children_aegon_targaryen = {
 						# 1 Rhaenys
 						if = {
 							limit = {
-								#has_character_flag = is_rhaenys_i_targaryen
 								has_inactive_trait = is_targaryen_29
 								scope:canon_father = {
 									agot_canon_children_force_pregnancy_spouse_trigger = {
@@ -56,13 +126,12 @@ story_ac_canon_children_aegon_targaryen = {
 								limit = {
 									agot_canon_children_child_pregnancy_trigger = {
 										ID = Targaryen_30
-										#FLAG = is_aenys_i_targaryen
 										TRAIT = is_targaryen_30
 										BIRTH_YEAR = ac_canon_children_birth_year_aenys_targaryen
 									}
 								}
 								agot_canon_children_force_pregnancy_basic_effect = {
-									CHILD_FLAG = is_targaryen_30 #is_aenys_i_targaryen
+									CHILD_FLAG = is_targaryen_30 
 									IS_FEMALE = no
 								}
 							}
@@ -70,7 +139,6 @@ story_ac_canon_children_aegon_targaryen = {
 							# lifecycle
 							agot_canon_children_life_cycle_effect = {
 								MOTHER = scope:canon_mother
-								#FINAL_CHILD_FLAG = is_aenys_i_targaryen
 								FINAL_CHILD_TRAIT = is_targaryen_30
 								FINAL_CHILD_ID = Targaryen_30
 							}
@@ -91,13 +159,12 @@ story_ac_canon_children_aegon_targaryen = {
 								limit = {
 									agot_canon_children_child_pregnancy_trigger = {
 										ID = Targaryen_31
-										#FLAG = is_maegor_i_targaryen
 										TRAIT = is_targaryen_31
 										BIRTH_YEAR = ac_canon_children_birth_year_maegor_targaryen
 									}
 								}
 								agot_canon_children_force_pregnancy_basic_effect = {
-									CHILD_FLAG = is_targaryen_31 #is_maegor_i_targaryen
+									CHILD_FLAG = is_targaryen_31 
 									IS_FEMALE = no
 								}
 							}
@@ -105,9 +172,270 @@ story_ac_canon_children_aegon_targaryen = {
 							#lifecycle
 							agot_canon_children_life_cycle_effect = {
 								MOTHER = scope:canon_mother
-								#FINAL_CHILD_FLAG = is_maegor_i_targaryen
 								FINAL_CHILD_TRAIT = is_targaryen_31
 								FINAL_CHILD_ID = Targaryen_31
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+story_ac_canon_children_aethan_velaryon = {
+	on_setup = {
+		agot_canon_children_setup_father_effect = {
+			FATHER = story_owner
+			FATHER_TRAIT = is_velaryon_13
+		}
+
+		agot_canon_children_setup_mother_effect = {
+			FATHER = story_owner
+			MOTHER = character:Massey_26
+			MOTHER_TRAIT = is_massey_26
+			PREVENT_PREGNANCY = yes
+		}
+	}
+	on_end = {}
+
+	on_owner_death = { agot_canon_children_on_owner_death_effect = yes }
+
+	#prenangices
+	effect_group = {
+		months = agot_canon_children_pregnancies_cycle_months
+
+		triggered_effect = {
+			effect = {
+				story_owner = {
+					save_scope_as = canon_father
+					every_in_list = {
+						variable = canon_mothers
+						save_scope_as = canon_mother
+
+			
+
+						# 1 Alarra Massey
+						if = {
+							limit = {
+								has_inactive_trait = is_massey_26
+								scope:canon_father = {
+									agot_canon_children_force_pregnancy_spouse_trigger = {
+										SPOUSE = scope:canon_mother
+									}
+								}
+							}
+
+							# 1-1 Alyssa Velaryon
+							if = {
+								limit = {
+									agot_canon_children_child_pregnancy_trigger = {
+										ID = Velaryon_24
+										TRAIT = is_velaryon_24
+										BIRTH_YEAR = ac_canon_children_birth_year_alyssa_velaryon
+									}
+								}
+								agot_canon_children_force_pregnancy_basic_effect = {
+									CHILD_FLAG = is_velaryon_24
+									IS_FEMALE = yes
+								}
+							}
+
+							# lifecycle
+							agot_canon_children_life_cycle_effect = {
+								MOTHER = scope:canon_mother
+								FINAL_CHILD_TRAIT = is_velaryon_24
+								FINAL_CHILD_ID = Velaryon_24
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+story_ac_canon_children_aenys_targaryen = {
+	on_setup = {
+		agot_canon_children_setup_father_effect = {
+			FATHER = story_owner
+			FATHER_TRAIT = is_targaryen_30
+		}
+	}
+	on_end = {}
+
+	on_owner_death = { agot_canon_children_on_owner_death_effect = yes }
+	# waiting for marriage type shi
+	effect_group = {
+		months = agot_canon_children_pregnancies_cycle_months
+
+		triggered_effect = { # add to canon mothers
+			effect = { 
+				story_owner = {
+					save_scope_as = daddy
+					if = {
+						limit = {
+							agot_canon_children_birth_year_trigger = {
+								BIRTH_YEAR = ac_canon_children_birth_year_alyssa_velaryon
+							}
+							NOT = { has_variable_list = canon_mothers }
+						}
+						ac_cc_setup_mom_when_shes_born_effect = {
+							HUSBAND = scope:daddy
+							WIFE_TRAIT = is_velaryon_24
+						}
+					}
+				}
+			}
+		}
+
+		triggered_effect = { # marry
+			effect = { 
+				story_owner = {
+					save_scope_as = daddy
+					if = {
+						limit = {
+							ac_cc_marriage_year_trigger = {
+								MARRIAGE_YEAR = ac_cc_aenys_alyssa_marriage_year
+							}
+							is_married = no
+						}
+						every_in_list = {
+							variable = canon_mothers
+							save_scope_as = canon_wife
+							if = {
+								limit = { has_inactive_trait = is_velaryon_24 }
+								remove_trait = refusing_marriage
+								scope:daddy = {
+									remove_trait = refusing_marriage
+									marry = scope:canon_wife
+								}
+							}
+						}
+					}
+				}
+			 }
+		}
+	}
+
+	#prenangices
+	effect_group = {
+		months = agot_canon_children_pregnancies_cycle_months
+
+		triggered_effect = {
+			effect = {
+				story_owner = {
+					save_scope_as = canon_father
+					every_in_list = {
+						variable = canon_mothers
+						save_scope_as = canon_mother
+
+			
+
+						# 1 Alyssa Velaryon
+						if = {
+							limit = {
+								has_inactive_trait = is_velaryon_24
+								scope:canon_father = {
+									agot_canon_children_force_pregnancy_spouse_trigger = {
+										SPOUSE = scope:canon_mother
+									}
+								}
+							}
+
+							# 1-1 Rhaena
+							if = {
+								limit = {
+									agot_canon_children_child_pregnancy_trigger = {
+										ID = Targaryen_32
+										TRAIT = is_targaryen_32
+										BIRTH_YEAR = ac_canon_children_birth_year_rhaena_targaryen
+									}
+								}
+								agot_canon_children_force_pregnancy_basic_effect = {
+									CHILD_FLAG = is_targaryen_32
+									IS_FEMALE = yes
+								}
+							}
+							# 1-2 Aegon the uncrowned
+							if = {
+								limit = {
+									agot_canon_children_child_pregnancy_trigger = {
+										ID = Targaryen_33
+										TRAIT = is_targaryen_33
+										BIRTH_YEAR = ac_canon_children_birth_year_aegon_targaryen
+									}
+								}
+								agot_canon_children_force_pregnancy_basic_effect = {
+									CHILD_FLAG = is_targaryen_33
+									IS_FEMALE = no
+								}
+							}
+							# 1-3 Viserys Targaryen
+							if = {
+								limit = {
+									agot_canon_children_child_pregnancy_trigger = {
+										ID = Targaryen_34
+										TRAIT = is_targaryen_34
+										BIRTH_YEAR = ac_canon_children_birth_year_viserys_targaryen
+									}
+								}
+								agot_canon_children_force_pregnancy_basic_effect = {
+									CHILD_FLAG = is_targaryen_34
+									IS_FEMALE = no
+								}
+							}
+							# 1-4 Jaehaerys the goat
+							if = {
+								limit = {
+									agot_canon_children_child_pregnancy_trigger = {
+										ID = Targaryen_35
+										TRAIT = is_targaryen_35
+										BIRTH_YEAR = ac_canon_children_birth_year_jaehaerys_targaryen
+									}
+								}
+								agot_canon_children_force_pregnancy_basic_effect = {
+									CHILD_FLAG = is_targaryen_35
+									IS_FEMALE = no
+								}
+							}
+							# 1-5 Alysanne Targaryen
+							if = {
+								limit = {
+									agot_canon_children_child_pregnancy_trigger = {
+										ID = Targaryen_36
+										TRAIT = is_targaryen_36
+										BIRTH_YEAR = ac_canon_children_birth_year_alysanne_targaryen
+									}
+								}
+								agot_canon_children_force_pregnancy_basic_effect = {
+									CHILD_FLAG = is_targaryen_36
+									IS_FEMALE = yes
+								}
+							}
+ 							# 1-6 Vaella				
+							 if = {
+								limit = {
+									agot_canon_children_child_pregnancy_trigger = {
+										ID = Targaryen_37
+										TRAIT = is_targaryen_37
+										BIRTH_YEAR = ac_canon_children_birth_year_vaella_targaryen
+									}
+								}
+								agot_canon_children_force_pregnancy_effect = {
+									CHILD_FLAG = is_targaryen_37
+									IS_FEMALE = yes
+									FATHER = scope:canon_father
+									BIRTH_FLAG = birth_child_will_become_sickly
+								}
+							}
+																					
+
+							# lifecycle
+							agot_canon_children_life_cycle_effect = {
+								MOTHER = scope:canon_mother
+								FINAL_CHILD_TRAIT = is_targaryen_37
+								FINAL_CHILD_ID = Targaryen_37
 							}
 						}
 					}

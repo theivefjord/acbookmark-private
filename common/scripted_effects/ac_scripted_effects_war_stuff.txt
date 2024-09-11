@@ -4,19 +4,19 @@
 	}
 	if = {
 		limit = { exists = global_var:CoW_is_loaded }
-		scope:harrenhal = {
+		province:1934 = {
 			remove_building = ruins_harrenhal_07
 			add_special_building = ruins_harrenhal_01
 		}
 	}
 	if = {
 		limit = { NOT = { exists = global_var:CoW_is_loaded } }
-		scope:harrenhal = {
+		province:1934 = {
 			remove_building = harrenhal_01
 			add_special_building = ruins_harrenhal_01
 		}
 	}
-	scope:harrenhal = {
+	province:1934 = {
 		agot_remove_dragon_siege_effect_minor = yes
 		agot_remove_dragon_siege_effect_medium = yes
 		agot_remove_dragon_siege_effect_major = yes

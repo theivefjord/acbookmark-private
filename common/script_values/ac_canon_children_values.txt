@@ -1,5 +1,34 @@
-﻿ac_canon_children_birth_year_aenys_targaryen = 8007
+﻿#birth years
+ac_canon_children_birth_year_aenys_targaryen = 8007
 ac_canon_children_birth_year_aenys_targaryen_min = { value = ac_canon_children_birth_year_aenys_targaryen add = -1 }
 
 ac_canon_children_birth_year_maegor_targaryen = 8012
 ac_canon_children_birth_year_maegor_targaryen_min = { value = ac_canon_children_birth_year_maegor_targaryen add = -1 }
+
+ac_canon_children_birth_year_alyssa_velaryon = 8007
+ac_canon_children_birth_year_alyssa_velaryon_min = { value = ac_canon_children_birth_year_alyssa_velaryon add = -1 }
+
+ac_canon_children_birth_year_rhaena_targaryen = 8023
+ac_canon_children_birth_year_rhaena_targaryen_min = { value = ac_canon_children_birth_year_rhaena_targaryen add = -1 }
+
+ac_canon_children_birth_year_aegon_targaryen = 8026
+ac_canon_children_birth_year_aegon_targaryen_min = { value = ac_canon_children_birth_year_aegon_targaryen add = -1 }
+
+ac_canon_children_birth_year_viserys_targaryen = 8029
+ac_canon_children_birth_year_viserys_targaryen_min = { value = ac_canon_children_birth_year_viserys_targaryen add = -1 }
+
+ac_canon_children_birth_year_jaehaerys_targaryen = 8034
+ac_canon_children_birth_year_jaehaerys_targaryen_min = { value = ac_canon_children_birth_year_jaehaerys_targaryen add = -1 }
+
+ac_canon_children_birth_year_alysanne_targaryen = 8036
+ac_canon_children_birth_year_alysanne_targaryen_min = { value = ac_canon_children_birth_year_alysanne_targaryen add = -1 }
+
+ac_canon_children_birth_year_vaella_targaryen = 8039
+ac_canon_children_birth_year_vaella_targaryen_min = { value = ac_canon_children_birth_year_vaella_targaryen add = -1 }
+
+ac_canon_children_birth_year_davos_baratheon = 8010
+ac_canon_children_birth_year_davos_baratheon_min = { value = ac_canon_children_birth_year_davos_baratheon add = -1 }
+
+# Marriage years
+ac_cc_aenys_alyssa_marriage_year = 8017
+ac_cc_aenys_alyssa_marriage_year_min = { value = ac_cc_aenys_alyssa_marriage_year add = -1 }
