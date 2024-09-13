@@ -107,7 +107,7 @@ conq_events.0001 = { # aegon d-day
 			give_crowns_to_sisters = yes 
 			if = {
 				limit = { is_ai = yes }
-				add_prowess_skill = 30
+				add_prowess_skill = 60
 				create_story = { type = story_ai_aegons_conquest }
 			}
 		}
@@ -189,7 +189,6 @@ conq_events.0002 = { # riverlands
 					target = root
 					modifier = pleased_opinion
 					opinion = 100
-					years = 10
 				}
 			}
 		}
@@ -227,7 +226,6 @@ conq_events.0002 = { # riverlands
 					target = root
 					modifier = pleased_opinion
 					opinion = 100
-					years = 10
 				}
 			}
 			
@@ -243,6 +241,12 @@ conq_events.0002 = { # riverlands
 		if = {
 			limit = { has_variable = ac_started_conquest }
 			change_variable = { name = ac_started_conquest add = 1 }
+		}
+		province:4152 = {
+			set_holding_type = city_holding
+		}
+		title:b_rhaenyss_hill = {
+			set_title_name = b_rhaenys_hh
 		}
 	}
 }
@@ -304,7 +308,6 @@ conq_events.0003 = { # vale
 					target = root
 					modifier = pleased_opinion
 					opinion = 100
-					years = 10
 				}
 			}
 		}
@@ -319,6 +322,9 @@ conq_events.0003 = { # vale
 		if = {
 			limit = { has_variable = ac_started_conquest }
 			change_variable = { name = ac_started_conquest add = 1 }
+		}
+		province:4156 ={
+			set_holding_type = castle_holding
 		}
 	}
 }
@@ -383,7 +389,6 @@ conq_events.0004 = { # stormlands
 					target = root
 					modifier = pleased_opinion
 					opinion = 100
-					years = 10
 				}
 			}
 		}
@@ -418,7 +423,6 @@ conq_events.0004 = { # stormlands
 					target = root
 					modifier = pleased_opinion
 					opinion = 100
-					years = 10
 				}
 			}
 		}
@@ -433,6 +437,9 @@ conq_events.0004 = { # stormlands
 		if = {
 			limit = { has_variable = ac_started_conquest }
 			change_variable = { name = ac_started_conquest add = 1 }
+		}
+		province:4154 = {
+			set_holding_type = city_holding
 		}
 	}
 }
@@ -508,7 +515,6 @@ conq_events.0005 = { # reach
 					target = root
 					modifier = pleased_opinion
 					opinion = 100
-					years = 10
 				}
 			}
 		}
@@ -540,7 +546,6 @@ conq_events.0005 = { # reach
 					target = root
 					modifier = pleased_opinion
 					opinion = 100
-					years = 10
 				}
 			}
 		}
@@ -585,7 +590,6 @@ conq_events.0005 = { # reach
 					target = root
 					modifier = pleased_opinion
 					opinion = 100
-					years = 10
 				}
 			}
 		}
@@ -594,6 +598,9 @@ conq_events.0005 = { # reach
 		if = {
 			limit = { has_variable = ac_started_conquest }
 			change_variable = { name = ac_started_conquest add = 1 }
+		}
+		province:4155 = {
+			set_holding_type = city_holding
 		}
 	}
 }
@@ -658,7 +665,6 @@ conq_events.0006 = { # westerlands
 					target = root
 					modifier = pleased_opinion
 					opinion = 100
-					years = 10
 				}
 			}
 		}
@@ -670,6 +676,12 @@ conq_events.0006 = { # westerlands
 		if = {
 			limit = { has_variable = ac_started_conquest }
 			change_variable = { name = ac_started_conquest add = 1 }
+		}
+		province:4153 = {
+			set_holding_type =  church_holding
+		}
+		title:b_visenyas_hill = {
+			set_title_name = b_visenyas_hh
 		}
 	}
 }
@@ -732,7 +744,6 @@ conq_events.0007 = { # north
 					target = root
 					modifier = pleased_opinion
 					opinion = 100
-					years = 10
 				}
 			}
 		}
@@ -812,7 +823,6 @@ conq_events.0008 = { # dorne
 					target = root
 					modifier = pleased_opinion
 					opinion = 100
-					years = 10
 				}
 			}
 		}
@@ -876,7 +886,8 @@ conq_events.0009 = { # form iron throne when ac variable > 5
 			legend_seed_great_deed_dynasty_effect = yes
 			every_vassal_or_below = {
 				limit = {
-					has_government = feudal_government
+					agot_is_valid_lp_feudal_government_target = yes
+					NOT = { has_government = lp_feudal_government }
 				}
 				change_government = lp_feudal_government
 			}
@@ -1025,7 +1036,6 @@ conq_events.0010 = { # durrandon marriage event
 					target = root
 					modifier = pleased_opinion
 					opinion = 100
-					years = 10
 				}
 			}
 			character:Durrandon_88 = {
@@ -1045,6 +1055,9 @@ conq_events.0010 = { # durrandon marriage event
 		if = {
 			limit = { has_variable = ac_started_conquest }
 			change_variable = { name = ac_started_conquest add = 1 }
+		}
+		province:4154 = {
+			set_holding_type = city_holding
 		}
 	}
 }
@@ -1140,7 +1153,6 @@ conq_events.0011 = { # iron islands FOR vodrux
 					target = root
 					modifier = pleased_opinion
 					opinion = 100
-					years = 10
 				}
 			}
 		}

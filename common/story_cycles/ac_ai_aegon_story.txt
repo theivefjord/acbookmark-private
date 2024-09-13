@@ -19,7 +19,13 @@
 		triggered_effect = { # 1st war - riverlands
 			trigger = {
 				var:ai_aegons_conquest_wars = 1
-				character:Targaryen_27 = { has_variable = ac_started_conquest }
+				character:Targaryen_27 = {
+					has_variable = ac_started_conquest
+					NOT = { 
+						is_at_war_with = title:e_the_riverlands.holder
+						is_at_war_as_attacker = yes
+					}
+				}
 			}
 			effect = {
 				character:Targaryen_27 = { 
@@ -61,6 +67,12 @@
 		triggered_effect = { # 2nd war - stormlands
 			trigger = {
 				var:ai_aegons_conquest_wars = 2
+				character:Targaryen_27 = { 
+					NOT = { 
+						is_at_war_with = title:e_the_stormlands.holder
+						is_at_war_as_attacker = yes
+					}
+				}
 			}
 			effect = {
 				character:Targaryen_27 = { 
@@ -102,6 +114,12 @@
 		triggered_effect = { # 3rd war - the reach
 			trigger = {
 				var:ai_aegons_conquest_wars = 3
+				character:Targaryen_27 = { 
+					NOT = { 
+						is_at_war_with = title:e_the_reach.holder
+						is_at_war_as_attacker = yes
+					}
+				}
 			}
 			effect = {
 				character:Targaryen_27 = { 
@@ -127,6 +145,12 @@
 		triggered_effect = { # 4th war - the westerlands
 			trigger = {
 				var:ai_aegons_conquest_wars = 4
+				character:Targaryen_27 = { 
+					NOT = { 
+						is_at_war_with = title:e_the_westerlands.holder
+						is_at_war_as_attacker = yes
+					}
+				}
 			}
 			effect = {
 				character:Targaryen_27 = { 
@@ -152,9 +176,15 @@
 		triggered_effect = { # 5th war - the north
 			trigger = {
 				var:ai_aegons_conquest_wars = 5
+				character:Targaryen_27 = { 
+					NOT = { 
+						is_at_war_with = title:e_the_north.holder
+						is_at_war_as_attacker = yes
+					}
+				}
 			}
 			effect = {
-				character:Targaryen_27 = { 
+				character:Targaryen_27 = {
 					start_war = {
 						casus_belli = ac_conquest_cb
 						target = title:e_the_north.holder
@@ -177,6 +207,12 @@
 		triggered_effect = { # 6th war - the vale
 			trigger = {
 				var:ai_aegons_conquest_wars = 6
+				character:Targaryen_27 = { 
+					NOT = { 
+						is_at_war_with = title:e_the_vale.holder
+						is_at_war_as_attacker = yes
+					}
+				}
 			}
 			effect = {
 				character:Targaryen_27 = { 
@@ -202,6 +238,12 @@
 		triggered_effect = { # 7th war - the iron islands
 			trigger = {
 				var:ai_aegons_conquest_wars = 7
+				character:Targaryen_27 = { 
+					NOT = { 
+						is_at_war_with = title:e_the_iron_islands.holder
+						is_at_war_as_attacker = yes
+					}
+				}
 			}
 			effect = {
 				character:Targaryen_27 = { 
@@ -224,30 +266,54 @@
 				}
 			}
 		}
-		triggered_effect = { # 8th war - dorne
+		triggered_effect = {
 			trigger = {
-				var:ai_aegons_conquest_wars = 8
+				character:Targaryen_27 = {
+					NOT = { this = title:e_the_iron_throne.holder }
+				}
+				var:ai_aegons_conquest_wars = 6
 			}
 			effect = {
-				character:Targaryen_27 = { 
-					start_war = {
-						casus_belli = ac_conquest_cb
-						target = title:e_dorne.holder
-						target_title = title:k_dorne
-					}
-				}
-				if = {
-					limit = {
-						character:Targaryen_27 = {
-							is_at_war = no
-						}
-					}
-					set_variable = {
-						name = ai_aegons_conquest_wars
-						value = 9
-					}
+				character:Targaryen_27 = {
+					trigger_event = conq_events.0009
 				}
 			}
 		}
+		triggered_effect = {
+			trigger = {
+				character:Targaryen_27 = { 
+					this = title:e_the_iron_throne.holder 
+					var:ai_aegons_conquest_wars = 8
+				}
+			}
+			effect = {
+				end_story = yes
+			}
+		}
+		#triggered_effect = { # 8th war - dorne
+		#	trigger = {
+		#		var:ai_aegons_conquest_wars = 8
+		#	}
+		#	effect = {
+		#		character:Targaryen_27 = { 
+		#			start_war = {
+		#				casus_belli = ac_conquest_cb
+		#				target = title:e_dorne.holder
+		#				target_title = title:k_dorne
+		#			}
+		#		}
+		#		if = {
+		#			limit = {
+		#				character:Targaryen_27 = {
+		#					is_at_war = no
+		#				}
+		#			}
+		#			set_variable = {
+		#				name = ai_aegons_conquest_wars
+		#				value = 9
+		#			}
+		#		}
+		#	}
+		#}
 	}
 }

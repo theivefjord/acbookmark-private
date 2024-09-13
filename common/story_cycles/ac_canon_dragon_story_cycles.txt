@@ -1,0 +1,416 @@
+﻿story_ac_canon_dragons_meraxes = {
+	on_setup = {
+		add_character_flag = recently_laid_eggs
+	}
+
+	on_end = {}
+
+	on_owner_death = { agot_canon_children_on_owner_death_effect = yes }
+
+	effect_group = { # eggs
+		months = 7
+
+		triggered_effect = { # meraxes clutch
+			trigger = {
+				current_year = 8005
+				story_owner = { NOT = { has_variable = meraxes_canon_clutch } }
+			}
+			effect = {
+				story_owner = {
+					save_scope_as = dragon_parent
+					#Tamed Dragon, rider family to employer
+					if = {
+						limit = {
+							exists = var:current_rider
+							exists = employer
+							employer = {
+								OR = {
+									is_spouse_of = prev.var:current_rider
+									is_close_family_of = prev.var:current_rider
+									house ?= prev.var:current_rider.house
+								}
+							}
+						}
+						employer = { save_scope_as = egg_receiver }
+					}
+					#Tamed Dragon, rider not family to employer
+					else_if = {
+						limit = {
+							exists = var:current_rider
+						}
+						var:current_rider = { save_scope_as = egg_receiver }
+					}
+					#Owned Dragon
+					else_if = {
+						limit = {
+							exists = employer
+						}
+						employer = { save_scope_as = egg_receiver }
+					}
+					scope:egg_receiver ?= {
+						trigger_event = {
+							id = ac_cd_events.0001
+							days = 1
+						}
+					}
+					set_variable = meraxes_canon_clutch
+					set_variable = { name = clutches value = 1 }
+					add_character_flag = {
+						flag = recently_laid_eggs
+						years = { 4 20 }
+					}
+				}
+			}
+		}
+	}
+
+	effect_group = { # hatch eggs
+		months = 7
+
+		triggered_effect = { # quicksilver hatches
+			trigger = {
+				current_year = 8007
+				story_owner = { has_variable = meraxes_canon_clutch }
+				any_artifact = {
+					has_variable = this_is_quicksilver
+				}
+				NOT = {
+					any_living_dragon = {
+						has_variable = is_quicksilver
+					}
+				}
+			}
+			effect = {
+				story_owner = {
+					save_scope_as = dragon_parent
+					#Tamed Dragon, rider family to employer
+					if = {
+						limit = {
+							exists = var:current_rider
+							exists = employer
+							employer = {
+								OR = {
+									is_spouse_of = prev.var:current_rider
+									is_close_family_of = prev.var:current_rider
+									house ?= prev.var:current_rider.house
+								}
+							}
+						}
+						employer = { save_scope_as = dragon_owner }
+					}
+					#Tamed Dragon, rider not family to employer
+					else_if = {
+						limit = {
+							exists = var:current_rider
+						}
+						var:current_rider = { save_scope_as = dragon_owner }
+					}
+					#Owned Dragon
+					else_if = {
+						limit = {
+							exists = employer
+						}
+						employer = { save_scope_as = dragon_owner }
+					}
+					scope:dragon_owner ?= {
+						trigger_event = {
+							id = ac_cd_events.0010
+							days = 1
+						}
+					}
+				}
+			}
+		}
+
+		triggered_effect = { # cannibal hatches
+			trigger = {
+				current_year = 8017
+				story_owner = { has_variable = meraxes_canon_clutch }
+				any_artifact = {
+					has_variable = this_is_cannibal
+				}
+				NOT = {
+					any_living_dragon = {
+						has_variable = is_cannibal
+					}
+				}
+			}
+			effect = {
+				story_owner = {
+					save_scope_as = dragon_parent
+					#Tamed Dragon, rider family to employer
+					if = {
+						limit = {
+							exists = var:current_rider
+							exists = employer
+							employer = {
+								OR = {
+									is_spouse_of = prev.var:current_rider
+									is_close_family_of = prev.var:current_rider
+									house ?= prev.var:current_rider.house
+								}
+							}
+						}
+						employer = { save_scope_as = dragon_owner }
+					}
+					#Tamed Dragon, rider not family to employer
+					else_if = {
+						limit = {
+							exists = var:current_rider
+						}
+						var:current_rider = { save_scope_as = dragon_owner }
+					}
+					#Owned Dragon
+					else_if = {
+						limit = {
+							exists = employer
+						}
+						employer = { save_scope_as = dragon_owner }
+					}
+					scope:dragon_owner ?= {
+						trigger_event = {
+							id = ac_cd_events.0011
+							days = 1
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+story_ac_canon_dragons_vhagar = {
+	on_setup = {
+		add_character_flag = recently_laid_eggs
+	}
+
+	on_end = {}
+
+	on_owner_death = { agot_canon_children_on_owner_death_effect = yes }
+
+	effect_group = { # eggs
+		months = 7
+
+		triggered_effect = { # vhagar clutch
+			trigger = {
+				current_year = 8027
+				story_owner = { NOT = { has_variable = vhagar_canon_clutch } }
+			}
+			effect = {
+				story_owner = {
+					save_scope_as = dragon_parent
+					#Tamed Dragon, rider family to employer
+					if = {
+						limit = {
+							exists = var:current_rider
+							exists = employer
+							employer = {
+								OR = {
+									is_spouse_of = prev.var:current_rider
+									is_close_family_of = prev.var:current_rider
+									house ?= prev.var:current_rider.house
+								}
+							}
+						}
+						employer = { save_scope_as = egg_receiver }
+					}
+					#Tamed Dragon, rider not family to employer
+					else_if = {
+						limit = {
+							exists = var:current_rider
+						}
+						var:current_rider = { save_scope_as = egg_receiver }
+					}
+					#Owned Dragon
+					else_if = {
+						limit = {
+							exists = employer
+						}
+						employer = { save_scope_as = egg_receiver }
+					}
+					scope:egg_receiver ?= {
+						trigger_event = {
+							id = ac_cd_events.0002
+							days = 1
+						}
+					}
+					set_variable = vhagar_canon_clutch
+					set_variable = { name = clutches value = 1 }
+					add_character_flag = {
+						flag = recently_laid_eggs
+						years = { 4 20 }
+					}
+				}
+			}
+		}
+	}
+
+	effect_group = { # hatch eggs
+		months = 7
+
+		triggered_effect = { # dreamfyre hatches
+			trigger = {
+				current_year = 8029
+				story_owner = { has_variable = vhagar_canon_clutch }
+				any_artifact = {
+					has_variable = this_is_dreamfyre
+				}
+				NOT = {
+					any_living_dragon = {
+						has_variable = is_dreamfyre
+					}
+				}
+			}
+			effect = {
+				story_owner = {
+					save_scope_as = dragon_parent
+					#Tamed Dragon, rider family to employer
+					if = {
+						limit = {
+							exists = var:current_rider
+							exists = employer
+							employer = {
+								OR = {
+									is_spouse_of = prev.var:current_rider
+									is_close_family_of = prev.var:current_rider
+									house ?= prev.var:current_rider.house
+								}
+							}
+						}
+						employer = { save_scope_as = dragon_owner }
+					}
+					#Tamed Dragon, rider not family to employer
+					else_if = {
+						limit = {
+							exists = var:current_rider
+						}
+						var:current_rider = { save_scope_as = dragon_owner }
+					}
+					#Owned Dragon
+					else_if = {
+						limit = {
+							exists = employer
+						}
+						employer = { save_scope_as = dragon_owner }
+					}
+					scope:dragon_owner ?= {
+						trigger_event = {
+							id = ac_cd_events.0020
+							days = 1
+						}
+					}
+				}
+			}
+		}
+
+		triggered_effect = { # vermithor hatches
+			trigger = {
+				current_year = 8034
+				story_owner = { has_variable = vhagar_canon_clutch }
+				any_artifact = {
+					has_variable = this_is_vermithor
+				}
+				NOT = {
+					any_living_dragon = {
+						has_variable = is_vermithor
+					}
+				}
+			}
+			effect = {
+				story_owner = {
+					save_scope_as = dragon_parent
+					#Tamed Dragon, rider family to employer
+					if = {
+						limit = {
+							exists = var:current_rider
+							exists = employer
+							employer = {
+								OR = {
+									is_spouse_of = prev.var:current_rider
+									is_close_family_of = prev.var:current_rider
+									house ?= prev.var:current_rider.house
+								}
+							}
+						}
+						employer = { save_scope_as = dragon_owner }
+					}
+					#Tamed Dragon, rider not family to employer
+					else_if = {
+						limit = {
+							exists = var:current_rider
+						}
+						var:current_rider = { save_scope_as = dragon_owner }
+					}
+					#Owned Dragon
+					else_if = {
+						limit = {
+							exists = employer
+						}
+						employer = { save_scope_as = dragon_owner }
+					}
+					scope:dragon_owner ?= {
+						trigger_event = {
+							id = ac_cd_events.0021
+							days = 1
+						}
+					}
+				}
+			}
+		}
+
+		triggered_effect = { # silverwing hatches
+			trigger = {
+				current_year = 8036
+				story_owner = { has_variable = vhagar_canon_clutch }
+				any_artifact = {
+					has_variable = this_is_silverwing
+				}
+				NOT = {
+					any_living_dragon = {
+						has_variable = is_silverwing
+					}
+				}
+			}
+			effect = {
+				story_owner = {
+					save_scope_as = dragon_parent
+					#Tamed Dragon, rider family to employer
+					if = {
+						limit = {
+							exists = var:current_rider
+							exists = employer
+							employer = {
+								OR = {
+									is_spouse_of = prev.var:current_rider
+									is_close_family_of = prev.var:current_rider
+									house ?= prev.var:current_rider.house
+								}
+							}
+						}
+						employer = { save_scope_as = dragon_owner }
+					}
+					#Tamed Dragon, rider not family to employer
+					else_if = {
+						limit = {
+							exists = var:current_rider
+						}
+						var:current_rider = { save_scope_as = dragon_owner }
+					}
+					#Owned Dragon
+					else_if = {
+						limit = {
+							exists = employer
+						}
+						employer = { save_scope_as = dragon_owner }
+					}
+					scope:dragon_owner ?= {
+						trigger_event = {
+							id = ac_cd_events.0022
+							days = 1
+						}
+					}
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,427 @@
+﻿namespace = ac_cd_events
+
+ac_cd_events.0001 = { # Meraxes clutch
+	type = character_event
+	window = dragon_character_event
+	theme = dragon
+	title = agot_dragon_egg_lay.0002.t
+	desc = {
+		desc = agot_dragon_egg_lay.0002.desc
+		triggered_desc = {
+			trigger = { scope:dragon_parent = { has_variable = dragon_gender_hidden } }
+			desc = agot_dragon_egg_lay.female_revealed
+		}
+	}
+	left_portrait = {
+		character = root
+		animation = personality_bold
+	}
+	right_portrait = {
+		character = scope:dragon_parent
+		animation = dragon_main
+		camera = camera_dragon_event_standing
+
+		#Add this so dragon fits within event window
+		outfit_tags = { linear_camera_zoom }
+	}
+
+	immediate = {
+		scope:dragon_parent = { save_scope_as = dragon } # For TT loc
+		scope:dragon_parent = {
+			set_variable = { name = spawn_eggs value = 2 }
+			create_character_memory = {
+				type = agot_dragon_laid_clutch_2
+			}
+		}
+	}
+
+	option = {
+		name = agot_dragon_egg_lay.0001.opt
+
+		ac_canon_dragon_version_spawn_laid_egg = {
+			AMOUNT_OF_EGGS_TO_SPAWN = 2
+			OWNER_SCOPE = root
+			DRAGON_PARENT = scope:dragon_parent
+			WHICH_DRAGON_1 = this_is_quicksilver
+			WHICH_DRAGON_2 = this_is_cannibal
+			WHICH_DRAGON_3 = this_is_noone
+		}
+		if = {
+			limit = {
+				scope:dragon_parent = {
+					has_variable = dragon_gender_hidden
+				}
+			}
+			scope:dragon_parent = {
+				agot_reveal_dragon_gender_effect = yes
+			}
+		}
+	}
+}
+
+ac_cd_events.0010 = { # Quicksilver hatches
+	type = character_event
+	window = dragon_character_event
+	theme = dragon
+	title = ac_canon_dragon_hatching.t
+	desc = ac_canon_dragon_hatching.desc
+
+	left_portrait = {
+		character = root
+		animation = ecstasy
+	}
+
+	right_portrait = {
+		character = scope:dragon
+		animation = dragon_head
+		camera = camera_dragon_event_standing_baby
+
+		#Add this so dragon fits within event window
+		outfit_tags = { linear_camera_zoom }
+	}
+
+	immediate = {
+		every_artifact = {
+			limit = {
+				has_variable = this_is_quicksilver
+			}
+			save_scope_as = quicksilver_egg
+		}
+		ac_canon_version_spawn_owned_hatchling_from_egg_effect = {
+			OWNER = root
+			EGG = scope:quicksilver_egg
+		}
+	}
+
+	option = {
+		name = ac_canon_dragon_hatching.a
+		custom_tooltip = agot_dragon_egg_cradling_birth.0002.a_tt_dragon_born
+		trigger_event = {
+			id = ac_cd_events.0099
+			days = 7
+		}
+	}
+}
+
+ac_cd_events.0011 = { # Cannibal hatches
+	type = character_event
+	window = dragon_character_event
+	theme = dragon
+	title = ac_cd_events.0011.t
+	desc = ac_cd_events.0011.desc
+
+	left_portrait = {
+		character = root
+		animation = worry
+	}
+
+	right_portrait = {
+		character = scope:dragon
+		animation = dragon_main
+		camera = camera_dragon_event_standing
+
+		#Add this so dragon fits within event window
+		outfit_tags = { linear_camera_zoom }
+	}
+	lower_right_portrait = {
+		character = scope:dragonkeeper
+	}
+
+	immediate = {
+		every_artifact = {
+			limit = {
+				has_variable = this_is_cannibal
+			}
+			save_scope_as = cannibal_egg
+		}
+		ac_canon_version_spawn_owned_hatchling_from_egg_effect = {
+			OWNER = root
+			EGG = scope:cannibal_egg
+		}
+		every_court_position_holder = {
+			limit = { has_court_position = head_dragonkeeper_court_position }
+			save_scope_as = dragonkeeper
+		}
+	}
+
+	option = {
+		name = ac_cd_events.0011.a
+		custom_tooltip = agot_dragon_egg_cradling_birth.0002.a_tt_dragon_born
+		trigger_event = {
+			id = ac_cd_events.0012
+			months = { 3 6 }
+		}
+	}
+}
+ac_cd_events.0012 = { # Cannibal leaves
+	type = character_event
+	window = dragon_character_event
+	theme = dragon
+	title = ac_cd_events.0012.t
+	desc = ac_cd_events.0012.desc
+
+	left_portrait = {
+		character = root
+		animation = ecstasy
+	}
+
+	right_portrait = {
+		character = scope:dragon
+		animation = dragon_head
+		camera = camera_dragon_event_standing_baby
+
+		#Add this so dragon fits within event window
+		outfit_tags = { linear_camera_zoom }
+	}
+	lower_right_portrait = {
+		character = scope:dragonkeeper
+	}
+
+	immediate = {
+		scope:dragon = {
+			
+			add_trait = dragon_cannibal
+		}
+	}
+
+	option = {
+		name = ac_cd_events.0012.a
+		#flavor = ac_cd_events.0012.a.tt
+		
+		scope:dragon = {
+			agot_dragon_flees_province = yes
+		}
+	}
+	option = {
+		name = ac_cd_events.0012.b
+		flavor = ac_cd_events.0012.b.tt
+	}
+}
+
+ac_cd_events.0002 = { # Meraxes clutch
+	type = character_event
+	window = dragon_character_event
+	theme = dragon
+	title = agot_dragon_egg_lay.0002.t
+	desc = {
+		desc = agot_dragon_egg_lay.0002.desc
+		triggered_desc = {
+			trigger = { scope:dragon_parent = { has_variable = dragon_gender_hidden } }
+			desc = agot_dragon_egg_lay.female_revealed
+		}
+	}
+	left_portrait = {
+		character = root
+		animation = personality_bold
+	}
+	right_portrait = {
+		character = scope:dragon_parent
+		animation = dragon_main
+		camera = camera_dragon_event_standing
+
+		#Add this so dragon fits within event window
+		outfit_tags = { linear_camera_zoom }
+	}
+
+	immediate = {
+		scope:dragon_parent = { save_scope_as = dragon } # For TT loc
+		scope:dragon_parent = {
+			set_variable = { name = spawn_eggs value = 3 }
+			create_character_memory = {
+				type = agot_dragon_laid_clutch_3
+			}
+		}
+	}
+
+	option = {
+		name = agot_dragon_egg_lay.0001.opt
+
+		ac_canon_dragon_version_spawn_laid_egg = {
+			AMOUNT_OF_EGGS_TO_SPAWN = 3
+			OWNER_SCOPE = root
+			DRAGON_PARENT = scope:dragon_parent
+			WHICH_DRAGON_1 = this_is_dreamfyre
+			WHICH_DRAGON_2 = this_is_vermithor
+			WHICH_DRAGON_3 = this_is_silverwing
+		}
+		if = {
+			limit = {
+				scope:dragon_parent = {
+					has_variable = dragon_gender_hidden
+				}
+			}
+			scope:dragon_parent = {
+				agot_reveal_dragon_gender_effect = yes
+			}
+		}
+	}
+}
+
+ac_cd_events.0020 = { # Dreamfyre hatches
+	type = character_event
+	window = dragon_character_event
+	theme = dragon
+	title = ac_canon_dragon_hatching.t
+	desc = ac_canon_dragon_hatching.desc
+
+	left_portrait = {
+		character = root
+		animation = ecstasy
+	}
+
+	right_portrait = {
+		character = scope:dragon
+		animation = dragon_head
+		camera = camera_dragon_event_standing_baby
+
+		#Add this so dragon fits within event window
+		outfit_tags = { linear_camera_zoom }
+	}
+
+	immediate = {
+		every_artifact = {
+			limit = {
+				has_variable = this_is_dreamfyre
+			}
+			save_scope_as = dreamfyre_egg
+		}
+		ac_canon_version_spawn_owned_hatchling_from_egg_effect = {
+			OWNER = root
+			EGG = scope:dreamfyre_egg
+		}
+	}
+
+	option = {
+		name = agot_dragon_egg_cradling_birth.0002.a
+		custom_tooltip = agot_dragon_egg_cradling_birth.0002.a_tt_dragon_born
+	}
+}
+
+ac_cd_events.0021 = { # Vermithor hatches
+	type = character_event
+	window = dragon_character_event
+	theme = dragon
+	title = ac_canon_dragon_hatching.t
+	desc = ac_canon_dragon_hatching.desc
+
+	left_portrait = {
+		character = root
+		animation = ecstasy
+	}
+
+	right_portrait = {
+		character = scope:dragon
+		animation = dragon_head
+		camera = camera_dragon_event_standing_baby
+
+		#Add this so dragon fits within event window
+		outfit_tags = { linear_camera_zoom }
+	}
+
+	immediate = {
+		every_artifact = {
+			limit = {
+				has_variable = this_is_vermithor
+			}
+			save_scope_as = vermithor_egg
+		}
+		ac_canon_version_spawn_owned_hatchling_from_egg_effect = {
+			OWNER = root
+			EGG = scope:vermithor_egg
+		}
+	}
+
+	option = {
+		name = agot_dragon_egg_cradling_birth.0002.a
+		custom_tooltip = agot_dragon_egg_cradling_birth.0002.a_tt_dragon_born
+	}
+}
+
+ac_cd_events.0022 = { # Silverwing hatches
+	type = character_event
+	window = dragon_character_event
+	theme = dragon
+	title = ac_canon_dragon_hatching.t
+	desc = ac_canon_dragon_hatching.desc
+
+	left_portrait = {
+		character = root
+		animation = ecstasy
+	}
+
+	right_portrait = {
+		character = scope:dragon
+		animation = dragon_head
+		camera = camera_dragon_event_standing_baby
+
+		#Add this so dragon fits within event window
+		outfit_tags = { linear_camera_zoom }
+	}
+
+	immediate = {
+		every_artifact = {
+			limit = {
+				has_variable = this_is_silverwing
+			}
+			save_scope_as = silverwing_egg
+		}
+		ac_canon_version_spawn_owned_hatchling_from_egg_effect = {
+			OWNER = root
+			EGG = scope:silverwing_egg
+		}
+	}
+
+	option = {
+		name = agot_dragon_egg_cradling_birth.0002.a
+		custom_tooltip = agot_dragon_egg_cradling_birth.0002.a_tt_dragon_born
+	}
+}
+
+ac_cd_events.0099 = { # Aenys bonds with quicksilver
+	window = dragon_character_event
+	theme = dragon
+	title = ac_cd_canon_bonding.t
+	desc = ac_cd_canon_bonding.desc
+
+	trigger = {
+		root = {
+			any_child = {
+				AND = {
+					has_inactive_trait = is_targaryen_30 
+					is_alive = yes
+				}
+			}
+		}
+	}
+
+	left_portrait = {
+		character = scope:aenys
+		animation = ecstasy
+	}
+
+	right_portrait = {
+		character = scope:dragon
+		animation = dragon_head
+		camera = camera_dragon_event_standing_baby
+
+		#Add this so dragon fits within event window
+		outfit_tags = { linear_camera_zoom }
+	}
+
+	immediate = {
+		root = {
+			every_child = {
+				limit = { has_inactive_trait = is_targaryen_30 }
+				save_scope_as = aenys
+			}
+		}
+		agot_bond_dragon_relation_effect = {
+			ACTOR = scope:aenys
+			DRAGON = scope:dragon
+		}
+	}
+
+	option = {
+		name = ac_cd_canon_bonding.a
+	}
+}

@@ -317,6 +317,7 @@ ac_war_events.0006 = { # the king who - knelt
 	}
 	immediate = {
 		root = {
+			set_variable = torrhen_knelt
 			every_character_war = {
 				limit = {
 					using_cb = ac_conquest_cb
@@ -363,7 +364,6 @@ ac_war_events.0006 = { # the king who - knelt
 					target = root
 					modifier = pleased_opinion
 					opinion = 150
-					years = 10
 				}
 			}
 		}
@@ -375,6 +375,10 @@ ac_war_events.0006 = { # the king who - knelt
 		if = {
 			limit = { has_variable = ac_started_conquest }
 			change_variable = { name = ac_started_conquest add = 1 }
+		}
+		if = {
+			limit = { has_variable = torrhen_knelt }
+			remove_variable = torrhen_knelt
 		}
 	}
 }
@@ -428,7 +432,7 @@ ac_war_events.0007 = { # bar emmon swears fealty
 	}
 }
 
-ac_war_events.0008 = {
+ac_war_events.0008 = { # finish up crownlands de jure
 	type = character_event
 	title = ac_war_events.0008.t
 	desc = ac_war_events.0008.desc
@@ -462,6 +466,192 @@ ac_war_events.0008 = {
 	option = { # pass
 		name = ac_war_events.0008.d
 		custom_tooltip = ac_crownlands_events.0001.a_tt
+	}
+}
+
+ac_war_events.0009 = { # riverrun swears fealty
+	type = character_event
+	title = ac_war_events.0009.t
+	desc = ac_war_events.0009.desc
+
+	theme = dragon
+	override_background = {
+		reference = farmland
+	}
+
+	left_portrait = {
+		character = title:d_riverrun.holder
+		animation = throne_room_kneel_1
+	}
+	right_portrait = {
+		character = root
+		animation = personality_bold
+	}
+	immediate = {
+		title:d_riverrun.holder = {
+			save_scope_as = mr_riverrun
+		}
+	}
+	option = { # accept their fealty
+		name = ac_crownlands_events.0001.a
+		ac_change_liege = {
+			TARGET = title:d_riverrun.holder
+			NEW_LIEGE = root
+		}
+		hidden_effect = {
+			ac_change_culture_effect = {
+				TARGET_HOLDER = title:d_riverrun.holder
+				CHANGE_TO_CULTURE = culture:crownlander
+			}
+		}
+		ai_chance = {
+			base = 100
+		}
+	}
+
+	option = { # pass bro
+		name = ac_war_events.0009.b
+	}
+}
+
+ac_war_events.0010 = { # the flying arryn
+	type = character_event
+	title = ac_war_events.0010.t
+	desc = ac_war_events.0010.desc
+	theme = dragon
+	trigger = {
+		character:Targaryen_28 ?= {
+			is_alive = yes
+		}
+	}
+	override_background = {
+		reference = ep2_travel_settlement_mountains
+	}
+	right_portrait = {
+		character = root
+		animation = throne_room_conversation_4
+	}
+	left_portrait = {
+		character = scope:visenya
+		animation = throne_room_conversation_1
+	}
+	immediate = {
+		character:Targaryen_28 ?= { save_scope_as = visenya }
+	}
+
+	option = {
+		name = ac_war_events.0010.a # she can go
+		trigger_event = {
+			id = ac_war_events.0011
+			days = 4
+		}
+		ai_chance = {
+			base = 100
+		}
+	}
+	option = {
+		name = ac_war_events.0010.b # the negotiations were short
+		custom_tooltip = ac_war_events.0010.a_tt
+	}
+}
+
+ac_war_events.0011 = { # the king who - flew
+	type = character_event
+	title = ac_war_events.0011.t
+	desc = ac_war_events.0011.desc
+	theme = dragon
+	trigger = {
+		character:Arryn_61 ?= { is_alive = yes }
+		character:Arryn_58 ?= { is_alive = yes }
+		character:Targaryen_28 ?= { is_alive = yes }
+	}
+	override_background = {
+		reference = ep2_travel_settlement_mountains
+	}
+	right_portrait = {
+		character = root
+		animation = throne_room_conversation_4
+	}
+	left_portrait = {
+		character = scope:visenya
+		animation = throne_room_conversation_1
+	}
+	lower_center_portrait  = {
+		character = scope:ronnel
+	}
+	lower_right_portrait = {
+		character = scope:sharra
+	}
+	immediate = {
+		character:Arryn_61 ?= { save_scope_as = ronnel }
+		character:Arryn_58 ?= { save_scope_as = sharra }
+		root = {
+			set_variable = ronnel_flew
+			every_character_war = {
+				limit = {
+					using_cb = ac_conquest_cb
+					is_defender = title:e_the_vale.holder
+				}
+				end_war = invalidated
+			}
+		}
+		hidden_effect = {
+			ac_change_vassals = {
+				OLD_HOLDER = scope:defender
+				NEW_HOLDER = root
+				CHANGE_VASSALS_OF_TITLE = title:k_the_vale
+				TYPE = granted
+			}
+			destroy_title = title:e_the_vale
+			get_title = title:k_the_vale
+		}
+		ac_change_liege = {
+			TARGET = scope:defender
+			NEW_LIEGE = root
+		}
+	}
+	option = {
+		name = ac_war_events.0011.a # flew type shi
+		ac_change_kingdom_title = {
+			NEW_HOLDER = scope:defender
+			CHANGE_KINGDOM_TITLE = title:k_the_vale
+			TYPE = granted
+		}
+		scope:defender ?= {
+			give_nickname = nick_the_king_who_flew
+		}
+		hidden_effect = {
+			ac_change_vassals = {
+				OLD_HOLDER = root
+				NEW_HOLDER = scope:defender
+				CHANGE_VASSALS_OF_TITLE = title:k_the_vale
+				TYPE = granted
+			}
+			scope:defender ?= {
+				add_legitimacy = 1400
+				add_opinion = {
+					target = root
+					modifier = pleased_opinion
+					opinion = 150
+				}
+			}
+		}
+		ai_chance = {
+			base = 100
+		}
+	}
+	after = {
+		if = {
+			limit = { has_variable = ac_started_conquest }
+			change_variable = { name = ac_started_conquest add = 1 }
+		}
+		if = {
+			limit = { has_variable = ronnel_flew }
+			remove_variable = ronnel_flew
+		}
+		province:4156 ={
+			set_holding_type = castle_holding
+		}
 	}
 }
 

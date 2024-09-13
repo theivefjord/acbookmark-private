@@ -11,6 +11,9 @@ story_ac_canon_children_orys_baratheon = {
 			MOTHER_TRAIT = is_durrandon_88
 			PREVENT_PREGNANCY = yes
 		}
+		character:Durrandon_88 = {
+			add_character_modifier = ac_cc_fertility_go_away
+		}
 	}
 	on_end = {}
 
@@ -53,6 +56,9 @@ story_ac_canon_children_orys_baratheon = {
 									CHILD_FLAG = is_baratheon_16 
 									IS_FEMALE = no
 								}
+								character:Durrandon_88 = {
+									remove_character_modifier = ac_cc_fertility_go_away
+								}
 							}
 
 							# lifecycle
@@ -89,6 +95,12 @@ story_ac_canon_children_aegon_targaryen = {
 			MOTHER = character:Targaryen_29
 			MOTHER_TRAIT = is_targaryen_29
 			PREVENT_PREGNANCY = yes
+		}
+		character:Targaryen_28 = {
+			add_character_modifier = ac_cc_fertility_go_away
+		}
+		character:Targaryen_29 = {
+			add_character_modifier = ac_cc_fertility_go_away
 		}
 
 	}
@@ -134,6 +146,9 @@ story_ac_canon_children_aegon_targaryen = {
 									CHILD_FLAG = is_targaryen_30 
 									IS_FEMALE = no
 								}
+								character:Targaryen_29 = {
+									remove_character_modifier = ac_cc_fertility_go_away
+								}
 							}
 
 							# lifecycle
@@ -166,6 +181,9 @@ story_ac_canon_children_aegon_targaryen = {
 								agot_canon_children_force_pregnancy_basic_effect = {
 									CHILD_FLAG = is_targaryen_31 
 									IS_FEMALE = no
+								}
+								character:Targaryen_28 = {
+									remove_character_modifier = ac_cc_fertility_go_away
 								}
 							}
 							

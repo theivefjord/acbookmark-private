@@ -1,6 +1,34 @@
 ﻿ac_7998_scenario_setup = {
 	ac_canon_children_setup_story_cycles_effect = yes
 
+	if = {
+		limit = { has_game_rule = agot_canon_children_enabled }
+		every_living_character = {
+			limit = { has_variable = canon_status_canon }
+			add_character_modifier = ac_cc_protection
+		}
+	}
+	character:Martell_53.culture = {
+		add_innovation = innovation_agot_anti_dragon_fighting
+	}
+
+	character:dragon_meraxes ?= { # meraxes story for canon dragons
+		if = {
+			limit = {
+				has_game_rule = agot_canon_dragons_enabled
+			}
+			create_story = story_ac_canon_dragons_meraxes 
+		}
+	}
+	character:dragon_vhagar ?= { # vhagar story for canon dragons
+		if = {
+			limit = {
+				has_game_rule = agot_canon_dragons_enabled
+			}
+			create_story = story_ac_canon_dragons_vhagar
+		}
+	}
+
 	character:Targaryen_29 ?= { # Rhaenys
 		if = {
 			limit = { is_alive = yes }
@@ -60,6 +88,7 @@
 		if = {
 			limit = { is_alive = yes }
 			add_trait = refusing_marriage
+			add_prowess_skill = 80 # HOW DO I PROTECT MY CANON BOYOS??
 		}
 	}
 

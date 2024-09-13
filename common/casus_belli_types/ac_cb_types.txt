@@ -165,6 +165,28 @@
 				}
 			}
 		}
+		else_if = {
+			limit = {
+				scope:defender = { has_title = title:e_the_riverlands }
+			}
+			scope:attacker = {
+				trigger_event = {
+					id = ac_war_events.0009
+					days = 5
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				scope:defender = { primary_title = title:e_the_vale }
+			}
+			scope:attacker = {
+				trigger_event = {
+					id = ac_war_events.0010
+					days = 20
+				}
+			}
+		}
 	}
 
 	on_victory_desc = {
@@ -206,7 +228,10 @@
 				limit = { scope:defender.primary_title = title:e_dorne  }
 				scope:attacker = { 
 					get_title = title:k_dorne
-					trigger_event = conq_events.0008
+					trigger_event = {
+						id = conq_events.0008
+						days = { 3 7 }
+					}
 				}
 			}
 			else_if = { # if has both but target is riverlands
@@ -216,7 +241,10 @@
 				}
 				scope:attacker = { 
 					get_title = title:k_the_riverlands
-					trigger_event = conq_events.0002
+					trigger_event = {
+						id = conq_events.0002
+						days = { 3 7 }
+					}
 				}
 			}
 			else_if = { # if has both but target is isles
@@ -226,36 +254,56 @@
 				}
 				scope:attacker = { 
 					get_title = title:k_the_iron_islands
-					trigger_event = conq_events.0011
+					trigger_event = {
+						id = conq_events.0011
+						days = { 3 7 }
+					}
 				}
 			}
-			
 			else_if = {
-				limit = { scope:defender.primary_title = title:e_the_north  }
+				limit = { 
+					scope:defender.primary_title = title:e_the_north
+					scope:attacker = { NOT = { has_variable = torrhen_knelt } }
+				}
 				scope:attacker = { 
 					get_title = title:k_the_north
-					trigger_event = conq_events.0007
+					trigger_event = {
+						id = conq_events.0007
+						days = { 3 7 }
+					}
 				}
 			}
 			else_if = {
 				limit = { scope:defender.primary_title = title:e_the_reach  }
 				scope:attacker = { 
 					get_title = title:k_the_reach
-					trigger_event = conq_events.0005
+					trigger_event = {
+						id = conq_events.0005
+						days = { 3 7 }
+					}
 				}
 			}
 			else_if = {
-				limit = { scope:defender.primary_title = title:e_the_vale  }
+				limit = { 
+					scope:defender.primary_title = title:e_the_vale  
+					scope:attacker = { NOT = { has_variable = ronnel_flew } }
+				}
 				scope:attacker = { 
 					get_title = title:k_the_vale
-					trigger_event = conq_events.0003
+					trigger_event = {
+						id = conq_events.0003
+						days = { 3 7 }
+					}
 				}
 			}
 			else_if = {
 				limit = { scope:defender.primary_title = title:e_the_westerlands  }
 				scope:attacker = { 
 					get_title = title:k_the_westerlands
-					trigger_event = conq_events.0006
+					trigger_event = {
+						id = conq_events.0006
+						days = { 3 7 }
+					}
 				}
 			}
 			else_if = {
@@ -267,7 +315,10 @@
 					}
 					scope:attacker = { 
 						get_title = title:k_the_stormlands
-						trigger_event = conq_events.0010 # send orys event first
+						trigger_event = {
+							id = conq_events.0010 # send orys event first
+							days = { 3 7 }
+						}
 					}
 				}
 				else_if = {
@@ -279,7 +330,10 @@
 					}
 					scope:attacker = {
 						get_title = title:k_the_stormlands
-						trigger_event = conq_events.0004
+						trigger_event = {
+							id = conq_events.0004
+							days = { 3 7 }
+						}
 					}
 				}
 			}
@@ -288,50 +342,23 @@
 		######## for buildings and renames ########
 
 		if = {
-			limit = { scope:attacker = { var:ac_started_conquest = 1 } }
-			province:4152 = {
-				set_holding_type = city_holding
-			}
-			title:b_rhaenyss_hill = {
-				set_title_name = b_rhaenys_hh
-			}
-		}
-		else_if = {
-			limit = { scope:attacker = { var:ac_started_conquest = 2 } }
-			province:4156 ={
-				set_holding_type = castle_holding
-			}
-		}
-		else_if = {
-			limit = { scope:attacker = { var:ac_started_conquest = 3 } }
-			province:4154 = {
-				set_holding_type = city_holding
-			}
-		}
-		else_if = {
-			limit = { scope:attacker = { var:ac_started_conquest = 4 } }
-			province:4155 = {
-				set_holding_type = city_holding
-			}
-		}
-		else_if = {
-			limit = { scope:attacker = { var:ac_started_conquest = 5 } }
-			province:4153 = {
-				set_holding_type =  church_holding
-			}
-			title:b_visenyas_hill = {
-				set_title_name = b_visenyas_hh
+			limit = { 
+				scope:attacker ?= { var:ac_started_conquest = 6 } 
+				scope:attacker ?= { NOT = { has_title = title:e_the_iron_throne } }
 			}
 			scope:attacker = { 
-				trigger_event = conq_events.0009 # form iron throne when ac variable > 4
+				trigger_event = {
+					id = conq_events.0009 # form iron throne when ac variable > 4
+					days = { 3 7 }
+				}
 			}
 		}
-		else_if = {
-			limit = {
-				scope:attacker = { var:ac_started_conquest = 8 }
-			}
-			remove_variable = ac_started_conquest
-		}
+		#else_if = {
+		#	limit = {
+		#		scope:attacker = { var:ac_started_conquest = 8 }
+		#	}
+		#	remove_variable = ac_started_conquest
+		#}
 
 		
 		

@@ -1,0 +1,5 @@
+﻿ac_has_canon_cradle_egg = {
+	OR = {
+		is_character_targaryen_30 = yes
+	}
+}

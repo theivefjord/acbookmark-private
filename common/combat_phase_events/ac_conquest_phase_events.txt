@@ -1,4 +1,4 @@
-﻿commander_ac_conq_joined_battle = {
+﻿commander_ac_conq_joined_battle = { # fof
 	type = commander
 
 	is_valid = {
@@ -24,7 +24,7 @@
 	}
 }
 
-knight_ac_conq_joined_battle = {
+knight_ac_conq_joined_battle = { # fof
 	type = knight
 
 	is_valid = {
@@ -49,3 +49,56 @@ knight_ac_conq_joined_battle = {
 		}
 	}
 }
+######### preliminary version for orys v argilac
+
+#commander_ac_conq_joined_battle = {
+#	type = commander
+#
+#	is_valid = {
+#		exists = root
+#		scope:combat_side.enemy_side = {
+#			any_side_commander = {
+#				is_alive = yes
+#				this = character:Durrandon_87
+#			}
+#		}
+#		has_variable = ac_started_conquest
+#		NOT = { has_variable = orys_argilac_duel_happened }
+#	}
+#
+#	chance = {
+#		base = 100
+#	}
+#
+#	effect = {
+#		root = {
+#			trigger_event = ac_war_events.0003
+#		}
+#	}
+#}
+#
+#knight_ac_conq_joined_battle = {
+#	type = knight
+#
+#	is_valid = {
+#		exists = root
+#		scope:combat_side.enemy_side = {
+#			any_side_knight = {
+#				is_alive = yes
+#				this = character:Durrandon_87
+#			}
+#		}
+#		has_variable = ac_started_conquest
+#		NOT = { has_variable = orys_argilac_duel_happened }
+#	}
+#
+#	chance = {
+#		base = 100
+#	}
+#
+#	effect = {
+#		root = {
+#			trigger_event = ac_war_events.0003
+#		}
+#	}
+#}

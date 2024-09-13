@@ -261,3 +261,46 @@
  ac_war_events.0008.b:0 "I will only send ravens to inform of my claims"
  ac_war_events.0008.c:0 "I will demand the vassals be given to me"
  ac_war_events.0008.d:0 "The Crownlands are strong enough"
+
+ ######## 5th update
+
+ #ac_cc_protection_modifier:0 "Canon Protection"
+ ac_cc_protection:0 "Canon Protection"
+ ac_cc_protection_desc:0 "Health to protect the canon characters for a while"
+ 
+ ac_cc_fertility_go_away:0 "Non-Canon Child Blocker"
+ ac_cc_fertility_go_away_desc:0 "Temporary fix to prevent canon characters from having children until they're done with the canon ones. Because sometimes the usual system doesn't work and I don't want to figure it out right now"
+ #ac_cc_protection_modifier_desc:0 "Health for canon characters"
+
+ ac_canon_dragon_hatching.t:0 "[dragon.GetName]"
+ ac_canon_dragon_hatching.desc:0 "At last! After many years of patience [dragon_parent.GetName]'s egg has finally hatched.\n\nA beautiful hatchling, it will surely grow to be a powerful and mighty dragon, serving house [dragon_owner.GetHouse.GetBaseName] for many generations.\n\nWe will call [dragon.GetHerHim] [dragon.GetName]."
+ ac_canon_dragon_hatching.a:0 "Wonderful news"
+
+ ac_cd_canon_bonding.t:0 "[dragon.GetName]"
+ ac_cd_canon_bonding.desc:0 "[aenys.GetName] seems to have already formed a strong bond with [dragon.GetName].\n\nThe two of them are inseparable, and I have no doubt that they will grow to be a formidable pair."
+ ac_cd_canon_bonding.a:0 "Good luck"
+
+ ac_cd_events.0011.t:0 "the Cannibal"
+ ac_cd_events.0011.desc:0 "As I inspect the newest hatchling [dragonkeeper.GetName] pulls me aside.\n\n"Your Grace, we may have a problem. The newest hatchling is... different. He is larger than the others, and the most aggressive hatchling I've ever seen. We have had to house him far away from the others, as he seems more like to eat them than play with them."\n\n"We have taken to calling him the [dragon.GetName].""
+ ac_cd_events.0011.a:0 "Very troubling"
+
+ ac_cd_events.0012.t:0 "the Cannibal"
+ ac_cd_events.0012.desc:0 "The [dragon.GetName] has grown quickly, and his aggression has only increased. He has taken to attacking the other hatchlings, and even the handlers who care for him. He is a danger to all around him.\n\n"Your grace, what shall be done with him?""
+ ac_cd_events.0012.a:0 "We must let him go"
+ ac_cd_events.0012.b:0 "He must stay"
+ ac_cd_events.0012.b.tt:0 "You risk the lives of the other dragons in hopes of eventually taming what will surely become a mighty [dragon|E]"
+
+ ac_war_events.0009.t:0 "the Lord of Riverrun"
+ ac_war_events.0009.desc:0 "As I'm preparing for war with Harren, my maester tells me that there's been a bird:\n\n”Your grace, I pray this finds you in good health. Harren the Black has called his banners and even now some of the riverlords are marching to Harrenhal. I will not answer his call. Too long have the Riverlands suffered beneath the yoke of ironborn cruelty, and Harren's tyranny has bled this land dry.\n\nI will instead pledge my house and my bannermen to your cause, in the hope that you will help heal the land you intend to rule."\n\n[mr_riverrun.GetFirstName] [mr_riverrun.GetDynastyName]\nLord of [GetTitleByKey('d_riverrun').GetNameNoTier]"
+ ac_war_events.0009.b:0 "I will not accept their fealty"
+
+ ac_war_events.0010.t:0 "the Flight of King Ronnel"
+ ac_war_events.0010.desc:0 "The time has come to bring the Vale into the fold. The craggy terrain and unyielding mountains leave much to be desired. Not to mention the Bloody Gate, upon which many armies are said to have dashed themselves asunder.\n\nOne evening, as we break camp beneath the shadow of the mountains, [visenya.GetName] approaches me: \n\n"Brother, give me leave to mount Vhagar. Let me fly to greet this boy king and his mother in their castle in the clouds.""
+ ac_war_events.0010.a:0 "As you wish"
+ ac_war_events.0010.b:0 "A gate is no match for a dragon"
+ ac_war_events.0010.a_tt:0 "#X @warning_icon! Ends the Flight of King Ronnel event chain.#!"
+
+ ac_war_events.0011.t:0 "the Flight of King Ronnel"
+ ac_war_events.0011.desc:0 "My sister returns from the Eyrie. She dismounts Vhagar, with a satisfied expression she says:\n\n"I have shown the little King the world from dragonback, and his mother was not blind to the message. They have bent the knee, brother. The Vale is ours.""
+ ac_war_events.0011.a:0 "Well done sister"
+ 

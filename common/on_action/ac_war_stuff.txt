@@ -4,6 +4,12 @@
 	}
 }
 
+on_war_invalidated = {
+	on_actions = {
+		ac_on_invalidated_war
+	}
+}
+
 ac_on_burn_harrenhal = {
 	trigger = {
 		exists = scope:army
@@ -19,6 +25,21 @@ ac_on_burn_harrenhal = {
 						days = 1
 					}
 				}
+			}
+		}
+	}
+}
+
+ac_on_invalidated_war = {
+	trigger = {
+		scope:attacker = { var:ac_started_conquest = 6 } 
+		scope:attacker = { NOT = { has_title = title:e_the_iron_throne } }
+	}
+	effect = {
+		scope:attacker = { 
+			trigger_event = {
+				id = conq_events.0009 # form iron throne when ac variable > 4
+				days = { 3 7 }
 			}
 		}
 	}

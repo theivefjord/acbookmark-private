@@ -1,0 +1,49 @@
+﻿# can't do without editing base court positions for flags - re-think later
+
+#WARDEN_NORTH_LOC = {
+#	type = character
+#
+#	text = { 
+#		trigger = {
+#			has_character_flag = warden_north
+#			is_landed = yes
+#		}
+#		localization_key = warden_of_the_north_court_position
+#	}
+#}
+#
+#WARDEN_EAST_LOC = {
+#	type = character
+#
+#	text = { 
+#		trigger = {
+#			has_character_flag = warden_east
+#			is_landed = yes
+#		}
+#		localization_key = warden_of_the_east_court_position
+#	}
+#}
+#
+#WARDEN_WEST_LOC = {
+#	type = character
+#
+#	text = { 
+#		trigger = {
+#			has_character_flag = warden_west
+#			is_landed = yes
+#		}
+#		localization_key = warden_of_the_west_court_position
+#	}
+#}
+#
+#WARDEN_SOUTH_LOC = {
+#	type = character
+#
+#	text = {
+#		trigger = {
+#			has_character_flag = warden_south
+#			is_landed = yes
+#		}
+#		localization_key = warden_of_the_south_court_position
+#	}
+#}

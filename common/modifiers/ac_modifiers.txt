@@ -1,0 +1,19 @@
+﻿ac_cc_protection = {
+	icon = health_positive
+	health = 2
+	negate_health_penalty_add = 1.5
+	stress_gain_mult = -0.8
+	hide_effects = yes
+}
+
+ac_cc_protection_neg = {
+	icon = health_positive
+	negate_health_penalty_add = 1.5
+	hide_effects = yes
+}
+
+ac_cc_fertility_go_away = {
+	icon = health_negative
+	fertility = -10000
+	hide_effects = yes
+}

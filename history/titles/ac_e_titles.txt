@@ -11,7 +11,7 @@
 	}
 	8001.6.11 = {
 		effect = {
-			destroy_title = title:e_aegons_host
+			holder = { destroy_title = title:e_aegons_host }
 		}
 	}
 }

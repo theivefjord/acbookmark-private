@@ -1,0 +1,45 @@
+﻿# can't do without editing base court positions for flags - re-think later
+
+#baron_warden_west = {
+#    type = character
+#    gender = male
+#	special = holder
+#    tier = barony
+#    priority = 300
+#    governments = { feudal_government lp_feudal_government }
+#    top_liege = no
+#    flag = warden_west
+#}
+
+#count_warden_west = {
+#    type = character
+#    gender = male
+#	special = holder
+#    tier = county
+#    priority = 300
+#    governments = { feudal_government lp_feudal_government }
+#    top_liege = no
+#    flag = warden_west
+#}
+
+#duke_warden_west = {
+#    type = character
+#    gender = male
+#	special = holder
+#    tier = duchy
+#    priority = 300
+#    governments = { feudal_government lp_feudal_government }
+#    top_liege = no
+#    flag = warden_west
+#}
+
+#king_warden_west = {
+#    type = character
+#    gender = male
+#	special = holder
+#    tier = kingdom
+#    priority = 300
+#    governments = { lp_feudal_government }
+#    top_liege = no
+#    flag = warden_west
+#}

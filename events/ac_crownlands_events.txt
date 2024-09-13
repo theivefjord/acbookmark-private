@@ -56,11 +56,11 @@ ac_crownlands_events.0001 = { # Massey's buddyhop
 	after = {
 		trigger_event = {
 			id = ac_crownlands_events.0002
-			days = 7
+			days = 28
 		}
 		trigger_event = {
 			id = ac_crownlands_events.0003
-			days = 2
+			days = 14
 		}
 	}
 }
