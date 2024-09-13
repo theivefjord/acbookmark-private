@@ -649,8 +649,10 @@ ac_war_events.0011 = { # the king who - flew
 			limit = { has_variable = ronnel_flew }
 			remove_variable = ronnel_flew
 		}
-		province:4156 ={
-			set_holding_type = castle_holding
+		hidden_effect = {
+			province:4156 ={
+				set_holding_type = castle_holding
+			}
 		}
 	}
 }

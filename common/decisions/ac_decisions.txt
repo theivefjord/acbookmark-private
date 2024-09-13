@@ -304,3 +304,114 @@ ac_kl_cobbler_square_if_missed_oppurtunity = {
 			base = 100
 		}
 }
+
+ac_proclaim_iron_throne = { # backup because I gotta re-work the whole conquest variable system
+	picture = "gfx/interface/illustrations/event_scenes/ironthrone/throneroom_ironthrone.dds"
+	major = yes
+	desc = agot_proclaim_iron_throne_desc
+	ai_goal	= yes
+	ai_potential = { always = yes }
+	ai_will_do = { base = 10000 }
+
+	is_shown = {
+		var:ac_started_conquest = 6
+	}
+
+	is_valid = {
+		#custom_description = {
+		#	text = agot_proclaim_it
+		#	any_held_title = {
+		#		title_capital_county.title_province = { geographical_region = world_westeros_seven_kingdoms }
+		#		tier = tier_kingdom
+		#		count >= 5
+		#		save_temporary_scope_as = de_jure_kingdom
+		#		root = { completely_controls = scope:de_jure_kingdom }
+		#	}
+		#}
+		has_title = title:d_kings_landing
+		has_title = title:c_kings_landing
+		is_imprisoned = no
+		agot_is_independent_ruler = yes
+	}
+
+	effect = {
+		remove_variable = ac_started_conquest
+		get_title = title:e_the_iron_throne
+		destroy_title = title:e_aegons_host
+		title:e_the_iron_throne = {
+			set_variable = is_paramountcy_realm
+		}
+		if = {
+			limit = { NOT = { has_government = lp_feudal_government } }
+			root = {
+				change_government = lp_feudal_government
+			}
+		}
+		add_prestige = 7000
+		dynasty = { add_dynasty_prestige = 3500 }
+		add_legitimacy = 2100 #Max Legitimacy
+		add_dread = 100
+		add_tyranny	= -35
+		gain_legitimizing_legend_seed_tooltip_effect = yes
+		give_nickname = nick_the_conqueror
+		agot_create_artifact_iron_throne_effect = { OWNER = this }
+		hidden_effect = {
+			legend_seed_great_deed_dynasty_effect = yes
+			every_vassal_or_below = {
+				limit = {
+					agot_is_valid_lp_feudal_government_target = yes
+					NOT = { has_government = lp_feudal_government }
+				}
+				change_government = lp_feudal_government
+			}
+		}
+		spawn_army = {
+			name = iron_throne_decision_troops
+			men_at_arms = {
+				type = westerosi_sellswords
+				men = 100
+			}
+			men_at_arms = {
+				type = barrow_knights #replace these with a riverlands cav MAA if they ever get one
+				men = 100
+			}
+			men_at_arms = {
+				type = winged_knights
+				men = 100
+			}
+			men_at_arms = {
+				type = summer_knights
+				men = 100
+			}
+			men_at_arms = {
+				type = storm_knights
+				men = 100
+			}
+			men_at_arms = {
+				type = westerlands_knights
+				men = 100
+			}
+			men_at_arms = {
+				type = sand_steeds
+				men = 100
+			}
+			inheritable = no
+			location = title:d_kings_landing.holder.capital_province
+			origin = title:d_kings_landing.holder.capital_province
+		}
+		trigger_event = conq_events.0012
+	
+		hidden_effect = {
+			scope:fake_artifact = {
+				add_durability = -1000
+			}
+		}
+
+		every_player = {
+			trigger_event = {
+				id = agot_proclaim.0001
+			}
+		}
+	}
+
+}

@@ -44,7 +44,7 @@
 	character:Targaryen_27 ?= { # Aegon
 		if = {
 			limit = { is_alive = yes }
-			add_stewardship_skill = 6
+			add_stewardship_skill = 7
 			set_character_faith = faith:valyrian
 			remove_concubine = character:Targaryen_29
 			marry = character:Targaryen_29

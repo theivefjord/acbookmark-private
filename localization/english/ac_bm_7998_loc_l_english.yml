@@ -303,4 +303,7 @@
  ac_war_events.0011.t:0 "the Flight of King Ronnel"
  ac_war_events.0011.desc:0 "My sister returns from the Eyrie. She dismounts Vhagar, with a satisfied expression she says:\n\n"I have shown the little King the world from dragonback, and his mother was not blind to the message. They have bent the knee, brother. The Vale is ours.""
  ac_war_events.0011.a:0 "Well done sister"
+
+ ac_proclaim_iron_throne:0 "Proclaim the Iron Throne"
+ ac_proclaim_iron_throne_confirm:0 "Proclaim the Iron Throne"
  
