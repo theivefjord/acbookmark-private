@@ -343,7 +343,7 @@
 
 		if = {
 			limit = { 
-				scope:attacker ?= { var:ac_started_conquest = 6 } 
+				scope:attacker ?= { var:ac_started_conquest >= 5 } 
 				scope:attacker ?= { NOT = { has_title = title:e_the_iron_throne } }
 			}
 			scope:attacker = { 

@@ -98,7 +98,7 @@ ac_cd_events.0010 = { # Quicksilver hatches
 		custom_tooltip = agot_dragon_egg_cradling_birth.0002.a_tt_dragon_born
 		trigger_event = {
 			id = ac_cd_events.0099
-			days = 7
+			months = 8
 		}
 	}
 }

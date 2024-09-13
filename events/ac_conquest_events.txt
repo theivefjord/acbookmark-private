@@ -565,6 +565,13 @@ conq_events.0005 = { # reach
 					is_alive = yes
 				}
 			}
+			NOT = {
+				character:Gardener_95.house = {
+					any_house_member = {
+						is_alive = yes
+					}
+				}
+			}
 		}
 		ac_change_titles = { # give titles to Gardeners
 			OLD_HOLDER = root
@@ -599,8 +606,10 @@ conq_events.0005 = { # reach
 			limit = { has_variable = ac_started_conquest }
 			change_variable = { name = ac_started_conquest add = 1 }
 		}
-		province:4155 = {
-			set_holding_type = city_holding
+		hidden_effect = {
+			province:4155 = {
+				set_holding_type = city_holding
+			}
 		}
 	}
 }
@@ -928,11 +937,6 @@ conq_events.0009 = { # form iron throne when ac variable > 5
 		}
 		trigger_event = conq_events.0012
 	
-		hidden_effect = {
-			scope:fake_artifact = {
-				add_durability = -1000
-			}
-		}
 		ai_chance = {
 			base = 100
 		}
@@ -951,10 +955,10 @@ conq_events.0009 = { # form iron throne when ac variable > 5
 	#	name = conq_events.0009.c # stay still and do nothing
 	#}
 	after = {
-		if = {
-			limit = { has_variable = ac_started_conquest }
-			remove_variable = ac_started_conquest
-		}
+		#if = {
+		#	limit = { has_variable = ac_started_conquest }
+		#	remove_variable = ac_started_conquest
+		#}
 		root = {
 			trigger_event = {
 				id = ac_war_events.0008
@@ -1006,6 +1010,8 @@ conq_events.0010 = { # durrandon marriage event
 			marry = character:Durrandon_88
 			set_culture = culture:stormlander
 			set_character_faith = faith:the_seven_main
+			remove_trait = bastard
+			add_trait = bastard_founder
 		}
 		ac_change_titles = { # give titles to argilac
 		OLD_HOLDER = root

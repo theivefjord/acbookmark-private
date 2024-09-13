@@ -314,7 +314,9 @@ ac_proclaim_iron_throne = { # backup because I gotta re-work the whole conquest 
 	ai_will_do = { base = 10000 }
 
 	is_shown = {
-		var:ac_started_conquest = 6
+		has_variable = ac_started_conquest
+		var:ac_started_conquest > 6
+		NOT = { has_title = title:e_the_iron_throne }
 	}
 
 	is_valid = {
@@ -335,7 +337,7 @@ ac_proclaim_iron_throne = { # backup because I gotta re-work the whole conquest 
 	}
 
 	effect = {
-		remove_variable = ac_started_conquest
+		#remove_variable = ac_started_conquest
 		get_title = title:e_the_iron_throne
 		destroy_title = title:e_aegons_host
 		title:e_the_iron_throne = {

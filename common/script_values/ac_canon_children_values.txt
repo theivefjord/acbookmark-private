@@ -30,5 +30,5 @@ ac_canon_children_birth_year_davos_baratheon = 8010
 ac_canon_children_birth_year_davos_baratheon_min = { value = ac_canon_children_birth_year_davos_baratheon add = -1 }
 
 # Marriage years
-ac_cc_aenys_alyssa_marriage_year = 8017
+ac_cc_aenys_alyssa_marriage_year = 8022
 ac_cc_aenys_alyssa_marriage_year_min = { value = ac_cc_aenys_alyssa_marriage_year add = -1 }

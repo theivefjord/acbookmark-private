@@ -33,6 +33,7 @@ ac_kingsguard.0001 = {
 		animation = idle
 	}
 	immediate = {
+		character:Targaryen_27 = { set_variable = { name = is_adding_kg value = 0 } }
 		primary_title = { set_variable = { name = kingsguard value = yes } }
 		hidden_effect = {
 			get_title = title:d_kingsguard
