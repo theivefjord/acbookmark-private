@@ -261,3 +261,46 @@
  ac_war_events.0008.b:0 "J'enverrai seulement des corbeaux pour informer de mes revendications"
  ac_war_events.0008.c:0 "J'exigerai que les vassaux me soient donnés"
  ac_war_events.0008.d:0 "Les Terres de la Couronne sont suffisamment fortes"
+
+ ###### 5ème mise à jour
+
+ ac_cc_protection:0 "Protection des Personnages Canoniques"
+ ac_cc_protection_desc:0 "Santé pour protéger les personnages canoniques pendant un certain temps"
+ 
+ ac_cc_fertility_go_away:0 "Bloqueur d'Enfants Non-Canoniques"
+ ac_cc_fertility_go_away_desc:0 "Solution temporaire pour empêcher les personnages canoniques d'avoir des enfants jusqu'à ce qu'ils aient terminé avec les enfants canoniques. Parce que parfois, le système habituel ne fonctionne pas et je n'ai pas envie de le résoudre maintenant."
+ 
+ ac_canon_dragon_hatching.t:0 "[dragon.GetName]"
+ ac_canon_dragon_hatching.desc:0 "Enfin ! Après de nombreuses années de patience, l'œuf de [dragon_parent.GetName] a finalement éclos.\n\nUn magnifique dragonneau, il deviendra sûrement un puissant et redoutable dragon, servant la maison [dragon_owner.GetHouse.GetBaseName] pendant de nombreuses générations.\n\nNous l'appellerons [dragon.GetHerHim] [dragon.GetName]."
+ ac_canon_dragon_hatching.a:0 "Une merveilleuse nouvelle"
+ 
+ ac_cd_canon_bonding.t:0 "[dragon.GetName]"
+ ac_cd_canon_bonding.desc:0 "[aenys.GetName] semble déjà avoir formé un lien fort avec [dragon.GetName].\n\nLes deux sont inséparables, et je n'ai aucun doute qu'ils deviendront un duo redoutable."
+ ac_cd_canon_bonding.a:0 "Bonne chance"
+ 
+ ac_cd_events.0011.t:0 "le Cannibale"
+ ac_cd_events.0011.desc:0 "Alors que j'inspecte le nouveau dragonneau, [dragonkeeper.GetName] m'interpelle.\n\n"Votre Grâce, nous pourrions avoir un problème. Le nouveau dragonneau est... différent. Il est plus grand que les autres, et le plus agressif que j'aie jamais vu. Nous avons dû le loger loin des autres, car il semble plus enclin à les dévorer qu'à jouer avec eux."\n\n"Nous avons pris l'habitude de l'appeler le [dragon.GetName].""
+ ac_cd_events.0011.a:0 "Très inquiétant"
+ 
+ ac_cd_events.0012.t:0 "le Cannibale"
+ ac_cd_events.0012.desc:0 "Le [dragon.GetName] a grandi rapidement, et son agressivité n'a fait qu'augmenter. Il s'est mis à attaquer les autres dragonneaux, et même les gardiens qui s'occupent de lui. Il est un danger pour tout son entourage.\n\n"Votre Grâce, que devons-nous faire de lui ?""
+ ac_cd_events.0012.a:0 "Nous devons le laisser partir"
+ ac_cd_events.0012.b:0 "Il doit rester"
+ ac_cd_events.0012.b.tt:0 "Vous risquez la vie des autres dragons dans l'espoir de dompter ce qui deviendra sûrement un puissant [dragon|E]"
+ 
+ ac_war_events.0009.t:0 "le Seigneur de Vivesaigues"
+ ac_war_events.0009.desc:0 "Alors que je me prépare pour la guerre contre Harren, mon mestre m'informe qu'un oiseau est arrivé :\n\n"Votre Grâce, j'espère que ce message vous trouve en bonne santé. Harren le Noir a convoqué ses bannières et déjà certains seigneurs des rivières marchent vers Harrenhal. Je ne répondrai pas à son appel. Trop longtemps les Terres de l'Ouest ont-elles souffert sous le joug cruel des Fer-nés, et la tyrannie de Harren a saigné cette terre à blanc.\n\nJe jure plutôt ma maison et mes vassaux à votre cause, dans l'espoir que vous aiderez à guérir la terre que vous avez l'intention de gouverner."\n\n[mr_riverrun.GetFirstName] [mr_riverrun.GetDynastyName]\nSeigneur de [GetTitleByKey('d_riverrun').GetNameNoTier]"
+ ac_war_events.0009.b:0 "Je n'accepterai pas leur allégeance"
+ 
+ ac_war_events.0010.t:0 "la Fuite du Roi Ronnel"
+ ac_war_events.0010.desc:0 "Le moment est venu d'intégrer le Val dans notre empire. Le terrain accidenté et les montagnes inébranlables laissent beaucoup à désirer. Sans parler de la Porte Sanglante, sur laquelle de nombreuses armées auraient été brisées.\n\nUn soir, alors que nous dressons le camp à l'ombre des montagnes, [visenya.GetName] s'approche de moi : \n\n"Frère, permets-moi de monter Vhagar. Laisse-moi voler à la rencontre de ce jeune roi et de sa mère dans leur château parmi les nuages.""
+ ac_war_events.0010.a:0 "Comme tu veux"
+ ac_war_events.0010.b:0 "Une porte ne fait pas le poids face à un dragon"
+ ac_war_events.0010.a_tt:0 "#X @warning_icon! Met fin à la chaîne d'événements de la Fuite du Roi Ronnel.#!"
+ 
+ ac_war_events.0011.t:0 "la Fuite du Roi Ronnel"
+ ac_war_events.0011.desc:0 "Ma sœur revient de l'Eyrie. Elle descend de Vhagar, avec une expression satisfaite et dit :\n\n"J'ai montré au petit roi le monde du dos d'un dragon, et sa mère n'était pas aveugle au message. Ils ont plié le genou, frère. Le Val est à nous.""
+ ac_war_events.0011.a:0 "Bien joué, sœur"
+ 
+ ac_proclaim_iron_throne:0 "Proclamer le Trône de Fer"
+ ac_proclaim_iron_throne_confirm:0 "Proclamer le Trône de Fer"
