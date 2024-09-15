@@ -1,6 +1,8 @@
 ﻿story_ac_canon_dragons_meraxes = {
 	on_setup = {
-		add_character_flag = recently_laid_eggs
+		story_owner = {
+			add_character_flag = recently_laid_eggs
+		}
 	}
 
 	on_end = {}
@@ -181,7 +183,9 @@
 
 story_ac_canon_dragons_vhagar = {
 	on_setup = {
-		add_character_flag = recently_laid_eggs
+		story_owner = {
+			add_character_flag = recently_laid_eggs
+		}
 	}
 
 	on_end = {}

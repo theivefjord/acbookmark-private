@@ -17,9 +17,6 @@
 		}
 	}
 	province:1934 = {
-		agot_remove_dragon_siege_effect_minor = yes
-		agot_remove_dragon_siege_effect_medium = yes
-		agot_remove_dragon_siege_effect_major = yes
 		set_variable = {
 			name = dragon_siege_modifier_massive
 			value = 1

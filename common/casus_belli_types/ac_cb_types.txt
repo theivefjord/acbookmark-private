@@ -611,7 +611,9 @@
 	use_de_jure_wargoal_only = yes
 
 	attacker_wargoal_percentage = 0.8
+	truce_days = 30
 
+	max_attacker_score_from_battles = 150
 	max_defender_score_from_occupation = 150
 	max_attacker_score_from_occupation = 150
 }
