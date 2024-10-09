@@ -1,7 +1,7 @@
 ﻿ac_bm_7998 = { #aegons conquest
 	start_date = 7998.1.1
 	is_playable = yes
-	group = ac_bm_group_7998
+	group = ac_bm_group
 
 	weight = {
 		value = 20
@@ -156,6 +156,73 @@
 		religion = old_gods_south
 		history_id = Stark_66
 		position = { 555 132 }
+
+		animation = idle
+	}
+}
+
+ac_bm_8002 = { #aegons conquest'd
+	start_date = 8002.1.1
+	is_playable = yes
+	group = ac_bm_group
+
+	weight = {
+		value = 20
+	}
+
+	character = {
+		name = "bookmark_ac_aegon_targaryen_post_conquest"
+		dynasty = dynn_Targaryen
+		dynasty_splendor_level = 4
+		type = male
+		birth = 7974.1.15
+		title = e_the_iron_throne
+		government = lp_feudal_government
+		culture = high_valyrian
+		religion = the_seven_main
+		difficulty = "BOOKMARK_CHARACTER_DIFFICULTY_EASY"
+		history_id = Targaryen_27
+		position = { 780 300 }
+
+		animation = personality_bold
+
+		character = {
+			name = "bookmark_ac_visenya_targaryen_post_conquest"
+			relation = "BOOKMARK_RELATION_WIFE"
+			dynasty = dynn_Targaryen
+			type = female
+			birth = 7972.1.1
+			culture = high_valyrian
+			religion = the_seven_main
+			history_id = Targaryen_28
+			animation = personality_bold
+		}
+
+		character = {
+			name = "bookmark_ac_rhaenys_targaryen_post_conquest"
+			relation = "BOOKMARK_RELATION_WIFE"
+			dynasty = dynn_Targaryen
+			type = female
+			birth = 7976.1.1
+			culture = high_valyrian
+			religion = the_seven_main
+			history_id = Targaryen_29
+			animation = idle
+		}
+	}
+	character = {
+		name = "bookmark_ac_meria_martell_post_conquest"
+		dynasty_house = house_Martell
+		dynasty_splendor_level = 4
+		difficulty = "BOOKMARK_CHARACTER_DIFFICULTY_HARD"
+		type = female
+		birth = 7921.1.1
+		title = e_dorne
+		government = feudal_government
+		culture = salt_dornish
+		religion = the_seven_main
+		history_id = Martell_53
+		position = { 1200 800 }
 
 		animation = idle
 	}

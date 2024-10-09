@@ -29,8 +29,7 @@
  bookmark_ac_argilac_durrandon:0 "Argilac Durrandon"
  bookmark_ac_argilac_durrandon_desc:0 "Argilac Durrandon, connu sous le nom d'Argilac l'Arrogant, fut le dernier roi de la Tempête de la maison Durrandon. Fier et défiant, Argilac refusa l'offre d'alliance d'Aegon Targaryen et choisit de le combattre sur le champ de bataille. Il combattit vaillamment lors de la Dernière Tempête, où il trouva la mort en combat singulier contre Orys Baratheon, général d'Aegon et prétendu demi-frère. Avec la mort d'Argilac, la maison Durrandon s'éteignit, et les Terres de la Tempête passèrent à la maison Baratheon, marquant la fin d'une ère pour les Terres de la Tempête."
 
- ac_bm_group_7998:0 "2 A.C."
- ac_bm_group_7998_desc:0 "Est-ce une chose ?"
+ ac_bm_group_desc:0 "Est-ce une chose ?"
  ac_bm_7998:0 "La Conquête d'Aegon"
  ac_bm_7998_desc:0 "Après que Daenys la Rêveuse ait prédit le Fléau de Valyria, les Targaryen s'enfuirent avec leurs dragons vers l'avant-poste le plus occidental du Domaine Valyrien, connu sous le nom de Peyredragon. Les Valyriens n'utilisaient pas de blasons, donc pour entrer dans la politique de Westeros, les Targaryen adoptèrent un dragon à trois têtes comme leur emblème. 114 ans plus tard, Aegon et ses sœurs-épouses, Visenya et Rhaenys, tournèrent leur regard vers l'ouest. Avec leurs dragons - Balerion, Meraxes et Vhagar - le Dragon à trois têtes est prêt à unir les sept royaumes de Westeros sous une seule bannière. Cette opportunité, la saisirez-vous ? Ou la laisserez-vous passer ?"
 
@@ -304,3 +303,29 @@
  
  ac_proclaim_iron_throne:0 "Proclamer le Trône de Fer"
  ac_proclaim_iron_throne_confirm:0 "Proclamer le Trône de Fer"
+
+
+
+ ###### 6th update
+ ac_war_events.0012.t:0 "le Dernier Roi de l'Orage"
+ ac_war_events.0012.desc:0 "La bataille sombre dans le chaos alors que Rhaenys descend sur le champ sur Meraxes. Au milieu du fracas de la  bataille, la voix de [orys.GetName] résonne comme le tonnerre :\n#bold Argilac ! c'est fini. Mon frère n'est pas sans pitié. Cède  maintenant, et ta lignée continuera de régner sur Accalmie.#!\n\nFurieux, Argilac hurle en retour :\n#bold Céder ? Je suis le [argilac. GetName] de l'ancienne lignée de la maison [argilac.GetHouse.GetName] ! Même les dieux n'osent me commander ! Je crache sur ton frère ! Et  quand tu giseras mort à mes pieds, bâtard, je cracherai sur toi aussi.#!"
+ ac_war_events.0012.a:0 "Bonne chance, frère"
+ ac_war_events.0012.b:0 "Le combat singulier est inutile"
+ ac_war_events.0012.a_tt:0 "Un combat singulier entre [orys.GetName] et [argilac.GetFirstName] va commencer"
+ 
+ ac_bm_group_8002:0 "2 A.C."
+ ac_bm_8002:0 "Règne du Dragon"
+ ac_bm_8002_desc:0 "Bien qu'Aegon se nomme Seigneur des Sept Couronnes, un royaume reste encore à conquérir.\n\n#bold Allez-vous tenter  d'intégrer Dorne dans le royaume, ou laisserez-vous le Crapaud Jaune mijoter dans son désert ?#!"
+ 
+ bookmark_ac_aegon_targaryen_post_conquest:0 "Aegon Targaryen"
+ bookmark_ac_visenya_targaryen_post_conquest:0 "Visenya Targaryen"
+ bookmark_ac_rhaenys_targaryen_post_conquest:0 "Rhaenys Targaryen"
+ bookmark_ac_meria_martell_post_conquest:0 "Meria Martell"
+ bookmark_ac_aegon_targaryen_post_conquest_desc:0 "Aegon Targaryen, connu sous le nom de Conquérant, a soumis six des Sept Royaumes. Avec le  pouvoir de ses dragons et la loyauté de ses sœurs, Aegon a forgé un royaume unifié sur les cendres de ses ennemis. Pourtant, Dorne reste  indépendante, défiant le Trône de Fer. Aegon doit maintenant décider comment faire face à cette dernière résistance : par le feu et le sang,  ou peut-être par les mots de la paix.\n\n#bold \Poursuivrez-vous votre conquête de feu, ou trouverez-vous un autre chemin pour régner sur  tout Westeros ?\#!"
+ bookmark_ac_meria_martell_post_conquest_desc:0 "Meria Martell, la Princesse de Dorne, reste inébranlable face aux vagues de la conquête.  Alors que le reste de Westeros a plié le genou, Dorne demeure libre sous sa direction. Surnommée le Crapaud Jaune de Dorne, Meria est âgée,  mais toujours aussi vive, et son royaume désertique reste impénétrable pour ceux qui cherchent à le conquérir. Alors que les forces d'Aegon  menacent les frontières, Meria doit user de toute sa ruse pour maintenir l'indépendance de Dorne.\n\n#bold \Allez-vous lutter pour garder  Dorne libre, ou les dragons briseront-ils enfin l'esprit fier de la maison Martell ?\#!"
+ 
+ conq_events.0013.t:0 "le Roi du Roc"
+ conq_events.0013.desc:0 "Le soleil vient à peine de se lever après la défaite écrasante des Jardiniers lorsqu'un de mes chevaliers  s'approche, traînant un homme enchaîné. S'arrêtant à quelques pas, l'homme s'avance vers moi, s'agenouille, et dit :\n\n#bold Votre Grâce,  je suis [lannisterboy.GetFirstName] de la maison [lannisterboy.GetHouse.GetBaseName], autrefois Roi du Roc. Je viens pour vous offrir mon  épée et ma couronne, et à la lumière des Sept, implorer votre pitié pour moi-même et mes hommes.#!"
+ conq_events.0013.a:0 "Vous n'avez rien à craindre, mon seigneur"
+ 
+ ac_bm_group:0 "L'Avènement du Dragon"

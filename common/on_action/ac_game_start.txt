@@ -27,5 +27,20 @@ ac_game_start = {
 				}
 			}
 		}
+		else_if = {
+			limit = { game_start_date = 8002.1.1 }
+			if = {
+				limit = { 
+					any_province = {
+						geographical_region = graphical_starfall
+					}
+				 }
+				 set_global_variable = {
+					name = CoW_is_loaded
+					value = yes
+				 }
+			}
+			ac_8002_scenario_setup = yes
+		}
 	}
 }

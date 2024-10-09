@@ -12,7 +12,7 @@ conq_events.0001 = { # aegon d-day
 
 	right_portrait = {
 		character = root
-		animation = war_over_win
+		animation = marshal
 	}
 	left_portrait = {
 		character = title:e_the_riverlands.holder
@@ -127,7 +127,7 @@ conq_events.0002 = { # riverlands
 
 	right_portrait = {
 		character = root
-		animation = war_over_win
+		animation = marshal
 	}
 	left_portrait = {
 		character = scope:defender
@@ -242,8 +242,16 @@ conq_events.0002 = { # riverlands
 			limit = { has_variable = ac_started_conquest }
 			change_variable = { name = ac_started_conquest add = 1 }
 		}
-		province:4152 = {
-			set_holding_type = city_holding
+		hidden_effect = {
+			province:4152 = {
+				set_holding_type = city_holding
+			}
+			title:k_the_riverlands.holder = {
+				vassal_contract_set_obligation_level = {
+					type = feudal_government_levies
+					level = 0
+				}
+			}
 		}
 		title:b_rhaenyss_hill = {
 			set_title_name = b_rhaenys_hh
@@ -264,7 +272,7 @@ conq_events.0003 = { # vale
 
 	right_portrait = {
 		character = root
-		animation = war_over_win
+		animation = marshal
 	}
 	left_portrait = {
 		character = scope:defender
@@ -323,8 +331,16 @@ conq_events.0003 = { # vale
 			limit = { has_variable = ac_started_conquest }
 			change_variable = { name = ac_started_conquest add = 1 }
 		}
-		province:4156 ={
-			set_holding_type = castle_holding
+		hidden_effect = {
+			province:4156 ={
+				set_holding_type = castle_holding
+			}
+			title:k_the_vale.holder = {
+				vassal_contract_set_obligation_level = {
+					type = feudal_government_levies
+					level = 0
+				}
+			}
 		}
 	}
 }
@@ -342,7 +358,7 @@ conq_events.0004 = { # stormlands
 
 	right_portrait = {
 		character = root
-		animation = war_over_win
+		animation = marshal
 	}
 	left_portrait = {
 		character = scope:defender
@@ -351,12 +367,12 @@ conq_events.0004 = { # stormlands
 	immediate = {
 		character:Durrandon_88 = { save_scope_as = argilacs_daughter }
 		hidden_effect = {
-			ac_change_vassals = {
-				OLD_HOLDER = scope:defender
-				NEW_HOLDER = root
-				CHANGE_VASSALS_OF_TITLE = title:k_the_stormlands
-				TYPE = conquest
-			}
+			#ac_change_vassals = {
+			#	OLD_HOLDER = scope:defender
+			#	NEW_HOLDER = root
+			#	CHANGE_VASSALS_OF_TITLE = title:k_the_stormlands
+			#	TYPE = conquest
+			#}
 			destroy_title = title:e_the_stormlands
 		}
 	}
@@ -438,8 +454,16 @@ conq_events.0004 = { # stormlands
 			limit = { has_variable = ac_started_conquest }
 			change_variable = { name = ac_started_conquest add = 1 }
 		}
-		province:4154 = {
-			set_holding_type = city_holding
+		hidden_effect = {
+			province:4154 = {
+				set_holding_type = city_holding
+			}
+			title:k_the_stormlands.holder = {
+				vassal_contract_set_obligation_level = {
+					type = feudal_government_levies
+					level = 0
+				}
+			}
 		}
 	}
 }
@@ -457,7 +481,7 @@ conq_events.0005 = { # reach
 
 	right_portrait = {
 		character = root
-		animation = war_over_win
+		animation = marshal
 	}
 	left_portrait = {
 		character = dynasty:dynn_Gardener.dynast
@@ -474,7 +498,7 @@ conq_events.0005 = { # reach
 		dynasty:dynn_Tyrell.dynast = { save_scope_as = tyrell }
 		hidden_effect = {
 			ac_change_vassals = {
-				OLD_HOLDER = scope:defender
+				OLD_HOLDER = title:e_the_reach.holder
 				NEW_HOLDER = root
 				CHANGE_VASSALS_OF_TITLE = title:k_the_reach
 				TYPE = conquest
@@ -610,6 +634,12 @@ conq_events.0005 = { # reach
 			province:4155 = {
 				set_holding_type = city_holding
 			}
+			title:k_the_reach.holder = {
+				vassal_contract_set_obligation_level = {
+					type = feudal_government_levies
+					level = 0
+				}
+			}
 		}
 	}
 }
@@ -627,7 +657,7 @@ conq_events.0006 = { # westerlands
 
 	right_portrait = {
 		character = root
-		animation = war_over_win
+		animation = marshal
 	}
 	left_portrait = {
 		character = scope:defender
@@ -635,9 +665,10 @@ conq_events.0006 = { # westerlands
 	}
 
 	immediate = {
+		dynasty:dynn_Lannister.dynast = { save_scope_as = lannister }
 		hidden_effect = {
 			ac_change_vassals = {
-				OLD_HOLDER = scope:defender
+				OLD_HOLDER = title:e_the_westerlands.holder
 				NEW_HOLDER = root
 				CHANGE_VASSALS_OF_TITLE = title:k_the_westerlands
 				TYPE = conquest
@@ -677,6 +708,18 @@ conq_events.0006 = { # westerlands
 				}
 			}
 		}
+		create_title_and_vassal_change = {
+			type = conquest
+			save_scope_as = change
+			add_claim_on_loss = no
+		}
+		dynasty:dynn_Lannister.dynast = {
+			change_liege = {
+				liege = root
+				change = scope:change
+			}
+		}
+		resolve_title_and_vassal_change = scope:change
 	}
 	option = {
 		name = conq_events.0006.b # keep titles
@@ -686,8 +729,16 @@ conq_events.0006 = { # westerlands
 			limit = { has_variable = ac_started_conquest }
 			change_variable = { name = ac_started_conquest add = 1 }
 		}
-		province:4153 = {
-			set_holding_type =  church_holding
+		hidden_effect = {
+			province:4153 = {
+				set_holding_type =  church_holding
+			}
+			title:k_the_westerlands.holder = {
+				vassal_contract_set_obligation_level = {
+					type = feudal_government_levies
+					level = 0
+				}
+			}
 		}
 		title:b_visenyas_hill = {
 			set_title_name = b_visenyas_hh
@@ -708,7 +759,7 @@ conq_events.0007 = { # north
 
 	right_portrait = {
 		character = root
-		animation = war_over_win
+		animation = marshal
 	}
 	left_portrait = {
 		character = scope:defender
@@ -768,6 +819,14 @@ conq_events.0007 = { # north
 			limit = { has_variable = ac_started_conquest }
 			change_variable = { name = ac_started_conquest add = 1 }
 		}
+		hidden_effect = {
+			title:k_the_north.holder = {
+				vassal_contract_set_obligation_level = {
+					type = feudal_government_levies
+					level = 0
+				}
+			}
+		}
 	}
 }
 
@@ -784,7 +843,7 @@ conq_events.0008 = { # dorne
 
 	right_portrait = {
 		character = root
-		animation = war_over_win
+		animation = marshal
 	}
 	left_portrait = {
 		character = scope:defender
@@ -846,6 +905,14 @@ conq_events.0008 = { # dorne
 		if = {
 			limit = { has_variable = ac_started_conquest }
 			change_variable = { name = ac_started_conquest add = 1 }
+		}
+		hidden_effect = {
+			title:k_dorne.holder = {
+				vassal_contract_set_obligation_level = {
+					type = feudal_government_levies
+					level = 0
+				}
+			}
 		}
 	}
 }
@@ -936,6 +1003,30 @@ conq_events.0009 = { # form iron throne when ac variable > 5
 			origin = title:d_kings_landing.holder.capital_province
 		}
 		trigger_event = conq_events.0012
+		title:k_the_reach.holder = {
+			agot_appoint_as_court_position_for_castle_history_effect = { 
+				CASTLE = title:e_the_iron_throne 
+				POSITION = warden_of_the_south_court_position 
+			}
+		}
+		title:k_the_north.holder = {
+			agot_appoint_as_court_position_for_castle_history_effect = { 
+				CASTLE = title:e_the_iron_throne 
+				POSITION = warden_of_the_north_court_position 
+			}
+		}
+		title:k_the_vale.holder = {
+			agot_appoint_as_court_position_for_castle_history_effect = { 
+				CASTLE = title:e_the_iron_throne 
+				POSITION = warden_of_the_east_court_position 
+			}
+		}
+		title:k_the_westerlands.holder = {
+			agot_appoint_as_court_position_for_castle_history_effect = { 
+				CASTLE = title:e_the_iron_throne 
+				POSITION = warden_of_the_west_court_position 
+			}
+		}
 	
 		ai_chance = {
 			base = 100
@@ -976,14 +1067,11 @@ conq_events.0010 = { # durrandon marriage event
 	override_background = {
 		reference = agot_pk_stormlands
 	}
-
 	theme = martial
-
 	right_portrait = {
 		character = character:Baratheon_14
 		animation = marshal
 	}
-
 	left_portrait = {
 		character = character:Durrandon_88
 		animation = grief
@@ -993,19 +1081,22 @@ conq_events.0010 = { # durrandon marriage event
 		character = root
 		animation = personality_bold
 	}
+	trigger = {
+		character:Baratheon_14 = { is_alive = yes }
+		character:Baratheon_14 = { is_married = no }
+		character:Durrandon_88 = { is_alive = yes }
+		character:Durrandon_88 = { is_married = no }
+	}
 
 	immediate = {
 		character:Baratheon_14 = { save_scope_as = orys }
+		hidden_effect = {
+			destroy_title = title:e_the_stormlands
+		}
 	}
 
 	option = {
 		name = conq_events.0010.a # marry orys to argilacs daughter and integrate
-		trigger = {
-			character:Baratheon_14 = { is_alive = yes }
-			character:Baratheon_14 = { is_married = no }
-			character:Durrandon_88 = { is_alive = yes }
-			character:Durrandon_88 = { is_married = no }
-		}
 		character:Baratheon_14 = {
 			marry = character:Durrandon_88
 			set_culture = culture:stormlander
@@ -1013,28 +1104,29 @@ conq_events.0010 = { # durrandon marriage event
 			remove_trait = bastard
 			add_trait = bastard_founder
 		}
-		ac_change_titles = { # give titles to argilac
+		#ac_change_kingdom_title = {
+		#	NEW_HOLDER = character:Baratheon_14
+		#	CHANGE_KINGDOM_TITLE = title:k_the_stormlands
+		#	TYPE = granted
+		#}
+		ac_change_titles = { 
 		OLD_HOLDER = root
 		NEW_HOLDER = character:Baratheon_14
 		GIVE_TITLES_IN_TITLE = title:k_the_stormlands
 		TYPE = granted
 		}
-		ac_change_kingdom_title = {
-			NEW_HOLDER = character:Baratheon_14
-			CHANGE_KINGDOM_TITLE = title:k_the_stormlands
-			TYPE = granted
-		}
-		ac_change_vassals = {
-			OLD_HOLDER = root
-			NEW_HOLDER = character:Baratheon_14
-			CHANGE_VASSALS_OF_TITLE = title:k_the_stormlands
-			TYPE = granted
-		}
+		character:Baratheon_14 = { get_title = title:k_the_stormlands }
 		dynasty:dynn_Baratheon = { set_coa = dynn_Durrandon }
 		character:Baratheon_14.house = { set_coa = dynn_Durrandon }
 		title:k_the_stormlands = { set_coa = dynn_Durrandon }
 
 		hidden_effect = {
+			ac_change_vassals = {
+				OLD_HOLDER = root
+				NEW_HOLDER = character:Baratheon_14
+				CHANGE_VASSALS_OF_TITLE = title:k_the_stormlands
+				TYPE = granted
+			}
 			character:Baratheon_14 = {
 				remove_trait = refusing_marriage
 				add_legitimacy = 850
@@ -1062,8 +1154,14 @@ conq_events.0010 = { # durrandon marriage event
 			limit = { has_variable = ac_started_conquest }
 			change_variable = { name = ac_started_conquest add = 1 }
 		}
-		province:4154 = {
-			set_holding_type = city_holding
+		hidden_effect = {
+			province:4154 = {
+				set_holding_type = city_holding
+			}
+		}
+		if = {
+			limit = { has_variable = orys_argilac_duel_happened }
+			remove_variable = orys_argilac_duel_happened
 		}
 	}
 }
@@ -1081,7 +1179,7 @@ conq_events.0011 = { # iron islands FOR vodrux
 
 	right_portrait = {
 		character = root
-		animation = personality_bold
+		animation = marshal
 	}
 	left_portrait = {
 		character = scope:defender
@@ -1169,6 +1267,16 @@ conq_events.0011 = { # iron islands FOR vodrux
 		option = {
 		name = conq_events.0011.c # keep titles
 	}
+	after = {
+		hidden_effect = {
+			title:k_the_iron_islands.holder = {
+				vassal_contract_set_obligation_level = {
+					type = feudal_government_levies
+					level = 0
+				}
+			}
+		}
+	}
 }
 
 conq_events.0012 = { # pick capital and do renames
@@ -1212,5 +1320,103 @@ conq_events.0012 = { # pick capital and do renames
 		name = conq_events.0012.b # rename to kings landing but keep capital as dragonstone
 		custom_tooltip = conq_events.0012.b_tt
 		custom_tooltip = conq_events.0012.a_tt
+	}
+}
+
+conq_events.0013 = { # westerlands conquest if started war with the reach
+	type = character_event
+	title = conq_events.0013.t
+	desc = conq_events.0013.desc
+
+	override_background = {
+		reference = farmland
+	}
+
+	theme = martial
+
+	left_portrait = {
+		character = scope:lannisterboy
+		animation = throne_room_kneel_1
+	}
+	right_portrait = {
+		character = root
+		animation = marshal
+	}
+
+	immediate = {
+		title:d_casterly_rock.holder = { save_scope_as = lannisterboy }
+		hidden_effect = {
+			#ac_change_vassals = {
+			#	OLD_HOLDER = scope:lannisterboy
+			#	NEW_HOLDER = root
+			#	CHANGE_VASSALS_OF_TITLE = title:k_the_westerlands
+			#	TYPE = conquest
+			#}
+			destroy_title = title:e_the_westerlands
+			create_title_and_vassal_change = {
+				type = swear_fealty
+				save_scope_as = liege_change
+			}
+			title:k_the_westerlands = {
+				every_de_jure_top_liege = {
+					change_liege = {
+						liege = root
+						change = scope:liege_change
+					}
+				}
+			}
+			resolve_title_and_vassal_change = scope:liege_change
+		}
+	}
+	option = {
+		name = conq_events.0013.a # lannisters get titles back and become lord paramount
+		ac_change_titles = { # give titles to lannisters
+			OLD_HOLDER = root
+			NEW_HOLDER = dynasty:dynn_Lannister.dynast
+			GIVE_TITLES_IN_TITLE = title:k_the_westerlands
+			TYPE = granted
+		}
+		ac_change_kingdom_title = {
+			NEW_HOLDER = dynasty:dynn_Lannister.dynast
+			CHANGE_KINGDOM_TITLE = title:k_the_westerlands
+			TYPE = granted
+		}
+		scope:lannisterboy = { give_nickname = nick_the_last }
+		hidden_effect = {
+			ac_change_vassals = {
+				OLD_HOLDER = root
+				NEW_HOLDER = dynasty:dynn_Lannister.dynast
+				CHANGE_VASSALS_OF_TITLE = title:k_the_westerlands
+				TYPE = granted
+			}
+			dynasty:dynn_Lannister.dynast = {
+				add_legitimacy = 1400
+				add_opinion = {
+					target = root
+					modifier = pleased_opinion
+					opinion = 100
+				}
+			}
+		}
+	}
+	after = {
+		if = {
+			limit = { has_variable = ac_started_conquest }
+			change_variable = { name = ac_started_conquest add = 1 }
+		}
+		hidden_effect = {
+			province:4153 = {
+				set_holding_type =  church_holding
+			}
+			title:k_the_westerlands.holder = {
+				vassal_contract_set_obligation_level = {
+					type = feudal_government_levies
+					level = 0
+				}
+			}
+		}
+		title:b_visenyas_hill = {
+			set_title_name = b_visenyas_hh
+		}
 	}
 }

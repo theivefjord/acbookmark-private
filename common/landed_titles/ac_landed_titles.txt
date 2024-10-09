@@ -1,6 +1,7 @@
 ﻿e_aegons_host = {
 	color = { 110 17 10 }
 	capital = c_kings_landing
+	can_create = { always = no }
 	k_the_crownlands = {
 		color = { 153 73 134 }
 		capital = c_kings_landing

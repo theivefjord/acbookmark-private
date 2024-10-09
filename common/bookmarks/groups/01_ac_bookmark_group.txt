@@ -1,3 +1,7 @@
-﻿ac_bm_group_7998 = { # Aegon's Conquest
+﻿ac_bm_group = { # Aegon's Conquest
 	default_start_date = 7998.1.1
 }
+
+#ac_bm_group_8002 = { # Aegon's Conquest'd
+#	default_start_date = 8002.1.1
+#}

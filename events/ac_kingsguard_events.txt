@@ -113,6 +113,8 @@ ac_kingsguard.0001 = {
 					KINGSGUARD = scope:conquest_kg_member
 					KING = root
 				}
+				agot_create_artifact_kingsguard_armour_effect = { OWNER = this }
+				agot_create_artifact_kingsguard_sword_effect = { OWNER = this }
 			}
 			agot_assign_lord_commander_effect = {
 				COMMANDER = character:Velaryon_15
@@ -142,6 +144,8 @@ ac_kingsguard.0001 = {
 					KINGSGUARD = scope:conquest_kg_member
 					KING = root
 				}
+				agot_create_artifact_kingsguard_armour_effect = { OWNER = this }
+				agot_create_artifact_kingsguard_sword_effect = { OWNER = this }
 				character:Targaryen_27 = { change_variable = { name = is_adding_kg add = 1 } }
 			}
 			agot_join_kingsguard_effect = {
@@ -173,6 +177,8 @@ ac_kingsguard.0001 = {
 					KINGSGUARD = scope:conquest_kg_member
 					KING = root
 				}
+				agot_create_artifact_kingsguard_armour_effect = { OWNER = this }
+				agot_create_artifact_kingsguard_sword_effect = { OWNER = this }
 				character:Targaryen_27 = { change_variable = { name = is_adding_kg add = 1 } }
 			}
 			agot_assign_lord_commander_effect = {

@@ -1057,3 +1057,28 @@ ac_vassalize_crownlands_effect = {
 	}
 	resolve_title_and_vassal_change = scope:change
 }
+
+ac_ironfist_alliance = {
+	title:e_the_reach.holder = { save_scope_as = reachboy }
+	title:e_the_westerlands.holder = { save_scope_as = westboy }
+	if = {
+		limit = {
+			scope:reachboy = { exists = yes }
+ 			scope:westboy = { exists = yes }
+			NOT = { scope:reachboy = { is_allied_to = scope:westboy } }
+		}
+		scope:westboy = {
+			add_opinion = {
+				target = scope:reachboy
+				modifier = event_negotiated_alliance_opinion
+			}
+		}
+		scope:reachboy = {
+			create_alliance = {
+				target = scope:westboy
+				allied_through_owner = scope:reachboy
+				allied_through_target = scope:westboy
+			}
+		}
+	}
+}

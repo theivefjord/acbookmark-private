@@ -1,0 +1,89 @@
+﻿commander_ac_conq_joined_battle = { # fof
+	type = commander
+
+	is_valid = {
+		exists = root
+		scope:combat_side.enemy_side = {
+			any_side_commander = {
+				is_alive = yes
+				house = character:Gardener_95.house 
+			}
+		}
+		has_variable = ac_started_conquest
+		NOT = { has_variable = decided_gardeners_fate }
+	}
+
+	chance = {
+		base = 100
+	}
+
+	effect = {
+		root = {
+			trigger_event = ac_war_events.0003
+		}
+	}
+}
+
+knight_ac_conq_joined_battle = { # fof
+	type = knight
+
+	is_valid = {
+		exists = root
+		scope:combat_side.enemy_side = {
+			any_side_knight = {
+				is_alive = yes
+				house = character:Gardener_95.house 
+			}
+		}
+		has_variable = ac_started_conquest
+		NOT = { has_variable = decided_gardeners_fate }
+	}
+
+	chance = {
+		base = 100
+	}
+
+	effect = {
+		root = {
+			trigger_event = ac_war_events.0003
+		}
+	}
+}
+
+orys_knight_against_argilac = { # argilac duel
+	type = commander
+
+	is_valid = {
+		exists = root
+		character:Baratheon_14 = { is_alive = yes }
+		character:Durrandon_87 = { is_alive = yes }
+		character:Baratheon_14 = { is_knight_of = character:Targaryen_27 }
+		scope:combat_side.enemy_side = {
+			OR = {
+				any_side_knight = { this = character:Durrandon_87 }
+				any_side_commander = { this = character:Durrandon_87 }
+			}
+		}
+		has_variable = ac_started_conquest
+		NOT = { has_variable = orys_argilac_duel_happened }
+	}
+
+	chance = {
+		base = 100
+	}
+
+	effect = {
+		root = {
+			trigger_event = {
+				id = ac_war_events.0012
+				days = 2
+			}
+		}
+		#else_if = {
+		#	limit = { character:Durrandon_87 = { is_ai = no } }
+		#	character:Durrandon_87 = {
+		#		trigger_event = ac_war_events.0012
+		#	}
+		#}
+	}
+}

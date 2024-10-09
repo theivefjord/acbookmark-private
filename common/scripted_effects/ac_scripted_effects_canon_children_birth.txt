@@ -376,6 +376,9 @@ ac_canon_children_davos_baratheon_birth_effect = {
 
 		add_character_flag = has_scripted_appearance
 		make_trait_inactive = scripted_appearance
+		make_trait_inactive = blue_eyes
+		make_trait_inactive = black_hair
+		make_trait_inactive = smol_tol
 
 		agot_canon_children_schedule_trait_effect = { TRAIT = flag:charming AGE = childhood_personality_age }
 		agot_canon_children_schedule_trait_effect = { TRAIT = flag:honest AGE = agot_canon_children_trait_1_year }

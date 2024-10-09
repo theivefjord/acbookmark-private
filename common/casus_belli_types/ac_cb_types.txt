@@ -281,6 +281,11 @@
 						id = conq_events.0005
 						days = { 3 7 }
 					}
+					get_title = title:k_the_westerlands
+					trigger_event = {
+						id = conq_events.0006
+						days = { 3 7 }
+					}
 				}
 			}
 			else_if = {
@@ -304,29 +309,31 @@
 						id = conq_events.0006
 						days = { 3 7 }
 					}
+					get_title = title:k_the_reach
+					trigger_event = {
+						id = conq_events.0005
+						days = { 3 7 }
+					}
 				}
 			}
 			else_if = {
 				limit = { scope:defender.primary_title = title:e_the_stormlands  }
+				#if = {
+				#	limit = {
+				#		character:Baratheon_14 = { is_alive = yes }
+				#		character:Durrandon_88 = { is_alive = yes }
+				#	}
+				#	scope:attacker = { 
+				#		get_title = title:k_the_stormlands
+				#		#trigger_event = {
+				#		#	id = conq_events.0010 # send orys event first
+				#		#	days = { 3 7 }
+				#		#}
+				#	}
+				#}
 				if = {
-					limit = {
-						character:Baratheon_14 = { is_alive = yes }
-						character:Durrandon_88 = { is_alive = yes }
-					}
-					scope:attacker = { 
-						get_title = title:k_the_stormlands
-						trigger_event = {
-							id = conq_events.0010 # send orys event first
-							days = { 3 7 }
-						}
-					}
-				}
-				else_if = {
 					limit = { 
-						OR = {
-							character:Baratheon_14 = { is_alive = no }
-							character:Durrandon_88 = { is_alive = no }
-						}
+						character:Baratheon_14 = { is_alive = no }
 					}
 					scope:attacker = {
 						get_title = title:k_the_stormlands

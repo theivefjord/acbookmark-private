@@ -29,8 +29,7 @@
  bookmark_ac_argilac_durrandon:0 "Argilac Durrandon"
  bookmark_ac_argilac_durrandon_desc:0 "Argilac Durrandon, known as Argilac the Arrogant, was the last Storm King of House Durrandon. Proud and defiant, Argilac refused Aegon Targaryen's offer of alliance and instead chose to face him in battle. He fought valiantly at the Last Storm, where he met his end in single combat against Orys Baratheon, Aegon's general and rumored half-brother. With Argilac's death, House Durrandon was extinguished, and the Stormlands passed to House Baratheon, marking the end of an era for the Stormlands."
  
- ac_bm_group_7998:0 "2 B.C."
- ac_bm_group_7998_desc:0 "Is this a thing?"
+ ac_bm_group_desc:0 "Is this a thing?"
  ac_bm_7998:0 "Aegon's Conquest"
  ac_bm_7998_desc:0 "After Daenys the Dreamer foresaw the Doom of Valyria, the Targaryens fled with their dragons to the westernmost outpost of the Valyrian Freehold, known as Dragonstone. The Valyrians didn't use coats of arms, so to enter the politics of Westeros, the Targaryens adopted a three-headed dragon as their sigil. 114 years later, Aegon and his sister-wives, Visenya and Rhaenys, turn their gaze westward. With their dragons—Balerion, Meraxes, and Vhagar—the Three-Headed Dragon is poised to unite all seven kingdoms of Westeros under one banner. This opportunity, will you capture it? Or let it slip?"
 
@@ -91,7 +90,7 @@
  conq_events.0003.desc:0 "[GetTitleByKey('k_the_vale').GetNameNoTier] of Arryn has fallen to me. The future of the region now hangs in the balance."
  conq_events.0004.desc:0 "I have brought [GetTitleByKey('k_the_stormlands').GetNameNoTier] to heel. The fate of House [defender.GetHouse.GetBaseName] and their lands now lies with me."
  conq_events.0005.desc:0 "[GetTitleByKey('k_the_reach').GetNameNoTier] has been subjugated by me, and its lords must now answer to the Dragon."
- conq_events.0006.desc:0 "[GetTitleByKey('k_the_westerlands').GetNameNoTier] have succumbed to my might. The future of house [defender.GetHouse.GetBaseName] and their lands is now uncertain."
+ conq_events.0006.desc:0 "[GetTitleByKey('k_the_westerlands').GetNameNoTier] have succumbed to my might. The future of house [lannister.GetHouse.GetBaseName] and their lands is now uncertain."
  conq_events.0007.desc:0 "[GetTitleByKey('k_the_north').GetNameNoTier] has fallen to the forces of me. The Stark lords will now face my decision."
  conq_events.0008.desc:0 "[GetTitleByKey('k_dorne').GetNameNoTier] has been brought under my control. The fate of the Martells and their lands is now in my hands."
  conq_events.0009.desc:0 "Having conquered a vast portion of Westeros, I must now make a decision about the future of my realm."
@@ -112,11 +111,11 @@
  conq_events.0004.b:0 "[argilacs_daughter.GetFullName] will rule the Stormlands"
 
  conq_events.0005.c:0 "Keep the titles to distribute later"
- conq_events.0005.a:0 "House [defender.GetHouse.GetBaseName] will continue ruling the reach"
+ conq_events.0005.a:0 "House [gardener.GetHouse.GetBaseName] will continue ruling the reach"
  conq_events.0005.b:0 "House [tyrell.GetHouse.GetBaseName] will be raised up to great lords"
 
  conq_events.0006.b:0 "Keep the titles to distribute later"
- conq_events.0006.a:0 "House [defender.GetHouse.GetBaseName] will continue ruling [GetTitleByKey('k_the_westerlands').GetName]"
+ conq_events.0006.a:0 "House [lannister.GetHouse.GetBaseName] will continue ruling [GetTitleByKey('k_the_westerlands').GetName]"
 
  conq_events.0007.b:0 "Keep the titles to distribute later"
  conq_events.0007.a:0 "House [defender.GetHouse.GetBaseName] will be allowed to continue ruling the North"
@@ -199,6 +198,7 @@
  ac_crownlands_events.0002.a:0 "Burn them all"
  ac_crownlands_events.0002.a_tt:0 "Will start wars to vassalize [GetTitleByKey('d_rosby').GetHolder.GetFullName], [GetTitleByKey('d_stokeworth').GetHolder.GetFullName], and [GetTitleByKey('d_duskendale').GetHolder.GetFullName]"
  ac_crownlands_events.0002.b:0 "They will learn eventually"
+ ac_cronwlands_events.0002.tt:0 "You will get an opportunity later on to expand these de jure lands of [GetTitleByKey('k_the_crownlands').GetNameNoTier]."
 
  ac_crownlands_events.0003.t:0 "Crackclaw Point"
  ac_crownlands_events.0003.desc:0 "I might send ravens to the lords and ladies of [GetTitleByKey('d_crackclaw_point').GetNameNoTier], demanding their fealty. They will either bend the knee or suffer the wrath of House [ROOT.Char.GetDynasty.GetBaseName]."
@@ -237,14 +237,14 @@
  conq_events.0005.d:0 "The [gardener.GetDynasty.GetBaseName] dynasty will live on and continue ruling the Reach"
 
  ac_war_events.0004.t:0 "the King in the North"
- ac_war_events.0004.desc:0 "While marching north with my army, my outriders come upon a small party of four, three maesters led by [brandon.GetFullName].\n\nHe is quickly brought before me and speaks:\n"Your Grace, my brother [defender.GetFirstName] [defender.GetHouse.GetBaseName], the King in the North, seeks an audience with you.""
+ ac_war_events.0004.desc:0 "While marching north with my army, my outriders come upon a small party of four, three maesters led by [brandon.GetFullName].\n\nHe is quickly brought before me and speaks:\n#bold Your Grace, my brother [defender.GetFirstName] [defender.GetHouse.GetBaseName], the King in the North, seeks an audience with you."#!"
  ac_war_events.0004.a:0 "I will hear him out"
  ac_war_events.0004.b:0 "Words cannot shield you from the dragon"
  ac_war_events.0004.c:0 "You were a fool to come here"
  ac_war_events.0004.a_tt:0 "#X @warning_icon! Ends the King who Knelt event chain.#!"
 
  ac_war_events.0005.t:0 "the King in the North"
- ac_war_events.0005.desc:0 ""Your grace, I have come to bend the knee and swear fealty to you, so that my people might be spared the dragonfire that has ravaged the south.\n\nIn return, I ask only that you send any unwanted prisoners or criminals north to [GetTitleByKey('k_the_wall').GetNameNoTier] to take the black and defend the realm.\n\nWinter is coming, and the Wall is all that stands between us and the evil that stirs beyond.""
+ ac_war_events.0005.desc:0 "#bold Your grace, I have come to bend the knee and swear fealty to you, so that my people might be spared the dragonfire that has ravaged the south.\n\nIn return, I ask only that you send any unwanted prisoners or criminals north to [GetTitleByKey('k_the_wall').GetNameNoTier] to take the black and defend the realm.\n\nWinter is coming, and the Wall is all that stands between us and the evil that stirs beyond.#!"
  ac_war_events.0005.a:0 "A reasonable request, my lord"
  ac_war_events.0005.b:0  "Words are wind"
 
@@ -281,11 +281,11 @@
  ac_cd_canon_bonding.a:0 "Good luck"
 
  ac_cd_events.0011.t:0 "the Cannibal"
- ac_cd_events.0011.desc:0 "As I inspect the newest hatchling [dragonkeeper.GetName] pulls me aside.\n\n"Your Grace, we may have a problem. The newest hatchling is... different. He is larger than the others, and the most aggressive hatchling I've ever seen. We have had to house him far away from the others, as he seems more like to eat them than play with them."\n\n"We have taken to calling him the [dragon.GetName].""
+ ac_cd_events.0011.desc:0 "As I inspect the newest hatchling [dragonkeeper.GetName] pulls me aside.\n\n#bold Your Grace, we may have a problem. The newest hatchling is... different. He is larger than the others, and the most aggressive hatchling I've ever seen. We have had to house him far away from the others, as he seems more like to eat them than play with them."\n\n"We have taken to calling him the [dragon.GetName].#!"
  ac_cd_events.0011.a:0 "Very troubling"
 
  ac_cd_events.0012.t:0 "the Cannibal"
- ac_cd_events.0012.desc:0 "The [dragon.GetName] has grown quickly, and his aggression has only increased. He has taken to attacking the other hatchlings, and even the handlers who care for him. He is a danger to all around him.\n\n"Your grace, what shall be done with him?""
+ ac_cd_events.0012.desc:0 "The [dragon.GetName] has grown quickly, and his aggression has only increased. He has taken to attacking the other hatchlings, and even the handlers who care for him. He is a danger to all around him.\n\n#bold Your grace, what shall be done with him?#!"
  ac_cd_events.0012.a:0 "We must let him go"
  ac_cd_events.0012.b:0 "He must stay"
  ac_cd_events.0012.b.tt:0 "You risk the lives of the other dragons in hopes of eventually taming what will surely become a mighty [dragon|E]"
@@ -295,15 +295,38 @@
  ac_war_events.0009.b:0 "I will not accept their fealty"
 
  ac_war_events.0010.t:0 "the Flight of King Ronnel"
- ac_war_events.0010.desc:0 "The time has come to bring the Vale into the fold. The craggy terrain and unyielding mountains leave much to be desired. Not to mention the Bloody Gate, upon which many armies are said to have dashed themselves asunder.\n\nOne evening, as we break camp beneath the shadow of the mountains, [visenya.GetName] approaches me: \n\n"Brother, give me leave to mount Vhagar. Let me fly to greet this boy king and his mother in their castle in the clouds.""
+ ac_war_events.0010.desc:0 "The time has come to bring the Vale into the fold. The craggy terrain and unyielding mountains leave much to be desired. Not to mention the Bloody Gate, upon which many armies are said to have dashed themselves asunder.\n\nOne evening, as we break camp beneath the shadow of the mountains, [visenya.GetName] approaches me: \n\n#bold Brother, give me leave to mount Vhagar. Let me fly to greet this boy king and his mother in their castle in the clouds!#"
  ac_war_events.0010.a:0 "As you wish"
  ac_war_events.0010.b:0 "A gate is no match for a dragon"
  ac_war_events.0010.a_tt:0 "#X @warning_icon! Ends the Flight of King Ronnel event chain.#!"
 
  ac_war_events.0011.t:0 "the Flight of King Ronnel"
- ac_war_events.0011.desc:0 "My sister returns from the Eyrie. She dismounts Vhagar, with a satisfied expression she says:\n\n"I have shown the little King the world from dragonback, and his mother was not blind to the message. They have bent the knee, brother. The Vale is ours.""
+ ac_war_events.0011.desc:0 "My sister returns from the Eyrie. She dismounts Vhagar, with a satisfied expression she says:\n\n#bold I have shown the little King the world from dragonback, and his mother was not blind to the message. They have bent the knee, brother. The Vale is ours.#!"
  ac_war_events.0011.a:0 "Well done sister"
 
  ac_proclaim_iron_throne:0 "Proclaim the Iron Throne"
  ac_proclaim_iron_throne_confirm:0 "Proclaim the Iron Throne"
+
+ ###### 6th update
+ ac_war_events.0012.t:0 "the Last Storm King"
+ ac_war_events.0012.desc:0 "The battle is turned into chaos after Rhaenys descends upon the field atop Meraxes. Amidst the clamor of battle, the voice of [orys.GetName] booms like thunder:\n#bold Argilac! it is over. My brother is not without mercy. Yield now, and your line will go on ruling Storm's End.#!\n\nEnraged, Argilac bellows back:\n#bold Yield? I am the [argilac.GetName] of the ancient line of House [argilac.GetHouse.GetName]! Not even the gods dare command me! I spit upon your brother! And when you lie dead beneath my feet, Bastard, I shall spit on you too.#!"
+ ac_war_events.0012.a:0 "Good luck brother"
+ ac_war_events.0012.b:0 "Single combat is unnecessary"
+ ac_war_events.0012.a_tt:0 "A single combat between [orys.GetName] and [argilac.GetFirstName] will begin"
  
+ ac_bm_group_8002:0 "2 A.C."
+ ac_bm_8002:0 "Reign of the Dragon"
+ ac_bm_8002_desc:0 "Although Aegon calls himself the Lord of the Seven Kingdoms, one kingdom remains unconquered.\n\n#bold Will you try to bring Dorne into the fold, or will you let the Yellow Toad simmer in her desert?#!"
+
+ bookmark_ac_aegon_targaryen_post_conquest:0 "Aegon Targaryen"
+ bookmark_ac_visenya_targaryen_post_conquest:0 "Visenya Targaryen"
+ bookmark_ac_rhaenys_targaryen_post_conquest:0 "Rhaenys Targaryen"
+ bookmark_ac_meria_martell_post_conquest:0 "Meria Martell"
+ bookmark_ac_aegon_targaryen_post_conquest_desc:0 "Aegon Targaryen, known as the Conqueror, has brought six of the Seven Kingdoms under his rule. With the power of his dragons and the loyalty of his sisters, Aegon has forged a unified realm from the ashes of his enemies. Yet, Dorne still stands independent, defying the Iron Throne. Aegon must now decide how to deal with this final holdout: through fire and blood, or perhaps through words of peace.\n\n#bold \Will you continue your conquest of fire, or find another path to rule all of Westeros?\#!"
+ bookmark_ac_meria_martell_post_conquest_desc:0 "Meria Martell, the Princess of Dorne, stands unyielding against the tides of conquest. While the rest of Westeros has bent the knee, Dorne remains free under her leadership. Known as the Yellow Toad of Dorne, Meria is old, yet sharp as ever, and her desert kingdom remains impenetrable to those who seek to conquer it. As Aegon's forces threaten the borders, Meria must use all her cunning to maintain Dorne's independence.\n\n#bold \Will you fight to keep Dorne free, or will the dragons finally break the proud spirit of House Martell?\#!"
+
+ conq_events.0013.t:0 "the King of the Rock"
+ conq_events.0013.desc:0 "The sun has barely risen after the crushing defeat of the Gardeners when one of my knights approaches, dragging along a man in chains. Stopping a few paces away, the man walks up to me, bends the knee, and says:\n\n#bold Your Grace, I am [lannisterboy.GetFirstName] of the House [lannisterboy.GetHouse.GetBaseName], once King of the Rock. I have come to offer you my sword and my crown, and in the light of the Seven, to beg mercy for myself and my men.#!"
+ conq_events.0013.a:0 "You have nothing to fear, my lord"
+
+ ac_bm_group:0 "Coming of the Dragon"

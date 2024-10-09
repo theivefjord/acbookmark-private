@@ -26,7 +26,7 @@ ac_canon_children_birth_year_alysanne_targaryen_min = { value = ac_canon_childre
 ac_canon_children_birth_year_vaella_targaryen = 8039
 ac_canon_children_birth_year_vaella_targaryen_min = { value = ac_canon_children_birth_year_vaella_targaryen add = -1 }
 
-ac_canon_children_birth_year_davos_baratheon = 8010
+ac_canon_children_birth_year_davos_baratheon = 8001
 ac_canon_children_birth_year_davos_baratheon_min = { value = ac_canon_children_birth_year_davos_baratheon add = -1 }
 
 # Marriage years

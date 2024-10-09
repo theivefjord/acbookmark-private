@@ -200,7 +200,10 @@ ac_war_events.0003 = { # field of fire
 			every_character_war = {
 				limit = {
 					using_cb = ac_conquest_cb
-					is_defender = title:e_the_reach.holder
+					OR = {
+						primary_defender = title:e_the_westerlands.holder
+						primary_defender = title:e_the_reach.holder
+					}
 				}
 				save_scope_as = reach_war
 			}
@@ -262,7 +265,6 @@ ac_war_events.0004 = { # the king who knelt - start
 				target = scope:defender
 				modifier = angry_opinion
 				opinion = -100
-				years = 20
 			}
 		}
 		custom_tooltip = ac_war_events.0004.a_tt
@@ -657,17 +659,150 @@ ac_war_events.0011 = { # the king who - flew
 	}
 }
 
-ac_war_events.0099 = {
+ac_war_events.0012 = { # Orys and Argilac duel | change this in the future, if player is argilac
+	type = character_event
+	title = ac_war_events.0012.t
+	desc = ac_war_events.0012.desc
+	#desc = {
+	#	first_valid = {
+	#		triggered_desc = { 
+	#			trigger = { this = character:Targaryen_27 }
+	#			desc = ac_war_events.0012.desc.aegon
+	#		}
+	#		triggered_desc = {
+	#			trigger = { this = character:Durrandon_87 }
+	#			desc = ac_war_events.0012.desc.argilac
+	#		}
+	#	}
+	#}
+	override_background = {
+		reference = battlefield
+	}
+	theme = war
+	left_portrait = {
+		character = scope:orys
+		animation = aggressive_sword
+		triggered_outfit = {
+			outfit_tags = { no_hat }
+		}
+	}
+	right_portrait = {
+		character = scope:argilac
+		animation = aggressive_mace
+	}
+
+	trigger = {
+		character:Durrandon_87 = { is_alive = yes }
+		character:Baratheon_14 = { is_alive = yes }
+	}
+	
+	immediate = {
+		location = { save_scope_as = location }
+		character:Baratheon_14 = { save_scope_as = orys }
+		character:Durrandon_87 = { save_scope_as = argilac }
+		set_variable = orys_argilac_duel_happened
+	}
+
+	option = {
+		name = ac_war_events.0012.a
+		custom_tooltip = ac_war_events.0012.a_tt
+
+		configure_start_single_combat_effect = {
+			SC_INITIATOR = scope:orys
+			SC_ATTACKER = scope:orys
+			SC_DEFENDER = scope:argilac
+			FATALITY = always
+			FIXED = yes
+			LOCALE = terrain_scope
+			OUTPUT_EVENT = ac_war_events.0098
+			INVALIDATION_EVENT = single_combat.1006
+		}
+		trigger_event = ac_war_events.0098
+	}
+
+	option = { # no single combat
+		name = ac_war_events.0012.b
+	}
+	#after = {
+	#	if = {
+	#		limit = { has_variable = ac_started_conquest }
+	#		change_variable = { name = ac_started_conquest add = 1 }
+	#	}
+	#	province:4154 = {
+	#		set_holding_type = city_holding
+	#	}
+	#	if = {
+	#		limit = { has_variable = ac_started_conquest }
+	#		remove_variable = ac_started_conquest
+	#	}
+	#}
+}
+
+ac_war_events.0098 = { # Orys and Argilac duel outcome
 	hidden = yes
+
 	immediate = {
 		root = {
 			every_character_war = {
 				limit = {
 					using_cb = ac_conquest_cb
-					is_defender = title:e_the_reach.holder
+					is_defender = title:e_the_stormlands.holder
 				}
 				end_war = attacker
 			}
+		}
+		#hidden_effect = {
+		#	ac_change_vassals = {
+		#		OLD_HOLDER = scope:defender
+		#		NEW_HOLDER = root
+		#		CHANGE_VASSALS_OF_TITLE = title:k_the_stormlands
+		#		TYPE = granted
+		#	}
+		#}
+		#ac_change_liege = {
+		#	TARGET = scope:defender
+		#	NEW_LIEGE = root
+		#}
+		if = {
+			limit = {
+				scope:orys = { is_alive = yes }
+				scope:argilac = { is_alive = no }
+			}
+			trigger_event = {
+				id = conq_events.0010
+				days = 5
+			}
+		}
+		else = {
+			trigger_event = {
+				id = conq_events.0004
+				days = 5
+			}
+		}
+	}
+}
+
+ac_war_events.0099 = {
+	hidden = yes
+	immediate = {
+		root = {
+			scope:reach_war = {
+				end_war = attacker
+			}
+			#every_character_war = {
+			#	limit = {
+			#		using_cb = ac_conquest_cb
+			#		primary_defender = title:e_the_reach.holder
+			#	}
+			#	end_war = attacker
+			#}
+			#every_character_war = {
+			#	limit = {
+			#		using_cb = ac_conquest_cb
+			#		primary_defender = title:e_the_reach.holder
+			#	}
+			#	end_war = attacker
+			#}
 		}
 	}
 }

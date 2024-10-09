@@ -10,6 +10,68 @@ on_war_invalidated = {
 	}
 }
 
+#on_war_won_attacker = {
+#	on_actions = {
+#		ac_on_won_rheachrock_war
+#	}
+#}
+
+on_war_started = {
+	on_actions = {
+		ac_westerlands_or_reach_war_started
+	}
+}
+
+#ac_on_won_rheachrock_war = {
+#	effect = {
+#		if = {
+#			limit = {
+#				scope:defender.primary_title = title:e_the_reach
+#				scope:attacker = { has_variable = ac_started_conquest }
+#			}
+#			scope:attacker = { 
+#				get_title = title:k_the_westerlands
+#				trigger_event = conq_events.0006
+#			}
+#		}
+#		else_if = {
+#			limit = {
+#				scope:defender.primary_title = title:e_the_westerlands
+#				scope:attacker = { has_variable = ac_started_conquest }
+#			}
+#			scope:attacker = { 
+#				get_title = title:k_the_reach
+#				trigger_event = conq_events.0005
+#			}
+#		}
+#	}
+#}
+
+ac_westerlands_or_reach_war_started = {
+	trigger = {
+		OR = {
+			scope:defender = { primary_title = title:e_the_westerlands }
+			scope:defender = { primary_title = title:e_the_reach }
+		}
+	}
+	effect = {
+		if = {
+			limit = { NOT = { scope:defender = { is_allied_to = scope:attacker } } }
+			ac_ironfist_alliance = yes
+		}
+		if = {
+			limit = { scope:defender = { primary_title = title:e_the_reach } }
+			scope:war = { add_defender = scope:westboy }
+			#add_defender = scope:westboy
+		}
+		else_if = {
+			limit = { scope:defender = { primary_title = title:e_the_westerlands } }
+			scope:war = { add_defender = scope:reachboy }
+			#add_defender = scope:reachboy
+		}
+	}
+}
+
 ac_on_burn_harrenhal = {
 	trigger = {
 		exists = scope:army
@@ -32,7 +94,8 @@ ac_on_burn_harrenhal = {
 
 ac_on_invalidated_war = {
 	trigger = {
-		scope:attacker = { var:ac_started_conquest >= 5 } 
+		scope:attacker = { has_variable = ac_started_conquest }
+		scope:attacker = { var:ac_started_conquest >= 5 }
 		scope:attacker = { NOT = { has_title = title:e_the_iron_throne } }
 	}
 	effect = {

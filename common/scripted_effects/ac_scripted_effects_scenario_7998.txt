@@ -1,5 +1,9 @@
 ﻿ac_7998_scenario_setup = {
 	ac_canon_children_setup_story_cycles_effect = yes
+	#if = {
+	#	limit = { NOT = { character:Gardener_53 = { is_allied_to = character:Lannister_79 } } }
+	#	ac_ironfist_alliance = yes
+	#}
 
 	if = {
 		limit = { has_game_rule = agot_canon_children_enabled }
@@ -44,10 +48,24 @@
 	character:Targaryen_27 ?= { # Aegon
 		if = {
 			limit = { is_alive = yes }
+			give_nickname = nick_the_dragon
 			add_stewardship_skill = 7
 			set_character_faith = faith:valyrian
 			remove_concubine = character:Targaryen_29
 			marry = character:Targaryen_29
+			add_gold = 480 # to be able to afford coronation right away
+			create_maa_regiment = {
+				type = dragonkeepers
+				size = 4
+			}
+			create_maa_regiment = {
+				type = dragonkeepers
+				size = 4
+			}
+			create_maa_regiment = {
+				type = armored_horsemen
+				size = 2
+			}
 			spawn_army = {
 				uses_supply = no
 				inheritable = no
@@ -88,7 +106,7 @@
 		if = {
 			limit = { is_alive = yes }
 			add_trait = refusing_marriage
-			add_prowess_skill = 80 # HOW DO I PROTECT MY CANON BOYOS??
+			#add_prowess_skill = 80 # HOW DO I PROTECT MY CANON BOYOS??
 		}
 	}
 
@@ -103,4 +121,77 @@
 		limit = { NOT = { has_global_variable = CoW_is_loaded } }
 		province:1934 = { add_special_building = harrenhal_01 }
 	}
+}
+
+ac_8002_scenario_setup = {
+	ac_canon_children_setup_story_cycles_effect = yes
+
+	if = {
+		limit = { has_game_rule = agot_canon_children_enabled }
+		every_living_character = {
+			limit = { has_variable = canon_status_canon }
+			add_character_modifier = ac_cc_protection
+		}
+	}
+	character:Martell_53.culture = {
+		add_innovation = innovation_agot_anti_dragon_fighting
+	}
+	culture:high_valyrian = { add_culture_tradition = ac_val_polygamy_doctrine }
+
+	character:dragon_meraxes ?= { # meraxes story for canon dragons
+		if = {
+			limit = {
+				has_game_rule = agot_canon_dragons_enabled
+			}
+			create_story = story_ac_canon_dragons_meraxes 
+		}
+	}
+	character:dragon_vhagar ?= { # vhagar story for canon dragons
+		if = {
+			limit = {
+				has_game_rule = agot_canon_dragons_enabled
+			}
+			create_story = story_ac_canon_dragons_vhagar
+		}
+	}
+
+	character:Targaryen_29 ?= { # Rhaenys
+		if = {
+			limit = { is_alive = yes }
+			#set_character_faith = faith:the_seven_main
+		}
+	}
+	character:Targaryen_28 ?= { # Visenya
+		if = {
+			limit = { is_alive = yes }
+			#set_character_faith = faith:the_seven_main
+		}
+	}
+	character:Targaryen_27 ?= { # Aegon
+		if = {
+			limit = { is_alive = yes }
+			add_stewardship_skill = 7
+			#set_character_faith = faith:the_seven_main
+			remove_concubine = character:Targaryen_29
+			marry = character:Targaryen_29
+			reverse_add_opinion = {
+				target = character:Martell_53
+				modifier = angry_opinion
+				opinion = -200
+			}
+		}
+	}
+	province:4152 = {
+		set_holding_type = city_holding
+	}
+	province:4153 = {
+		set_holding_type =  church_holding
+	}
+	province:4155 = {
+		set_holding_type = city_holding
+	}
+	province:4156 ={
+		set_holding_type = castle_holding
+	}
+	#province:1934 = { add_special_building = ruins_harrenhal_01 }
 }

@@ -70,7 +70,7 @@ ac_crownlands_events.0002 = { # crownlands wars
 	title = ac_crownlands_events.0002.t
 	desc = ac_crownlands_events.0002.desc
 	override_background = {
-		reference = holy_site_generic
+		reference = farmland
 	}
 
 	theme = martial
@@ -137,6 +137,7 @@ ac_crownlands_events.0002 = { # crownlands wars
 	
 	option = { # or not 
 		name = ac_crownlands_events.0002.b  
+		custom_tooltip = ac_cronwlands_events.0002.tt
 		ai_chance = {
 			base = 100
 		}
@@ -150,7 +151,7 @@ ac_crownlands_events.0003 = { # send ravens to the independent boyos at crackcla
 
 	theme = intrigue
 	override_background = {
-		reference = bp1_relaxing_room_western
+		reference = farmland
 	}
 
 	left_portrait = {
