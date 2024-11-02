@@ -682,9 +682,6 @@ ac_war_events.0012 = { # Orys and Argilac duel | change this in the future, if p
 	left_portrait = {
 		character = scope:orys
 		animation = aggressive_sword
-		triggered_outfit = {
-			outfit_tags = { no_hat }
-		}
 	}
 	right_portrait = {
 		character = scope:argilac
@@ -698,7 +695,10 @@ ac_war_events.0012 = { # Orys and Argilac duel | change this in the future, if p
 	
 	immediate = {
 		location = { save_scope_as = location }
-		character:Baratheon_14 = { save_scope_as = orys }
+		character:Baratheon_14 = {
+			save_scope_as = orys
+			add_character_flag = no_hat
+		}
 		character:Durrandon_87 = { save_scope_as = argilac }
 		set_variable = orys_argilac_duel_happened
 	}
@@ -711,31 +711,52 @@ ac_war_events.0012 = { # Orys and Argilac duel | change this in the future, if p
 			SC_INITIATOR = scope:orys
 			SC_ATTACKER = scope:orys
 			SC_DEFENDER = scope:argilac
-			FATALITY = always
-			FIXED = yes
+			FATALITY = no
+			FIXED = no
 			LOCALE = terrain_scope
-			OUTPUT_EVENT = ac_war_events.0098
+			OUTPUT_EVENT = ac_war_events.0013
 			INVALIDATION_EVENT = single_combat.1006
 		}
-		trigger_event = ac_war_events.0098
+		#trigger_event = ac_war_events.0098
 	}
 
 	option = { # no single combat
 		name = ac_war_events.0012.b
 	}
-	#after = {
-	#	if = {
-	#		limit = { has_variable = ac_started_conquest }
-	#		change_variable = { name = ac_started_conquest add = 1 }
-	#	}
-	#	province:4154 = {
-	#		set_holding_type = city_holding
-	#	}
-	#	if = {
-	#		limit = { has_variable = ac_started_conquest }
-	#		remove_variable = ac_started_conquest
-	#	}
-	#}
+}
+
+ac_war_events.0013 = {
+	hidden = yes
+
+	immediate = {
+		character:Baratheon_14 = { remove_character_flag = no_hat }
+	}
+	option = {
+		random_list = {
+			0 = {
+				modifier = { # Orys wins
+					add = agot_historic_outcome_2
+				}
+				character:Durrandon_87 = {
+					death = {
+						death_reason = death_duel
+						killer = character:Baratheon_14
+					}
+				}
+			}
+			0 = {
+				modifier = { # Argilac wins
+					add = agot_nononhistoric_outcome_2
+				}
+				character:Baratheon_14 = {
+					death = {
+						death_reason = death_duel
+						killer = character:Durrandon_87
+					}
+				}
+			}
+		}
+	}
 }
 
 ac_war_events.0098 = { # Orys and Argilac duel outcome

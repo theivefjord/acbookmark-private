@@ -332,8 +332,28 @@
 				#	}
 				#}
 				if = {
-					limit = { 
-						character:Baratheon_14 = { is_alive = no }
+					limit = {
+						character:Baratheon_14 = { is_alive = yes }
+						character:Baratheon_14 = { is_married = no }
+						character:Durrandon_88 = { is_alive = yes }
+						character:Durrandon_88 = { is_married = no }
+					}
+					scope:attacker = {
+						get_title = title:k_the_stormlands
+						trigger_event = {
+							id = conq_events.0010
+							days = { 3 7 }
+						}
+					}
+				}
+				else_if = {
+					limit = {
+						OR = {
+							character:Baratheon_14 = { is_alive = no }
+							character:Durrandon_88 = { is_alive = no }
+							character:Baratheon_14 = { is_married = yes }
+							character:Durrandon_88 = { is_married = yes }
+						}
 					}
 					scope:attacker = {
 						get_title = title:k_the_stormlands
