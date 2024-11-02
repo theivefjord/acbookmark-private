@@ -1,5 +1,5 @@
 ﻿Grand_Maester_001 = {
-	name = Leto # Canon, I
+	name = Elric # Canon, I
 
 	learning = 9
 
