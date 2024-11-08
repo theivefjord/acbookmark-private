@@ -500,12 +500,12 @@ ac_war_events.0009 = { # riverrun swears fealty
 			TARGET = title:d_riverrun.holder
 			NEW_LIEGE = root
 		}
-		hidden_effect = {
-			ac_change_culture_effect = {
-				TARGET_HOLDER = title:d_riverrun.holder
-				CHANGE_TO_CULTURE = culture:crownlander
-			}
-		}
+		#hidden_effect = {
+		#	ac_change_culture_effect = {
+		#		TARGET_HOLDER = title:d_riverrun.holder
+		#		CHANGE_TO_CULTURE = culture:crownlander
+		#	}
+		#}
 		ai_chance = {
 			base = 100
 		}

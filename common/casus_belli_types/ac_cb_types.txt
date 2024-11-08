@@ -363,6 +363,10 @@
 						}
 					}
 				}
+				if = {
+					limit = { title:e_the_stormlands.holder = { has_character_modifier = uncoronated_modifier } }
+					title:e_the_stormlands.holder = { remove_character_modifier = uncoronated_modifier }
+				}
 			}
 		}
 
