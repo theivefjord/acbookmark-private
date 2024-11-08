@@ -382,6 +382,9 @@ ac_war_events.0006 = { # the king who - knelt
 			limit = { has_variable = torrhen_knelt }
 			remove_variable = torrhen_knelt
 		}
+		title:k_the_north.holder = {
+			trigger_event = conq_events.0099
+		}
 	}
 }
 

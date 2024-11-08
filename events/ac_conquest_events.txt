@@ -251,6 +251,7 @@ conq_events.0002 = { # riverlands
 					type = feudal_government_levies
 					level = 0
 				}
+				trigger_event = conq_events.0099
 			}
 		}
 		title:b_rhaenyss_hill = {
@@ -825,6 +826,7 @@ conq_events.0007 = { # north
 					type = feudal_government_levies
 					level = 0
 				}
+				trigger_event = conq_events.0099
 			}
 		}
 	}
@@ -1417,6 +1419,29 @@ conq_events.0013 = { # westerlands conquest if started war with the reach
 		}
 		title:b_visenyas_hill = {
 			set_title_name = b_visenyas_hh
+		}
+	}
+}
+
+conq_events.0099 = {
+	hidden = yes
+	immediate = {
+		every_ruler = {
+			limit = {
+				has_faith = faith:old_gods_south
+				OR = {
+					this.primary_title = { target_is_de_jure_liege_or_above = title:e_the_north }
+					this.primary_title = { target_is_de_jure_liege_or_above = title:e_the_riverlands }
+					this.primary_title = { target_is_de_jure_liege_or_above = title:e_the_westerlands }
+					this.primary_title = { target_is_de_jure_liege_or_above = title:e_the_stormlands }
+					this.primary_title = { target_is_de_jure_liege_or_above = title:e_the_reach }
+				}
+				this.primary_title.tier >= tier_duchy
+			}
+			if = {
+				limit = { has_realm_law = equal_law }
+				add_realm_law_skip_effects = male_preference_law
+			}
 		}
 	}
 }
