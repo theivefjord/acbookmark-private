@@ -93,6 +93,16 @@
 				location = capital_province
 				origin = capital_province
 			}
+			add_trait_xp = {
+				trait = dragonrider
+				track = dragon_bond
+				value = 50
+			}
+			add_trait_xp = {
+				trait = dragonrider
+				track = dragon_training
+				value = 15
+			}
 		}
 	}
 	character:Velaryon_11 ?= { # Daemon Velaryon
@@ -178,6 +188,16 @@ ac_8002_scenario_setup = {
 				target = character:Martell_53
 				modifier = angry_opinion
 				opinion = -200
+			}
+			add_trait_xp = {
+				trait = dragonrider
+				track = dragon_bond
+				value = 75
+			}
+			add_trait_xp = {
+				trait = dragonrider
+				track = dragon_training
+				value = 55
 			}
 		}
 	}
