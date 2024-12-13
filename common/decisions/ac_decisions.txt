@@ -80,12 +80,13 @@ ac_doctrine_of_exceptionalism = {
 	is_shown = {
 		faith = faith:the_seven_main
 		has_title = title:e_the_iron_throne
-		root = character:Targaryen_27
+		dynasty = dynasty:dynn_Targaryen
 		NOT = { faith:the_seven_main = { has_doctrine = agot_exceptionalism_doctrine } }
 	}
 
 	is_valid = {
 		has_trait = dragonrider
+		culture = culture:high_valyrian
 		piety >= 6000
 		title:k_the_most_devout.holder = {
 			opinion = { target = root value >= 100 }

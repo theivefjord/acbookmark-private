@@ -969,6 +969,7 @@ conq_events.0009 = { # form iron throne when ac variable > 5
 				}
 				change_government = lp_feudal_government
 			}
+			title:k_the_crownlands = { set_de_jure_liege_title = title:e_the_iron_throne }
 		}
 		spawn_army = {
 			name = iron_throne_decision_troops
