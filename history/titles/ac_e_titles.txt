@@ -4,8 +4,7 @@
 	}
 	7999.4.1 = {
 		holder = Targaryen_27	 # Aegon I 'the Conqueror'
-		#law = slavery_0
-		effect = { # AGOT TODO
+		effect = { 
 			agot_set_empire_tier_realm_paramountcy = yes
 		}
 	}

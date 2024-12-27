@@ -14,7 +14,6 @@
 	}
 	7990.1.1 = {
 		trait = scholar
-		trait = maester_historical
 		trait = infirm
 		effect = {
 			agot_maester_forge_link_history_effect = { METAL = bronze }
@@ -27,16 +26,11 @@
 			add_character_flag = specialisation_astronomy
 		}
 	}
-	7997.1.1 = {
-		trait = archmaester
-		effect = { make_trait_inactive = archmaester_bronze }
-	}
 	8001.1.1 = {
 		employer = Targaryen_27 # Aegon I Targaryen
-		effect = {
-			remove_trait = archmaester_bronze
-			make_trait_inactive = grandmaester
-		}
+		trait = maester_historical
+		effect = { agot_maester_starting_setup_history_effect = yes }
+		effect = { make_trait_inactive = grandmaester }
 	}
 	8004.10.1 = { death = yes }
 }

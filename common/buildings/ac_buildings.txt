@@ -1,0 +1,50 @@
+﻿dragonpit_01 = {
+
+	construction_time = very_slow_construction_time
+
+	type_icon = "icon_dragonpit.dds"
+
+	effect_desc = building_dragonpit_effect
+
+	on_complete = {
+		county.holder = {
+			trigger_event = agot_dragon_pits.0001
+		}
+	}
+
+	cost_gold = 250
+
+	next_building = dragonpit_02
+
+	county_holder_character_modifier = {
+		faith_of_the_seven_religion_opinion = 10
+	}
+
+	character_modifier = {
+		faith_of_the_seven_religion_opinion = 10
+	}
+
+	character_modifier = {
+		prowess_per_piety_level = 1
+		martial_per_piety_level = 1
+	}
+
+	max_garrison = 500
+
+	province_modifier = {
+		fort_level = 2
+	}
+
+	# AGOT TODO
+	ai_value = {
+		base = 100
+		modifier = { # Fill all building slots before going for special buildings
+			factor = 0
+			free_building_slots > 0
+		}
+	}
+
+	type = special
+
+	flag = travel_point_of_interest_religious
+}

@@ -807,6 +807,7 @@ conq_events.0007 = { # north
 					opinion = 100
 				}
 			}
+			title:k_the_north = { set_de_jure_liege_title = scope:attacker.primary_title }
 		}
 		ai_chance = {
 			base = 100
