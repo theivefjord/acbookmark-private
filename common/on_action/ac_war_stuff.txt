@@ -97,13 +97,11 @@ ac_on_invalidated_war = {
 		scope:attacker = { has_variable = ac_started_conquest }
 		scope:attacker = { var:ac_started_conquest >= 5 }
 		scope:attacker = { NOT = { has_title = title:e_the_iron_throne } }
+		scope:attacker = { NOT = { has_title = title:e_valyrian_freehold } }
 	}
 	effect = {
 		scope:attacker = { 
-			trigger_event = {
-				id = conq_events.0009 # form iron throne when ac variable > 4
-				days = { 3 7 }
-			}
+			trigger_event = conq_events.0009
 		}
 	}
 }

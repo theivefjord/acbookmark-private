@@ -929,6 +929,10 @@ conq_events.0009 = { # form iron throne when ac variable > 5
 	}
 
 	theme = martial
+	trigger = {
+		NOT = { has_title = title:e_the_iron_throne }
+		NOT = { has_title = title:e_valyrian_freehold }
+	}
 
 	right_portrait = {
 		character = root.primary_spouse
