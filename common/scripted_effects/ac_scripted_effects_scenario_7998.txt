@@ -123,14 +123,6 @@
 	title:c_dragonstone = {
 		set_county_faith = faith:valyrian
 	}
-	if = {
-		limit = { has_global_variable = CoW_is_loaded }
-		province:1934 = { add_special_building = ruins_harrenhal_07 }
-	}
-	if = {
-		limit = { NOT = { has_global_variable = CoW_is_loaded } }
-		province:1934 = { add_special_building = harrenhal_01 }
-	}
 }
 
 ac_8002_scenario_setup = {
@@ -213,5 +205,4 @@ ac_8002_scenario_setup = {
 	province:4156 ={
 		set_holding_type = castle_holding
 	}
-	#province:1934 = { add_special_building = ruins_harrenhal_01 }
 }

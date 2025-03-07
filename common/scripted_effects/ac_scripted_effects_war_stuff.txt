@@ -3,19 +3,22 @@
 		save_scope_as = harrenhal
 	}
 	if = {
-		limit = { exists = global_var:CoW_is_loaded }
+		limit = { # new check to see if CoW is loaded
+			title:b_wynegarde.title_province = {
+				has_special_building_slot = yes
+			}
+		 }
 		province:1934 = {
 			remove_building = ruins_harrenhal_07
 			add_special_building = ruins_harrenhal_01
 		}
 	}
-	if = {
-		limit = { NOT = { exists = global_var:CoW_is_loaded } }
-		province:1934 = {
-			remove_building = harrenhal_01
-			add_special_building = ruins_harrenhal_01
-		}
-	}
+	# else = { # re-do this if the AGOT team make a new model for the unburnt Harrenhal | this is stupid since that would only happen when they do their own AC bookmark
+	# 	province:1934 = {
+	# 		remove_building = harrenhal_01
+	# 		add_special_building = ruins_harrenhal_01
+	# 	}
+	# }
 	province:1934 = {
 		set_variable = {
 			name = dragon_siege_modifier_massive

@@ -1,0 +1,39 @@
+﻿on_game_start = {
+	on_actions = {
+		ac_game_start
+	}
+}
+
+ac_game_start = {
+	effect = {
+		if = {
+			limit = { game_start_date = 7998.1.1 }
+			ac_7998_scenario_setup = yes
+			character:Targaryen_27 = {
+				trigger_event = {
+					id = conq_events.0001
+					days = 2
+				}
+			}
+
+			# harrenhal stuff
+			if = {
+				limit = { 
+					title:b_wynegarde.title_province = {
+						has_special_building_slot = yes
+					}
+				 }
+				province:1934 = { add_special_building = ruins_harrenhal_07 }
+			}
+			else = { 
+				# just make it ruined right away since they have the same model anyway
+				# with the other model it's un-upgradable unless burnt by aegon, which isn't guaranteed 
+				province:1934 = { add_special_building = ruins_harrenhal_01 }
+			}
+		}
+		else_if = {
+			limit = { game_start_date = 8002.1.1 }
+			ac_8002_scenario_setup = yes
+		}
+	}
+}
