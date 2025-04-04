@@ -423,5 +423,38 @@ ac_cd_events.0099 = { # Aenys bonds with quicksilver
 
 	option = {
 		name = ac_cd_canon_bonding.a
+		hidden_effect = {
+			trigger_event = {
+				id = ac_cd_events.0098
+				years = 11
+			}
+		}
+	}
+}
+
+ac_cd_events.0098 = {
+	hidden = yes
+	trigger = {
+		root = {
+			any_child = {
+				AND = {
+					has_inactive_trait = is_targaryen_30 
+					is_alive = yes
+					NOT = { has_trait = dragonrider }
+				}
+			}
+		}
+	}
+	immediate = {
+		root = {
+			every_child = {
+				limit = { has_inactive_trait = is_targaryen_30 }
+				save_scope_as = aenys
+			}
+		}
+		agot_tame_dragon = {
+			TAMER = scope:aenys
+			DRAGON = scope:dragon
+		}
 	}
 }

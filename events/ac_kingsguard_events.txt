@@ -103,11 +103,13 @@ ac_kingsguard.0001 = {
 		trigger = {
 			character:Velaryon_15 = { is_alive = yes }
 			character:Velaryon_15 = { is_landed = no }
+			character:Velaryon_15 = { is_married = no }
 		}
 		custom_tooltip = {
 			text = ac_kingsguard.0001.a_tt
 			every_in_list = {
 				list = conquest_kg_members
+				limit = { this = { is_married = no } }
 				save_scope_as = conquest_kg_member
 				agot_join_kingsguard_effect = {
 					KINGSGUARD = scope:conquest_kg_member
@@ -138,7 +140,10 @@ ac_kingsguard.0001 = {
 			character:Targaryen_27 = { set_variable = { name = is_adding_kg value = 0 } }
 			every_in_list = {
 				list = conquest_kg_members
-				limit = { NOT = { character:Targaryen_27.var:is_adding_kg > 6 } }
+				limit = { 
+					NOT = { character:Targaryen_27.var:is_adding_kg > 6 } 
+					this = { is_married = no } 
+				}
 				save_scope_as = conquest_kg_member
 				agot_join_kingsguard_effect = {
 					KINGSGUARD = scope:conquest_kg_member
@@ -171,7 +176,10 @@ ac_kingsguard.0001 = {
 			}
 			every_in_list = {
 				list = conquest_kg_members
-				limit = { NOT = { character:Targaryen_27.var:is_adding_kg > 6 } }
+				limit = { 
+					NOT = { character:Targaryen_27.var:is_adding_kg > 6 } 
+					this = { is_married = no } 
+				}
 				save_scope_as = conquest_kg_member
 				agot_join_kingsguard_effect = {
 					KINGSGUARD = scope:conquest_kg_member
@@ -184,6 +192,10 @@ ac_kingsguard.0001 = {
 			agot_assign_lord_commander_effect = {
 				COMMANDER = scope:kg_new_boyo
 				KING = root
+			}
+			scope:kg_new_boyo = {
+				agot_create_artifact_kingsguard_armour_effect = { OWNER = this }
+				agot_create_artifact_kingsguard_sword_effect = { OWNER = this }
 			}
 			character:Targaryen_27 = { remove_variable = is_adding_kg }
 		}
@@ -198,6 +210,10 @@ ac_kingsguard.0001 = {
 			agot_join_kingsguard_effect = {
 				KINGSGUARD = scope:kg_new_boyo
 				KING = root
+			}
+			scope:kg_new_boyo = {
+				agot_create_artifact_kingsguard_armour_effect = { OWNER = this }
+				agot_create_artifact_kingsguard_sword_effect = { OWNER = this }
 			}
 		}
 		custom_tooltip = {

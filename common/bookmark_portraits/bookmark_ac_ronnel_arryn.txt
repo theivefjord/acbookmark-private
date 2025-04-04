@@ -2,7 +2,7 @@
 # History database id:Arryn_61
 bookmark_ac_ronnel_arryn={
 	type=boy
-	id=21406
+	id=25113
 	random_seed=4160082092
 	age=0.070000
 	genes={ 		hair_color={ 58 51 63 150 }
@@ -97,8 +97,8 @@ bookmark_ac_ronnel_arryn={
  		expression_other={ "cheek_wrinkles_both_01" 0 "cheek_wrinkles_both_01" 0 }
  		complexion={ "complexion_40" 20 "complexion_6" 113 }
  		gene_height={ "normal_height" 157 "normal_height" 157 }
- 		gene_bs_body_type={ "body_fat_head_fat_medium" 138 "body_fat_head_fat_medium" 137 }
- 		gene_bs_body_shape={ "body_shape_hourglass_half" 175 "body_shape_average" 51 }
+ 		gene_bs_body_type={ "body_fat_head_fat_medium" 133 "body_fat_head_fat_medium" 137 }
+ 		gene_bs_body_shape={ "body_shape_hourglass_half" 159 "body_shape_average" 51 }
  		gene_bs_bust={ "bust_clothes" 44 "bust_shape_1_half" 0 }
  		gene_age={ "old_1" 71 "old_2" 19 }
  		gene_eyebrows_shape={ "avg_spacing_lower_thickness" 153 "avg_spacing_lower_thickness" 153 }
@@ -184,11 +184,13 @@ bookmark_ac_ronnel_arryn={
  		hair_aging={ "vanilla_hair_aging" 127 "vanilla_hair_aging" 184 }
  		beards={ "all_beards" 23 "no_beard" 0 }
  		cloaks={ "no_cloak" 255 "no_cloak" 0 }
- 		hairstyles={ "all_hairstyles" 41 "all_hairstyles" 0 }
+ 		hairstyles={ "all_hairstyles" 31 "all_hairstyles" 0 }
  		legwear={ "agot_boots_legwear" 136 "all_legwear" 0 }
  		gene_shrink_body={ "shrink_all" 255 "" 0 }
  		gene_bs_additive_headgears={ "additive_headgears" 255 "" 0 }
  		gene_bs_cloak_offset={ "cloak_offset" 255 "" 0 }
+ 		gene_bs_cloak_offset2={ "cloak_offset2" 255 "cloak_offset2" 0 }
+ 		gene_bs_cloak_offset3={ "cloak_offset3" 255 "cloak_offset3" 0 }
  		gene_bs_long_beard={ "long_beard" 255 "" 0 }
  		cosmetics_eyeliner={ "eyeliner_none" 255 "eyeliner_none" 0 }
  		cosmetics_eyeshadow={ "eyeshadow_none" 255 "eyeshadow_none" 0 }
@@ -214,6 +216,10 @@ bookmark_ac_ronnel_arryn={
 		}
  {
 			hash=1563190100
+			invert=no
+		}
+ {
+			hash=75156179
 			invert=no
 		}
  }

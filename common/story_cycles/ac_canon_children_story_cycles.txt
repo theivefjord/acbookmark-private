@@ -53,11 +53,12 @@ story_ac_canon_children_orys_baratheon = {
 									}
 								}
 								agot_canon_children_force_pregnancy_basic_effect = {
-									CHILD_FLAG = is_baratheon_16 
+									CHILD_FLAG = is_baratheon_16
 									IS_FEMALE = no
 								}
 								character:Durrandon_88 = {
 									remove_character_modifier = ac_cc_fertility_go_away
+									remove_character_modifier = ac_cc_protection
 								}
 							}
 
@@ -148,6 +149,7 @@ story_ac_canon_children_aegon_targaryen = {
 								}
 								character:Targaryen_29 = {
 									remove_character_modifier = ac_cc_fertility_go_away
+									remove_character_modifier = ac_cc_protection
 								}
 							}
 
@@ -184,6 +186,7 @@ story_ac_canon_children_aegon_targaryen = {
 								}
 								character:Targaryen_28 = {
 									remove_character_modifier = ac_cc_fertility_go_away
+									remove_character_modifier = ac_cc_protection
 								}
 							}
 							
@@ -256,6 +259,9 @@ story_ac_canon_children_aethan_velaryon = {
 								agot_canon_children_force_pregnancy_basic_effect = {
 									CHILD_FLAG = is_velaryon_24
 									IS_FEMALE = yes
+								}
+								character:Massey_26 = {
+									remove_character_modifier = ac_cc_protection
 								}
 							}
 

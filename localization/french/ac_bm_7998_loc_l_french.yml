@@ -179,11 +179,11 @@
  ac_kingsguard.0001.c:0 "[kg_new_boyo.GetName] sera le premier Lord Commandant et choisira les membres"
  ac_kingsguard.0001.d:0 "[kg_new_boyo.GetName] sera le premier Lord Commandant mais je choisirai les membres"
 
- ac_kingsguard.0001.a_tt:0 "[velaryon_lc.GetFullName] deviendra [GetPlayer.GetCouncillorPosition( 'kingsguard_lord_commander' ).GetPositionName]\n[goode_4_kg.GetFullName] deviendra un frère juré de la Garde Royale\n[goode_3_kg.GetFullName] deviendra un frère juré de la Garde Royale\n[darklyn_9_kg.GetFullName] deviendra un frère juré de la Garde Royale\n[roote_7_kg.GetFullName] deviendra un frère juré de la Garde Royale\n[kingsguard_1_kg.GetFullName] deviendra un frère juré de la Garde Royale"
+ ac_kingsguard.0001.a_tt:0 "[velaryon_lc.GetFullName] deviendra [GetPlayer.GetCouncillorPosition( 'kingsguard_lord_commander' ).GetPositionName]"
 
- ac_kingsguard.0001.b_tt:0 "[baratheon_lc.GetFullName] deviendra [GetPlayer.GetCouncillorPosition( 'kingsguard_lord_commander' ).GetPositionName]\n[goode_4_kg.GetFullName] deviendra un frère juré de la Garde Royale\n[goode_3_kg.GetFullName] deviendra un frère juré de la Garde Royale\n[darklyn_9_kg.GetFullName] deviendra un frère juré de la Garde Royale\n[roote_7_kg.GetFullName] deviendra un frère juré de la Garde Royale\n[kingsguard_1_kg.GetFullName] deviendra un frère juré de la Garde Royale"
+ ac_kingsguard.0001.b_tt:0 "[baratheon_lc.GetFullName] deviendra [GetPlayer.GetCouncillorPosition( 'kingsguard_lord_commander' ).GetPositionName]"
 
- ac_kingsguard.0001.c_tt:0 "[kg_new_boyo.GetFullName] deviendra [GetPlayer.GetCouncillorPosition( 'kingsguard_lord_commander' ).GetPositionName]\n[goode_4_kg.GetFullName] deviendra un frère juré de la Garde Royale\n[goode_3_kg.GetFullName] deviendra un frère juré de la Garde Royale\n[darklyn_9_kg.GetFullName] deviendra un frère juré de la Garde Royale\n[roote_7_kg.GetFullName] deviendra un frère juré de la Garde Royale\n[kingsguard_1_kg.GetFullName] deviendra un frère juré de la Garde Royale"
+ ac_kingsguard.0001.c_tt:0 "[kg_new_boyo.GetFullName] deviendra [GetPlayer.GetCouncillorPosition( 'kingsguard_lord_commander' ).GetPositionName]"
 
  ac_kingsguard.0001.d_tt:0 "[kg_new_boyo.GetFullName] deviendra [GetPlayer.GetCouncillorPosition( 'kingsguard_lord_commander' ).GetPositionName]"
  
@@ -329,3 +329,8 @@
  conq_events.0013.a:0 "Vous n'avez rien à craindre, mon seigneur"
  
  ac_bm_group:0 "L'Avènement du Dragon"
+
+ conq_events.0098.t:0 "Couronnement"
+ conq_events.0098.desc:0 "C'est sur cette colline que je bâtirai ma forteresse et proclamerai ma  domination sur ces royaumes brisés."
+ conq_events.0098.a:0 "Aegon, Premier du Nom, Roi de tout Westeros et Bouclier de son Peuple"
+ conq_events.0098.b:0 "Cela peut attendre"

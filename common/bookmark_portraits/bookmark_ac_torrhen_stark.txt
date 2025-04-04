@@ -2,7 +2,7 @@
 # History database id:Stark_66
 bookmark_ac_torrhen_stark={
 	type=male
-	id=17205
+	id=20025
 	random_seed=3054899977
 	age=0.400000
 	genes={ 		hair_color={ 37 241 37 241 }
@@ -97,8 +97,8 @@ bookmark_ac_torrhen_stark={
  		expression_other={ "cheek_wrinkles_both_01" 147 "cheek_wrinkles_both_01" 147 }
  		complexion={ "complexion_11" 29 "complexion_11" 29 }
  		gene_height={ "normal_height" 131 "normal_height" 131 }
- 		gene_bs_body_type={ "body_fat_head_fat_low" 112 "body_fat_head_fat_low" 121 }
- 		gene_bs_body_shape={ "body_shape_average" 142 "body_shape_average" 51 }
+ 		gene_bs_body_type={ "body_fat_head_fat_low" 131 "body_fat_head_fat_low" 121 }
+ 		gene_bs_body_shape={ "body_shape_average" 102 "body_shape_average" 51 }
  		gene_bs_bust={ "bust_clothes" 30 "bust_shape_1_half" 38 }
  		gene_age={ "old_beauty_1" 255 "old_beauty_1" 255 }
  		gene_eyebrows_shape={ "avg_spacing_lower_thickness" 255 "avg_spacing_lower_thickness" 255 }
@@ -183,11 +183,13 @@ bookmark_ac_torrhen_stark={
  		gene_no_portrait={ "normal_portrait" 127 "normal_portrait" 127 }
  		hair_aging={ "late_hair_aging" 40 "late_hair_aging" 40 }
  		cloaks={ "agot_historic_capes" 168 "no_cloak" 0 }
- 		hairstyles={ "all_hairstyles" 212 "all_hairstyles" 0 }
+ 		hairstyles={ "all_hairstyles" 206 "all_hairstyles" 0 }
  		legwear={ "dragon_rider_legwear" 84 "all_legwear" 0 }
  		gene_shrink_body={ "shrink_all" 255 "" 0 }
  		gene_bs_additive_headgears={ "additive_headgears" 255 "" 0 }
  		gene_bs_cloak_offset={ "cloak_offset" 255 "" 0 }
+ 		gene_bs_cloak_offset2={ "cloak_offset2" 255 "cloak_offset2" 0 }
+ 		gene_bs_cloak_offset3={ "cloak_offset3" 255 "cloak_offset3" 0 }
  		gene_bs_long_beard={ "long_beard" 255 "" 0 }
  		cosmetics_eyeliner={ "eyeliner_none" 255 "eyeliner_none" 0 }
  		cosmetics_eyeshadow={ "eyeshadow_none" 255 "eyeshadow_none" 0 }
@@ -195,8 +197,8 @@ bookmark_ac_torrhen_stark={
  		cosmetics_blush={ "blush_none" 255 "blush_none" 0 }
  		cosmetics_lipcolor={ "lipcolor_none" 255 "lipcolor_none" 0 }
  		clothes={ "north_high_winter_high_clothes" 249 "most_clothes" 0 }
- 		headgear={ "agot_crowns" 59 "no_headgear" 0 }
- 		beards={ "all_beards" 64 "no_beard" 0 }
+ 		headgear={ "agot_crowns" 41 "no_headgear" 0 }
+ 		beards={ "all_beards" 59 "no_beard" 0 }
  		gene_balding_hair_effect={ "no_baldness" 255 "no_baldness" 0 }
  }
 	entity={ 3942081117 3942081117 }

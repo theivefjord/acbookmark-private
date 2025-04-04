@@ -110,6 +110,7 @@ conq_events.0001 = { # aegon d-day
 				add_prowess_skill = 60
 				create_story = { type = story_ai_aegons_conquest }
 			}
+			trigger_event = conq_events.0098
 		}
 	}
 }
@@ -1156,6 +1157,14 @@ conq_events.0010 = { # durrandon marriage event
 	option = {
 		name = conq_events.0010.b # OR DONT LMAO
 		trigger_event = conq_events.0004
+		#hidden_effect = {
+			character:Baratheon_14 = {
+				remove_trait = refusing_marriage
+			}
+			character:Durrandon_88 = {
+				remove_trait = refusing_marriage
+			}
+		#}
 	}
 	after = {
 		if = {
@@ -1312,16 +1321,38 @@ conq_events.0012 = { # pick capital and do renames
 		title:b_goldguard_heights = {
 			set_title_name = b_goldguard_heights
 		}
+		title:d_kings_landing = {
+			set_title_name = d_kings_landing
+		}
+		title:c_briarcrest = { add_to_list = complete_kl }
+		title:c_blackstripe = { add_to_list = complete_kl }
+		title:c_wings_pass = { add_to_list = complete_kl }
 	}
 	option = {
-		name = conq_events.0012.a # rename to kings landing and make capital
+		name = conq_events.0012.a # rename to kings landing and make capital and complete duchy
 		set_realm_capital = title:c_kings_landing 
+		
 		custom_tooltip = {
 			text = conq_events.0012.a_tt
 		}
 		ai_chance = {
 			base = 100
 		}
+		create_title_and_vassal_change = {
+			type = conquest
+			save_scope_as = change
+			add_claim_on_loss = no
+		}
+		every_in_list = {
+			list = complete_kl
+			save_scope_as = kl_addition
+			set_de_jure_liege_title = title:d_kings_landing
+			change_title_holder = {
+				holder = root
+				change = scope:change
+			}
+		}
+		resolve_title_and_vassal_change = scope:change
 	}
 
 	option = {
@@ -1449,5 +1480,60 @@ conq_events.0099 = {
 				add_realm_law_skip_effects = male_preference_law
 			}
 		}
+	}
+}
+
+# makeshift coronation event because it the uncrowned thing kinda 
+conq_events.0098 = {
+	type = character_event
+	title = conq_events.0098.t
+	desc = conq_events.0098.desc
+
+	override_background = {
+		reference = hills
+	}
+
+	theme = realm
+
+	right_portrait = {
+		character = character:Targaryen_28
+		animation = marshal
+	}
+	left_portrait = {
+		character = root
+		animation = throne_room_kneel_1
+	}
+	option = {
+		name = conq_events.0098.a
+		hidden_effect = {
+			if = {
+				limit = {
+					has_character_flag = not_had_coronation
+				}
+				remove_character_flag = not_had_coronation
+			}
+			if = {
+				limit = {
+					any_character_artifact = {
+						artifact_slot_type = helmet
+					}
+					random_character_artifact = {
+						limit = {
+							artifact_slot_type = helmet
+						}
+						equip_artifact_to_owner_replace = yes
+					}
+				}
+			}
+		}
+		if = {
+			limit = {
+				has_character_modifier = uncoronated_modifier
+			}
+			remove_character_modifier = uncoronated_modifier
+		}
+	}
+	option = {
+		name = conq_events.0098.b
 	}
 }
